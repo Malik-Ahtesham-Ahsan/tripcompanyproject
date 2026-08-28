@@ -10,7 +10,7 @@ const quickLinks = [
   { label: "📋 How It Works", href: "#how-it-works" },
   { label: "🌍 Countries", href: "#schengen-visa" },
   { label: "❓ FAQ", href: "#faq" },
-  { label: "📞 Contact Us", href: "#contact" },
+  { label: "💬 Contact Us", href: siteConfig.whatsappHref, external: true },
 ];
 
 export function Footer() {
@@ -31,10 +31,12 @@ export function Footer() {
             Expert guidance, proven results, outstanding service.
           </p>
           <div className="mt-2 flex flex-col gap-2 text-sm">
-            <a href={siteConfig.phoneHref} className="flex items-center gap-2 hover:text-white">
-              📞 {siteConfig.phone}
-            </a>
-            <a href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white">
+            <a
+              href={siteConfig.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white"
+            >
               💬 {siteConfig.whatsapp} (WhatsApp)
             </a>
             <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 hover:text-white">
@@ -58,7 +60,13 @@ export function Footer() {
         <div className="flex flex-col gap-3">
           <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
           {quickLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm transition-colors hover:text-white">
+            <Link
+              key={link.href}
+              href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              className="text-sm transition-colors hover:text-white"
+            >
               {link.label}
             </Link>
           ))}
@@ -73,7 +81,15 @@ export function Footer() {
           <div className="mt-2 flex gap-3">
             <a href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="text-xl hover:scale-110 transition-transform" aria-label="WhatsApp">💬</a>
             <a href={`mailto:${siteConfig.email}`} className="text-xl hover:scale-110 transition-transform" aria-label="Email">✉️</a>
-            <a href={siteConfig.phoneHref} className="text-xl hover:scale-110 transition-transform" aria-label="Phone">📞</a>
+            <a
+              href={siteConfig.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl transition-transform hover:scale-110"
+              aria-label="WhatsApp"
+            >
+              💬
+            </a>
           </div>
         </div>
       </Container>

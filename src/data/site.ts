@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "TravelVista Ltd",
   tagline: "Schengen Visa & European Holiday Specialists UK",
-  phone: "+92 301 7904652",
-  phoneHref: "tel:+923017904652",
-  whatsapp: "+92 301 7904652",
-  whatsappHref: "https://wa.me/923017904652",
+  phone: "+44 7862 609755",
+  phoneHref: "https://wa.me/447862609755",
+  whatsapp: "+44 7862 609755",
+  whatsappHref: "https://wa.me/447862609755",
   email: "info@travelvista.co.uk",
   address: "128 Kingsway, London, WC2B 6NH, United Kingdom",
   hours: {

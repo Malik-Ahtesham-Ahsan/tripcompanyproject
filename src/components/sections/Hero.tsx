@@ -61,7 +61,12 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button href="#contact" size="lg">
+              <Button
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="lg"
+              >
                 ✈ Apply Now – It&apos;s Free
               </Button>
               <Button href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" size="lg" variant="outline">

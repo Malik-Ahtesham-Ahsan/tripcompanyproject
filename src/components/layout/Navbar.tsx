@@ -6,7 +6,7 @@ import { Menu, Phone, PlaneTakeoff, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { TopBanner } from "@/components/layout/TopBanner";
-import { navLinks, whatsappNavLink } from "@/data/nav";
+import { navLinks } from "@/data/nav";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/cn";
 
@@ -66,12 +66,20 @@ export function Navbar() {
           <div className="hidden items-center gap-4 lg:flex">
             <a
               href={siteConfig.phoneHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-navy-900 xl:flex"
             >
               <Phone className="h-4 w-4" />
               {siteConfig.phone}
             </a>
-            <Button href="#contact" size="md" className="whitespace-nowrap">
+            <Button
+              href={siteConfig.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              size="md"
+              className="whitespace-nowrap"
+            >
               ✈ Free Consultation
             </Button>
           </div>
@@ -95,7 +103,7 @@ export function Navbar() {
         >
           <div className="overflow-hidden">
             <Container className="flex flex-col gap-1 pb-6 pt-2">
-              {[...navLinks, whatsappNavLink].map((link) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -108,11 +116,23 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <a href={siteConfig.phoneHref} className="mt-2 flex items-center gap-2 px-3 text-sm font-semibold text-navy-900">
+              <a
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 flex items-center gap-2 px-3 text-sm font-semibold text-navy-900"
+              >
                 <Phone className="h-4 w-4" />
                 {siteConfig.phone}
               </a>
-              <Button href="#contact" size="md" className="mt-3 w-full" onClick={() => setOpen(false)}>
+              <Button
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="md"
+                className="mt-3 w-full"
+                onClick={() => setOpen(false)}
+              >
                 ✈ Free Consultation
               </Button>
             </Container>

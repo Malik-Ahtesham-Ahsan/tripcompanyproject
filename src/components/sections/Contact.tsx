@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -6,8 +6,7 @@ import { ConsultationForm } from "@/components/forms/ConsultationForm";
 import { siteConfig } from "@/data/site";
 
 const infoItems = [
-  { icon: Phone, label: "Call Us", value: siteConfig.phone, href: siteConfig.phoneHref },
-  { icon: MessageCircle, label: "WhatsApp", value: siteConfig.whatsapp, href: siteConfig.whatsappHref },
+  { icon: MessageCircle, label: "WhatsApp Us", value: siteConfig.whatsapp, href: siteConfig.whatsappHref },
   { icon: Mail, label: "Email Us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   { icon: MapPin, label: "Visit Us", value: siteConfig.address, href: undefined },
   { icon: Clock, label: "Office Hours", value: siteConfig.hours.weekday, href: undefined },

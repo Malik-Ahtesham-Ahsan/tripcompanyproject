@@ -13,14 +13,26 @@ export function CtaSection() {
           Contact us today for a free consultation — our expert team responds within 2 hours.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Button href="#contact" size="lg" variant="secondary">
+          <Button
+            href={siteConfig.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            size="lg"
+            variant="secondary"
+          >
             ✈ Book Free Consultation
           </Button>
           <Button href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" size="lg" variant="outline">
             💬 Chat on WhatsApp
           </Button>
-          <Button href={siteConfig.phoneHref} size="lg" variant="outline">
-            📞 Call Us Now
+          <Button
+            href={siteConfig.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            size="lg"
+            variant="outline"
+          >
+            💬 WhatsApp Us Now
           </Button>
         </div>
       </Container>

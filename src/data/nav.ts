@@ -14,12 +14,6 @@ export const navLinks: NavLink[] = [
   { label: "USA Visa", href: "#usa-visa", icon: "🗽" },
   { label: "Turkey Visa", href: "#turkey-visa", icon: "🕌" },
   { label: "All Services", href: "#services", icon: "✈️" },
-  { label: "Contact Us", href: "#contact", icon: "📞" },
+  { label: "Contact Us", href: siteConfig.whatsappHref, external: true, icon: "💬" },
 ];
 
-export const whatsappNavLink: NavLink = {
-  label: "WhatsApp",
-  href: siteConfig.whatsappHref,
-  external: true,
-  icon: "💬",
-};
