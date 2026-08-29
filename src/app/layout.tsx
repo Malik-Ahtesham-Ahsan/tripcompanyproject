@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
+import logo from "@/logo.jpeg";
 
 const display = Plus_Jakarta_Sans({
   variable: "--font-display",
@@ -48,6 +49,10 @@ export const metadata: Metadata = {
     title: "TravelVista Ltd | Schengen Visa & European Holiday Specialists UK",
     description:
       "Expert Schengen visa consultancy with 98% approval rate. Free consultation, 29 Schengen countries, flights, hotels and holiday packages.",
+  },
+  icons: {
+    icon: logo.src,
+    apple: logo.src,
   },
   robots: {
     index: true,

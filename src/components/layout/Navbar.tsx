@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Menu, Phone, PlaneTakeoff, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { TopBanner } from "@/components/layout/TopBanner";
 import { navLinks } from "@/data/nav";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/cn";
+import logo from "@/logo.jpeg";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,8 +43,8 @@ export function Navbar() {
       >
         <Container className="flex h-18 items-center justify-between py-3">
           <Link href="#home" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600">
-              <PlaneTakeoff className="h-5 w-5 text-white" strokeWidth={2.25} />
+            <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-white">
+              <Image src={logo} alt="TravelVista Ltd logo" fill sizes="48px" className="object-contain" priority />
             </span>
             <span className="font-display whitespace-nowrap text-lg font-bold tracking-tight text-navy-950">
               {siteConfig.name}

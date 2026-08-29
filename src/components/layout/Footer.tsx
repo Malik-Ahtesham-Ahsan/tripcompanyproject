@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { Mail, PlaneTakeoff } from "lucide-react";
+import Image from "next/image";
+import { Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site";
+import logo from "@/logo.jpeg";
 
 const quickLinks = [
   { label: "🏠 Home", href: "#home" },
@@ -21,8 +23,8 @@ export function Footer() {
       <Container className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:py-20">
         <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
           <Link href="#home" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600">
-              <PlaneTakeoff className="h-5 w-5 text-white" strokeWidth={2.25} />
+            <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-white">
+              <Image src={logo} alt="TravelVista Ltd logo" fill sizes="64px" className="object-contain" />
             </span>
             <span className="font-display text-lg font-bold text-white">{siteConfig.name}</span>
           </Link>
