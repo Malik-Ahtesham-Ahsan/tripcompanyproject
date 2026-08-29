@@ -4,22 +4,22 @@
   --background: #ffffff;
   --foreground: #0b1b32;
 
-  /* TravelVista Ltd palette — professional navy/blue */
-  --color-navy-950: #050e1f;
-  --color-navy-900: #0b1b32;
-  --color-navy-800: #112544;
-  --color-navy-700: #16315a;
-  --color-navy-600: #1d3f72;
-  --color-navy-500: #2a5391;
+  /* TravelVista Ltd — British Royal Navy, Union Red, and ivory */
+  --color-navy-950: #06142f;
+  --color-navy-900: #0b1f4b;
+  --color-navy-800: #132b5c;
+  --color-navy-700: #1d3d76;
+  --color-navy-600: #2c4f8f;
+  --color-navy-500: #4665a1;
 
-  --color-blue-600: #1259c3;
-  --color-blue-500: #1e6de0;
-  --color-blue-400: #3f8bf5;
+  --color-blue-600: #012169;
+  --color-blue-500: #003f8f;
+  --color-blue-400: #2f6fbd;
 
-  --color-gold-500: #c9a24b;
-  --color-gold-400: #d9b96a;
+  --color-gold-500: #c8102e;
+  --color-gold-400: #e31837;
 
-  --color-sand-50: #faf8f4;
+  --color-sand-50: #f8f6f1;
 }
 
 @theme inline {

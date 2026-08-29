@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBadges } from "@/components/sections/TrustBadges";
+import { OffersSlider } from "@/components/sections/OffersSlider";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Services } from "@/components/sections/Services";
 import { Destinations } from "@/components/sections/Destinations";
@@ -22,6 +23,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <TrustBadges />
+        <OffersSlider />
         <WhyChooseUs />
         <Services />
         <Destinations />

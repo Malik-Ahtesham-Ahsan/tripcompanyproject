@@ -6,11 +6,20 @@ import Link from "next/link";
 import { Menu, Phone, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import {
+  FacebookIcon,
+  InstagramIcon,
+} from "@/components/icons/SocialIcons";
 import { TopBanner } from "@/components/layout/TopBanner";
 import { navLinks } from "@/data/nav";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/cn";
 import logo from "@/logo.jpeg";
+
+const socialLinks = [
+  { href: siteConfig.social.facebook, label: "Facebook", icon: FacebookIcon },
+  { href: siteConfig.social.instagram, label: "Instagram", icon: InstagramIcon },
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,44 +44,66 @@ export function Navbar() {
       <TopBanner />
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300",
+          "sticky top-0 z-50 transition-all duration-500",
           scrolled || open
-            ? "bg-white/95 shadow-sm shadow-navy-950/5 backdrop-blur-md"
-            : "bg-white shadow-sm shadow-navy-950/5"
+            ? "bg-white/95 shadow-md shadow-navy-950/10 backdrop-blur-md"
+            : "bg-white/90 shadow-sm shadow-navy-950/5 backdrop-blur-sm"
         )}
       >
         <Container className="flex h-18 items-center justify-between py-3">
-          <Link href="#home" className="flex items-center gap-2.5">
-            <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-white">
-              <Image src={logo} alt="TravelVista Ltd logo" fill sizes="48px" className="object-contain" priority />
+          <Link href="#home" className="group flex items-center gap-2.5">
+            <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 group-hover:scale-105 group-hover:shadow-md group-hover:shadow-blue-600/15">
+              <Image
+                src={logo}
+                alt="TravelVista Ltd logo"
+                fill
+                sizes="48px"
+                className="object-contain transition-transform duration-500 group-hover:scale-110"
+                priority
+              />
             </span>
-            <span className="font-display whitespace-nowrap text-lg font-bold tracking-tight text-navy-950">
+            <span className="font-display whitespace-nowrap text-lg font-bold tracking-tight text-navy-950 transition-colors duration-300 group-hover:text-blue-600">
               {siteConfig.name}
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 xl:gap-2 lg:flex">
+          <nav className="hidden items-center gap-1 xl:gap-2 xl:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-navy-800 transition-colors hover:bg-navy-950/5 hover:text-blue-600"
+                className="group relative whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-navy-800 transition-colors duration-300 hover:text-blue-600"
               >
                 {link.label}
+                <span className="absolute inset-x-3 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-300 ease-out group-hover:scale-x-100" />
               </Link>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-4 xl:flex">
+            <div className="hidden items-center gap-1 border-r border-navy-950/10 pr-3 2xl:flex">
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-8 w-8 items-center justify-center rounded-full text-navy-700/65 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600/10 hover:text-blue-600"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
             <a
               href={siteConfig.phoneHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-navy-900 xl:flex"
+              className="group hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-navy-900 transition-colors duration-300 hover:text-blue-600 xl:flex"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
               {siteConfig.phone}
             </a>
             <Button
@@ -80,7 +111,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               size="md"
-              className="whitespace-nowrap"
+              className="whitespace-nowrap transition-transform duration-300 hover:-translate-y-0.5"
             >
               ✈ Free Consultation
             </Button>
@@ -91,7 +122,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-navy-950 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg text-navy-950 transition-all duration-300 hover:bg-navy-950/5 hover:text-blue-600 xl:hidden"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -99,7 +130,7 @@ export function Navbar() {
 
         <div
           className={cn(
-            "grid overflow-hidden bg-white transition-[grid-template-rows] duration-300 ease-out lg:hidden",
+            "grid overflow-hidden bg-white transition-[grid-template-rows] duration-300 ease-out xl:hidden",
             open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
           )}
         >
@@ -112,19 +143,36 @@ export function Navbar() {
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-2.5 text-base font-medium text-navy-900 hover:bg-navy-950/5"
+                  className="rounded-lg px-3 py-2.5 text-base font-medium text-navy-900 transition-all duration-300 hover:translate-x-1 hover:bg-blue-600/5 hover:text-blue-600"
                 >
                   {link.icon ? `${link.icon} ` : ""}
                   {link.label}
                 </Link>
               ))}
+              <div className="mt-3 flex items-center gap-2 border-t border-navy-950/8 px-3 pt-4">
+                <span className="mr-1 text-xs font-semibold uppercase tracking-wider text-navy-700/50">
+                  Follow us
+                </span>
+                {socialLinks.map(({ href, label, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-navy-950/10 text-navy-700/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
               <a
                 href={siteConfig.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 flex items-center gap-2 px-3 text-sm font-semibold text-navy-900"
+                className="group mt-2 flex items-center gap-2 px-3 text-sm font-semibold text-navy-900 transition-colors duration-300 hover:text-blue-600"
               >
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
                 {siteConfig.phone}
               </a>
               <Button
@@ -132,7 +180,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 size="md"
-                className="mt-3 w-full"
+                className="mt-3 w-full transition-transform duration-300 hover:-translate-y-0.5"
                 onClick={() => setOpen(false)}
               >
                 ✈ Free Consultation

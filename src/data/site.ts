@@ -25,9 +25,7 @@ export const siteConfig = {
     rating: "5★",
   },
   social: {
-    facebook: "https://facebook.com/travelvista",
-    instagram: "https://instagram.com/travelvista",
-    linkedin: "https://linkedin.com/company/travelvista",
-    twitter: "https://twitter.com/travelvista",
+    facebook: "https://www.facebook.com/share/1DoG2T6Dpo/?mibextid=wwXIfr",
+    instagram: "https://www.instagram.com/travelvista.ltd?igsi=MTN6bTBrc2p3N2pmeg%3D%3D&utm_source=qr",
   },
 } as const;

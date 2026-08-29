@@ -1,7 +1,21 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { AlertCircle, Loader2, Send } from "lucide-react";
+import {
+  AlertCircle,
+  BadgeCheck,
+  Globe2,
+  History,
+  Loader2,
+  Mail,
+  MapPinned,
+  MessageCircle,
+  PhoneCall,
+  Send,
+  ShieldCheck,
+  UserRound,
+  type LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 
@@ -11,7 +25,7 @@ type ConsultationFormProps = {
 };
 
 const inputClasses =
-  "w-full rounded-xl border border-navy-950/12 bg-white px-4 py-3 text-sm text-navy-950 outline-none transition-colors placeholder:text-navy-700/40 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/15";
+  "w-full rounded-xl border border-navy-950/12 bg-white px-4 py-3 pl-11 text-sm text-navy-950 shadow-sm shadow-navy-950/5 outline-none transition-all placeholder:text-navy-700/40 focus:border-blue-600 focus:shadow-md focus:shadow-blue-600/10 focus:ring-2 focus:ring-blue-600/15";
 
 export function ConsultationForm({ variant = "contact", onSuccess }: ConsultationFormProps) {
   const [submitted, setSubmitted] = useState(false);
@@ -101,23 +115,47 @@ export function ConsultationForm({ variant = "contact", onSuccess }: Consultatio
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      <Field label="Full Name *" htmlFor={`${variant}-name`} className="sm:col-span-2">
+    <div className="space-y-5">
+      {variant === "hero" ? (
+        <div className="grid grid-cols-2 gap-2 rounded-2xl border border-blue-600/10 bg-gradient-to-r from-blue-600/5 to-gold-500/10 p-3 text-xs text-navy-800">
+          <div className="flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-blue-600 shadow-sm">
+              <BadgeCheck className="h-4 w-4" />
+            </span>
+            <span>
+              <strong className="block text-navy-950">100% Free</strong>
+              No obligation
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-blue-600 shadow-sm">
+              <ShieldCheck className="h-4 w-4" />
+            </span>
+            <span>
+              <strong className="block text-navy-950">Secure &amp; Private</strong>
+              GDPR protected
+            </span>
+          </div>
+        </div>
+      ) : null}
+
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <Field icon={UserRound} label="Full Name *" htmlFor={`${variant}-name`} className="sm:col-span-2">
         <input id={`${variant}-name`} name="name" required type="text" placeholder="Your full name" className={inputClasses} />
       </Field>
-      <Field label="Phone *" htmlFor={`${variant}-phone`}>
+      <Field icon={PhoneCall} label="Phone *" htmlFor={`${variant}-phone`}>
         <input id={`${variant}-phone`} name="phone" required type="tel" placeholder="+44 7000 000000" className={inputClasses} />
       </Field>
-      <Field label="Email *" htmlFor={`${variant}-email`}>
+      <Field icon={Mail} label="Email *" htmlFor={`${variant}-email`}>
         <input id={`${variant}-email`} name="email" required type="email" placeholder="you@email.com" className={inputClasses} />
       </Field>
-      <Field label="Nationality" htmlFor={`${variant}-nationality`}>
+      <Field icon={Globe2} label="Nationality" htmlFor={`${variant}-nationality`}>
         <input id={`${variant}-nationality`} name="nationality" type="text" placeholder="e.g. Pakistani" className={inputClasses} />
       </Field>
-      <Field label="UK City" htmlFor={`${variant}-ukCity`}>
+      <Field icon={MapPinned} label="UK City" htmlFor={`${variant}-ukCity`}>
         <input id={`${variant}-ukCity`} name="ukCity" type="text" placeholder="e.g. London" className={inputClasses} />
       </Field>
-      <Field label="Status in UK" htmlFor={`${variant}-statusInUk`}>
+      <Field icon={BadgeCheck} label="Status in UK" htmlFor={`${variant}-statusInUk`}>
         <select id={`${variant}-statusInUk`} name="statusInUk" defaultValue="" className={inputClasses}>
           <option value="" disabled>Select...</option>
           <option value="UK BRP">UK BRP</option>
@@ -128,7 +166,7 @@ export function ConsultationForm({ variant = "contact", onSuccess }: Consultatio
           <option value="Other">Other</option>
         </select>
       </Field>
-      <Field label="Previous Schengen Visas?" htmlFor={`${variant}-previousSchengen`}>
+      <Field icon={History} label="Previous Schengen Visas?" htmlFor={`${variant}-previousSchengen`}>
         <select id={`${variant}-previousSchengen`} name="previousSchengen" defaultValue="" className={inputClasses}>
           <option value="" disabled>Select...</option>
           <option value="Yes – in last 3 years">Yes – in last 3 years</option>
@@ -155,7 +193,7 @@ export function ConsultationForm({ variant = "contact", onSuccess }: Consultatio
         </div>
       </Field>
       {variant === "contact" ? (
-        <Field label="Message" htmlFor={`${variant}-message`} className="sm:col-span-2">
+        <Field icon={MessageCircle} label="Message" htmlFor={`${variant}-message`} className="sm:col-span-2">
           <textarea
             id={`${variant}-message`}
             name="message"
@@ -176,7 +214,7 @@ export function ConsultationForm({ variant = "contact", onSuccess }: Consultatio
       <Button
         type="submit"
         size="lg"
-        className="sm:col-span-2"
+        className="shadow-lg shadow-blue-600/20 sm:col-span-2"
         disabled={submitting}
         icon={submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
       >
@@ -185,7 +223,8 @@ export function ConsultationForm({ variant = "contact", onSuccess }: Consultatio
       <p className="text-center text-xs text-navy-700/50 sm:col-span-2">
         🔒 Your data is 100% secure &amp; GDPR compliant
       </p>
-    </form>
+      </form>
+    </div>
   );
 }
 
@@ -198,18 +237,23 @@ function Field({
   htmlFor,
   children,
   className,
+  icon: Icon,
 }: {
+  icon?: LucideIcon;
   label: string;
   htmlFor: string;
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <div className={`flex flex-col gap-1.5 ${className ?? ""}`}>
+    <div className={`flex flex-col gap-1.5 transition-transform duration-200 focus-within:-translate-y-0.5 ${className ?? ""}`}>
       <label htmlFor={htmlFor} className="text-xs font-semibold text-navy-800">
         {label}
       </label>
-      {children}
+      <div className="relative">
+        {Icon ? <Icon className="pointer-events-none absolute left-3.5 top-3.5 z-10 h-4 w-4 text-navy-700/45" /> : null}
+        {children}
+      </div>
     </div>
   );
 }

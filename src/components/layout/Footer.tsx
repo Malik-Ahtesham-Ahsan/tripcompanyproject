@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail } from "lucide-react";
+import {
+  FacebookIcon,
+  InstagramIcon,
+} from "@/components/icons/SocialIcons";
 import { Container } from "@/components/ui/Container";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site";
@@ -13,6 +17,11 @@ const quickLinks = [
   { label: "🌍 Countries", href: "#schengen-visa" },
   { label: "❓ FAQ", href: "#faq" },
   { label: "💬 Contact Us", href: siteConfig.whatsappHref, external: true },
+];
+
+const socialLinks = [
+  { href: siteConfig.social.facebook, label: "Facebook", icon: FacebookIcon },
+  { href: siteConfig.social.instagram, label: "Instagram", icon: InstagramIcon },
 ];
 
 export function Footer() {
@@ -32,6 +41,25 @@ export function Footer() {
             UK&apos;s most trusted Schengen visa consultants and European holiday specialists.
             Expert guidance, proven results, outstanding service.
           </p>
+          <div className="mt-1">
+            <p className="text-xs font-semibold uppercase tracking-wider text-white/55">
+              Follow us
+            </p>
+            <div className="mt-3 flex items-center gap-2">
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-400 hover:bg-gold-500 hover:text-white"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+          </div>
           <div className="mt-2 flex flex-col gap-2 text-sm">
             <a
               href={siteConfig.whatsappHref}

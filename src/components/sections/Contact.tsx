@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ConsultationForm } from "@/components/forms/ConsultationForm";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 import { siteConfig } from "@/data/site";
 
 const infoItems = [
@@ -10,6 +11,11 @@ const infoItems = [
   { icon: Mail, label: "Email Us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   { icon: MapPin, label: "Visit Us", value: siteConfig.address, href: undefined },
   { icon: Clock, label: "Office Hours", value: siteConfig.hours.weekday, href: undefined },
+];
+
+const socialLinks = [
+  { href: siteConfig.social.instagram, label: "Instagram", icon: InstagramIcon },
+  { href: siteConfig.social.facebook, label: "Facebook", icon: FacebookIcon },
 ];
 
 export function Contact() {
@@ -48,6 +54,24 @@ export function Contact() {
               <p>{siteConfig.hours.saturday}</p>
               <p className="mt-1">{siteConfig.hours.sunday}</p>
               <p className="mt-1 font-medium text-blue-600">{siteConfig.hours.whatsapp}</p>
+            </div>
+            <div className="rounded-2xl border border-navy-950/8 bg-navy-950 p-5 text-white">
+              <p className="text-xs font-semibold uppercase tracking-wider text-white/55">Follow TravelVista</p>
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {socialLinks.map(({ href, label, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit TravelVista on ${label}`}
+                    className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-3 py-3 text-sm font-semibold text-white transition-colors hover:border-white/35 hover:bg-white/10"
+                  >
+                    <Icon className="h-5 w-5" />
+                    {label}
+                  </a>
+                ))}
+              </div>
             </div>
           </Reveal>
 
