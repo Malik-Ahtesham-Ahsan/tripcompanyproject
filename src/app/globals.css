@@ -54,6 +54,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  /* `clip` (not `hidden`) — it stops sideways overflow without turning the
+     body into a scroll container, so the sticky navbar keeps working. */
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 .font-display {

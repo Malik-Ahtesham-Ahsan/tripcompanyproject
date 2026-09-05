@@ -50,39 +50,39 @@ export function Navbar() {
             : "bg-white/90 shadow-sm shadow-navy-950/5 backdrop-blur-sm"
         )}
       >
-        <Container className="flex h-18 items-center justify-between py-3">
-          <Link href="#home" className="group flex items-center gap-2.5">
-            <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 group-hover:scale-105 group-hover:shadow-md group-hover:shadow-blue-600/15">
+        <Container className="flex h-18 items-center gap-3 py-3">
+          <Link href="#home" className="group flex shrink-0 items-center gap-2.5">
+            <span className="relative block h-10 w-10 shrink-0 overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 group-hover:scale-105 group-hover:shadow-md group-hover:shadow-blue-600/15 xl:h-11 xl:w-11">
               <Image
                 src={logo}
                 alt="TravelVista Ltd logo"
                 fill
-                sizes="48px"
+                sizes="44px"
                 className="object-contain transition-transform duration-500 group-hover:scale-110"
                 priority
               />
             </span>
-            <span className="font-display whitespace-nowrap text-lg font-bold tracking-tight text-navy-950 transition-colors duration-300 group-hover:text-blue-600">
+            <span className="font-display whitespace-nowrap text-base font-bold tracking-tight text-navy-950 transition-colors duration-300 group-hover:text-blue-600 2xl:text-lg">
               {siteConfig.name}
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 xl:gap-2 xl:flex">
+          <nav className="hidden min-w-0 flex-1 items-center justify-center xl:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="group relative whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-navy-800 transition-colors duration-300 hover:text-blue-600"
+                className="group relative whitespace-nowrap rounded-lg px-2 py-2 text-[13px] font-medium text-navy-800 transition-colors duration-300 hover:text-blue-600 2xl:px-3 2xl:text-sm"
               >
                 {link.label}
-                <span className="absolute inset-x-3 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                <span className="absolute inset-x-2 bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-300 ease-out group-hover:scale-x-100 2xl:inset-x-3" />
               </Link>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-4 xl:flex">
+          <div className="ml-auto hidden shrink-0 items-center gap-3 xl:flex 2xl:gap-4">
             <div className="hidden items-center gap-1 border-r border-navy-950/10 pr-3 2xl:flex">
               {socialLinks.map(({ href, label, icon: Icon }) => (
                 <a
@@ -101,7 +101,7 @@ export function Navbar() {
               href={siteConfig.phoneHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="group hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-navy-900 transition-colors duration-300 hover:text-blue-600 xl:flex"
+              className="group hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-navy-900 transition-colors duration-300 hover:text-blue-600 2xl:flex"
             >
               <Phone className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
               {siteConfig.phone}
@@ -111,7 +111,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               size="md"
-              className="whitespace-nowrap transition-transform duration-300 hover:-translate-y-0.5"
+              className="whitespace-nowrap px-4 text-[13px] transition-transform duration-300 hover:-translate-y-0.5 2xl:px-5 2xl:text-sm"
             >
               ✈ Free Consultation
             </Button>
@@ -122,7 +122,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-navy-950 transition-all duration-300 hover:bg-navy-950/5 hover:text-blue-600 xl:hidden"
+            className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-navy-950 transition-all duration-300 hover:bg-navy-950/5 hover:text-blue-600 xl:hidden"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
