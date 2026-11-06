@@ -51,7 +51,7 @@ export function Navbar() {
         )}
       >
         <Container className="flex h-18 items-center gap-3 py-3">
-          <Link href="#home" className="group flex shrink-0 items-center gap-2.5">
+          <Link href="/" className="group flex shrink-0 items-center gap-2.5">
             <span className="relative block h-10 w-10 shrink-0 overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 group-hover:scale-105 group-hover:shadow-md group-hover:shadow-blue-600/15 xl:h-11 xl:w-11">
               <Image
                 src={logo}

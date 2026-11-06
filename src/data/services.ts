@@ -25,7 +25,7 @@ export const services: Service[] = [
     title: "Schengen Visa Services",
     description:
       "Full documentation support, application submission and embassy tracking for all 29 Schengen countries. 98% success rate.",
-    href: "#schengen-visa",
+    href: "/#schengen-visa",
     badge: "Most Popular",
     cta: "Learn More →",
   },
@@ -35,7 +35,7 @@ export const services: Service[] = [
     title: "Flights & Hotel Bookings",
     description:
       "Best-price flights and hotel packages across Europe. We find the deals so you can focus on the adventure.",
-    href: "#contact",
+    href: "/#contact",
     cta: "Book Now →",
   },
   {
@@ -44,7 +44,7 @@ export const services: Service[] = [
     title: "European Holiday Packages",
     description:
       "All-inclusive tailored packages — visa, flights, hotel and itinerary. Just pack your bags.",
-    href: "#destinations",
+    href: "/#destinations",
     cta: "View Packages →",
   },
   {
@@ -53,7 +53,7 @@ export const services: Service[] = [
     title: "Canada Visa",
     description:
       "Expert assistance for Canadian visitor, study and work visa applications from the UK.",
-    href: "#canada-visa",
+    href: "/#canada-visa",
     cta: "Enquire Now →",
   },
   {
@@ -62,7 +62,7 @@ export const services: Service[] = [
     title: "USA Visa",
     description:
       "B1/B2 tourist and business visa applications handled professionally from start to finish.",
-    href: "#usa-visa",
+    href: "/#usa-visa",
     cta: "Enquire Now →",
   },
   {
@@ -71,7 +71,7 @@ export const services: Service[] = [
     title: "Turkey & Dubai Visas",
     description:
       "Hassle-free Turkey and UAE visa assistance — perfect for short breaks and family holidays.",
-    href: "#turkey-visa",
+    href: "/#turkey-visa",
     cta: "Enquire Now →",
   },
 ];

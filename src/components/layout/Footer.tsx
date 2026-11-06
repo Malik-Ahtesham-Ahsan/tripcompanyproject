@@ -1,21 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
 import {
   FacebookIcon,
   InstagramIcon,
 } from "@/components/icons/SocialIcons";
 import { Container } from "@/components/ui/Container";
 import { services } from "@/data/services";
+import { companyLinks } from "@/data/legal";
 import { siteConfig } from "@/data/site";
 import logo from "@/logo.jpeg";
 
 const quickLinks = [
-  { label: "🏠 Home", href: "#home" },
-  { label: "⭐ Why TravelVista", href: "#why-us" },
-  { label: "📋 How It Works", href: "#how-it-works" },
-  { label: "🌍 Countries", href: "#schengen-visa" },
-  { label: "❓ FAQ", href: "#faq" },
+  { label: "🏠 Home", href: "/#home" },
+  { label: "⭐ Why TravelVista", href: "/#why-us" },
+  { label: "📋 How It Works", href: "/#how-it-works" },
+  { label: "🌍 Countries", href: "/#schengen-visa" },
+  { label: "❓ FAQ", href: "/#faq" },
   { label: "💬 Contact Us", href: siteConfig.whatsappHref, external: true },
 ];
 
@@ -29,9 +29,9 @@ export function Footer() {
 
   return (
     <footer className="bg-navy-950 text-white/70">
-      <Container className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:py-20">
+      <Container className="grid grid-cols-1 gap-10 py-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12 xl:grid-cols-5 lg:py-20">
         <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
-          <Link href="#home" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2.5">
             <span className="relative block h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-white">
               <Image src={logo} alt="TravelVista Ltd logo" fill sizes="64px" className="object-contain" />
             </span>
@@ -95,6 +95,19 @@ export function Footer() {
               href={link.href}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
+              className="text-sm transition-colors hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Company</h3>
+          {companyLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
               className="text-sm transition-colors hover:text-white"
             >
               {link.label}
