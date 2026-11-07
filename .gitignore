@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# uploaded source archives (kept locally, never committed)
+/travelvista-nextjs-project*/
+/travelvista-nextjs-upload*/
