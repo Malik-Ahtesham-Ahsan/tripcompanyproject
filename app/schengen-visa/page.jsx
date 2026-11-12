@@ -6,7 +6,7 @@ export const metadata = {
   "title": "Schengen Visa from the UK: Documents & Fees | TravelVista",
   "description": "How to apply for a Schengen visa from the UK: who needs one, which country to apply to, documents, the €90 fee and timings. Free consultation.",
   "alternates": {
-    "canonical": "https://www.travelvista.uk/schengen-visa.html"
+    "canonical": "https://www.travelvista.uk/schengen-visa"
   },
   "robots": {
     "index": true,
@@ -19,7 +19,7 @@ export const metadata = {
     "locale": "en_GB",
     "title": "Schengen Visa from the UK: Documents & Fees | TravelVista",
     "description": "How to apply for a Schengen visa from the UK: who needs one, which country to apply to, documents, the €90 fee and timings. Free consultation.",
-    "url": "https://www.travelvista.uk/schengen-visa.html",
+    "url": "https://www.travelvista.uk/schengen-visa",
     "images": [
       {
         "url": "https://www.travelvista.uk/assets/og-image.jpg",
@@ -49,7 +49,7 @@ const structuredData = [
         "@type": "ListItem",
         "position": 2,
         "name": "Schengen visa",
-        "item": "https://www.travelvista.uk/schengen-visa.html"
+        "item": "https://www.travelvista.uk/schengen-visa"
       }
     ]
   },
@@ -105,7 +105,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="schengen-visa.html" />
+      <Header current="/schengen-visa" />
       <main id="main">
       <section className="page-hero">
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
@@ -126,7 +126,7 @@ export default function Page() {
           <nav aria-label="Breadcrumb" className="breadcrumb" data-i-aria-label="c766e66518">
             <ol>
               <li>
-                <a data-i="70f8bb9a8a" href="index.html">Home</a>
+                <a data-i="70f8bb9a8a" href="/">Home</a>
               </li>
               <li aria-current="page" data-i="e8f1e9ab2e">Schengen visa</li>
             </ol>
@@ -211,6 +211,13 @@ export default function Page() {
                 </svg>
                 {" "}
                 <span data-i="1f4cd2a364">For all 29 Schengen countries</span>
+              </li>
+              <li>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16">
+                  <path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+                </svg>
+                {" "}
+                <span data-i="1ffbef9984">Single or multiple-entry visa applications (the embassy decides what is granted)</span>
               </li>
             </ul>
             <a className="btn btn-wa package-cta" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20the%20%C2%A389%20Schengen%20visa%20package." rel="noopener" target="_blank">
@@ -361,21 +368,21 @@ export default function Page() {
                       <td data-i="e3772ac4b4">France</td>
                       <td data-i="3c543452c9">TLScontact</td>
                       <td>
-                        <a data-i="5b7b21c8b9" href="france-visa-from-uk.html">France visa</a>
+                        <a data-i="5b7b21c8b9" href="/france-visa-from-uk">France visa</a>
                       </td>
                     </tr>
                     <tr>
                       <td data-i="20a8df9b76">Spain</td>
                       <td data-i="d133f331db">BLS International</td>
                       <td>
-                        <a data-i="61c580383b" href="spain-visa-from-uk.html">Spain visa</a>
+                        <a data-i="61c580383b" href="/spain-visa-from-uk">Spain visa</a>
                       </td>
                     </tr>
                     <tr>
                       <td data-i="ad79ef0f07">Italy</td>
                       <td data-i="3b54d2500e">VFS Global</td>
                       <td>
-                        <a data-i="58d03af574" href="italy-visa-from-uk.html">Italy visa</a>
+                        <a data-i="58d03af574" href="/italy-visa-from-uk">Italy visa</a>
                       </td>
                     </tr>
                   </tbody>
@@ -387,7 +394,7 @@ export default function Page() {
               <h2 data-i="0e69e80f77">The 29 Schengen countries</h2>
               <p className="prose" data-i="f1f95b7358">One Schengen visa lets you travel across all of these countries during the dates on your visa.</p>
               <div className="cgrid">
-                <a className="ccard" href="austria-visa-from-uk.html">
+                <a className="ccard" href="/austria-visa-from-uk">
                   <span className="badge">AT</span>
                   <span className="ccard-text">
                     <strong data-i="593905b319">Austria</strong>
@@ -395,7 +402,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="belgium-visa-from-uk.html">
+                <a className="ccard" href="/belgium-visa-from-uk">
                   <span className="badge">BE</span>
                   <span className="ccard-text">
                     <strong data-i="5cb4c9d828">Belgium</strong>
@@ -403,7 +410,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="bulgaria-visa-from-uk.html">
+                <a className="ccard" href="/bulgaria-visa-from-uk">
                   <span className="badge">BG</span>
                   <span className="ccard-text">
                     <strong data-i="5c77726358">Bulgaria</strong>
@@ -411,7 +418,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="croatia-visa-from-uk.html">
+                <a className="ccard" href="/croatia-visa-from-uk">
                   <span className="badge">HR</span>
                   <span className="ccard-text">
                     <strong data-i="d7e0453bb4">Croatia</strong>
@@ -419,7 +426,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="czech-republic-visa-from-uk.html">
+                <a className="ccard" href="/czech-republic-visa-from-uk">
                   <span className="badge">CZ</span>
                   <span className="ccard-text">
                     <strong data-i="1fef429092">Czech Republic</strong>
@@ -427,7 +434,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="denmark-visa-from-uk.html">
+                <a className="ccard" href="/denmark-visa-from-uk">
                   <span className="badge">DK</span>
                   <span className="ccard-text">
                     <strong data-i="89da124e04">Denmark</strong>
@@ -435,7 +442,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="estonia-visa-from-uk.html">
+                <a className="ccard" href="/estonia-visa-from-uk">
                   <span className="badge">EE</span>
                   <span className="ccard-text">
                     <strong data-i="f0a96da3f8">Estonia</strong>
@@ -443,7 +450,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="finland-visa-from-uk.html">
+                <a className="ccard" href="/finland-visa-from-uk">
                   <span className="badge">FI</span>
                   <span className="ccard-text">
                     <strong data-i="c909b138eb">Finland</strong>
@@ -451,7 +458,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="france-visa-from-uk.html">
+                <a className="ccard" href="/france-visa-from-uk">
                   <span className="badge">FR</span>
                   <span className="ccard-text">
                     <strong data-i="e3772ac4b4">France</strong>
@@ -459,7 +466,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="germany-visa-from-uk.html">
+                <a className="ccard" href="/germany-visa-from-uk">
                   <span className="badge">DE</span>
                   <span className="ccard-text">
                     <strong data-i="17d53e0e6a">Germany</strong>
@@ -467,7 +474,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="greece-visa-from-uk.html">
+                <a className="ccard" href="/greece-visa-from-uk">
                   <span className="badge">GR</span>
                   <span className="ccard-text">
                     <strong data-i="4902a456ca">Greece</strong>
@@ -475,7 +482,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="hungary-visa-from-uk.html">
+                <a className="ccard" href="/hungary-visa-from-uk">
                   <span className="badge">HU</span>
                   <span className="ccard-text">
                     <strong data-i="f14e46ce7d">Hungary</strong>
@@ -483,7 +490,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="iceland-visa-from-uk.html">
+                <a className="ccard" href="/iceland-visa-from-uk">
                   <span className="badge">IS</span>
                   <span className="ccard-text">
                     <strong data-i="b3c92eecf0">Iceland</strong>
@@ -491,7 +498,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="italy-visa-from-uk.html">
+                <a className="ccard" href="/italy-visa-from-uk">
                   <span className="badge">IT</span>
                   <span className="ccard-text">
                     <strong data-i="ad79ef0f07">Italy</strong>
@@ -499,7 +506,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="latvia-visa-from-uk.html">
+                <a className="ccard" href="/latvia-visa-from-uk">
                   <span className="badge">LV</span>
                   <span className="ccard-text">
                     <strong data-i="c5f5bb3b35">Latvia</strong>
@@ -507,7 +514,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="liechtenstein-visa-from-uk.html">
+                <a className="ccard" href="/liechtenstein-visa-from-uk">
                   <span className="badge">LI</span>
                   <span className="ccard-text">
                     <strong data-i="b0ddce0f54">Liechtenstein</strong>
@@ -515,7 +522,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="lithuania-visa-from-uk.html">
+                <a className="ccard" href="/lithuania-visa-from-uk">
                   <span className="badge">LT</span>
                   <span className="ccard-text">
                     <strong data-i="74a788cee2">Lithuania</strong>
@@ -523,7 +530,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="luxembourg-visa-from-uk.html">
+                <a className="ccard" href="/luxembourg-visa-from-uk">
                   <span className="badge">LU</span>
                   <span className="ccard-text">
                     <strong data-i="5076721c40">Luxembourg</strong>
@@ -531,7 +538,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="malta-visa-from-uk.html">
+                <a className="ccard" href="/malta-visa-from-uk">
                   <span className="badge">MT</span>
                   <span className="ccard-text">
                     <strong data-i="1a591a3e91">Malta</strong>
@@ -539,7 +546,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="netherlands-visa-from-uk.html">
+                <a className="ccard" href="/netherlands-visa-from-uk">
                   <span className="badge">NL</span>
                   <span className="ccard-text">
                     <strong data-i="fb61c8a8eb">Netherlands</strong>
@@ -547,7 +554,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="norway-visa-from-uk.html">
+                <a className="ccard" href="/norway-visa-from-uk">
                   <span className="badge">NO</span>
                   <span className="ccard-text">
                     <strong data-i="988455e67d">Norway</strong>
@@ -555,7 +562,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="poland-visa-from-uk.html">
+                <a className="ccard" href="/poland-visa-from-uk">
                   <span className="badge">PL</span>
                   <span className="ccard-text">
                     <strong data-i="5ff03b7273">Poland</strong>
@@ -563,7 +570,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="portugal-visa-from-uk.html">
+                <a className="ccard" href="/portugal-visa-from-uk">
                   <span className="badge">PT</span>
                   <span className="ccard-text">
                     <strong data-i="a495190bcc">Portugal</strong>
@@ -571,7 +578,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="romania-visa-from-uk.html">
+                <a className="ccard" href="/romania-visa-from-uk">
                   <span className="badge">RO</span>
                   <span className="ccard-text">
                     <strong data-i="d6b897fd14">Romania</strong>
@@ -579,7 +586,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="slovakia-visa-from-uk.html">
+                <a className="ccard" href="/slovakia-visa-from-uk">
                   <span className="badge">SK</span>
                   <span className="ccard-text">
                     <strong data-i="b6c149c3e0">Slovakia</strong>
@@ -587,7 +594,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="slovenia-visa-from-uk.html">
+                <a className="ccard" href="/slovenia-visa-from-uk">
                   <span className="badge">SI</span>
                   <span className="ccard-text">
                     <strong data-i="d1aa050361">Slovenia</strong>
@@ -595,7 +602,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="spain-visa-from-uk.html">
+                <a className="ccard" href="/spain-visa-from-uk">
                   <span className="badge">ES</span>
                   <span className="ccard-text">
                     <strong data-i="20a8df9b76">Spain</strong>
@@ -603,7 +610,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="sweden-visa-from-uk.html">
+                <a className="ccard" href="/sweden-visa-from-uk">
                   <span className="badge">SE</span>
                   <span className="ccard-text">
                     <strong data-i="72ddd2b619">Sweden</strong>
@@ -611,7 +618,7 @@ export default function Page() {
                   </span>
                   <span aria-hidden="true" className="arrow">→</span>
                 </a>
-                <a className="ccard" href="switzerland-visa-from-uk.html">
+                <a className="ccard" href="/switzerland-visa-from-uk">
                   <span className="badge">CH</span>
                   <span className="ccard-text">
                     <strong data-i="77dcd849e5">Switzerland</strong>
@@ -700,7 +707,7 @@ export default function Page() {
                   <span data-i="3aba7bad7f">WhatsApp us</span>
                 </a>
                 {" "}
-                <a className="btn btn-ghost" href="contact.html">
+                <a className="btn btn-ghost" href="/contact">
                   <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
                     <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.3V17h16V7.3z" fill="currentColor"></path>
                   </svg>
@@ -781,7 +788,7 @@ export default function Page() {
               <span data-i="8eb8a88ae3">Chat on WhatsApp</span>
             </a>
             {" "}
-            <a className="btn btn-outline" data-i="ad01ea72e2" href="contact.html">Send an enquiry</a>
+            <a className="btn btn-outline" data-i="ad01ea72e2" href="/contact">Send an enquiry</a>
           </div>
         </div>
       </section>

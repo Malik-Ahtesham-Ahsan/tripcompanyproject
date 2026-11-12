@@ -6,7 +6,7 @@ export const metadata = {
   "title": "Refund Policy | TravelVista Ltd",
   "description": "TravelVista Ltd refund policy: when our service fee is refunded, what happens if a visa is refused, and how third-party visa fees work.",
   "alternates": {
-    "canonical": "https://www.travelvista.uk/refund-policy.html"
+    "canonical": "https://www.travelvista.uk/refund-policy"
   },
   "robots": {
     "index": true,
@@ -19,7 +19,7 @@ export const metadata = {
     "locale": "en_GB",
     "title": "Refund Policy | TravelVista Ltd",
     "description": "TravelVista Ltd refund policy: when our service fee is refunded, what happens if a visa is refused, and how third-party visa fees work.",
-    "url": "https://www.travelvista.uk/refund-policy.html",
+    "url": "https://www.travelvista.uk/refund-policy",
     "images": [
       {
         "url": "https://www.travelvista.uk/assets/og-image.jpg",
@@ -49,7 +49,7 @@ const structuredData = [
         "@type": "ListItem",
         "position": 2,
         "name": "Refund policy",
-        "item": "https://www.travelvista.uk/refund-policy.html"
+        "item": "https://www.travelvista.uk/refund-policy"
       }
     ]
   }
@@ -59,7 +59,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="refund-policy.html" />
+      <Header current="/refund-policy" />
       <main id="main">
       <section className="page-hero">
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
@@ -80,7 +80,7 @@ export default function Page() {
           <nav aria-label="Breadcrumb" className="breadcrumb" data-i-aria-label="c766e66518">
             <ol>
               <li>
-                <a data-i="70f8bb9a8a" href="index.html">Home</a>
+                <a data-i="70f8bb9a8a" href="/">Home</a>
               </li>
               <li aria-current="page" data-i="8e07202536">Refund policy</li>
             </ol>

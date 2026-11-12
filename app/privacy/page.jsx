@@ -6,7 +6,7 @@ export const metadata = {
   "title": "Privacy Policy | TravelVista Ltd",
   "description": "How TravelVista Ltd collects, uses, shares and protects your personal information, and your rights under UK data protection law.",
   "alternates": {
-    "canonical": "https://www.travelvista.uk/privacy.html"
+    "canonical": "https://www.travelvista.uk/privacy"
   },
   "robots": {
     "index": true,
@@ -19,7 +19,7 @@ export const metadata = {
     "locale": "en_GB",
     "title": "Privacy Policy | TravelVista Ltd",
     "description": "How TravelVista Ltd collects, uses, shares and protects your personal information, and your rights under UK data protection law.",
-    "url": "https://www.travelvista.uk/privacy.html",
+    "url": "https://www.travelvista.uk/privacy",
     "images": [
       {
         "url": "https://www.travelvista.uk/assets/og-image.jpg",
@@ -49,7 +49,7 @@ const structuredData = [
         "@type": "ListItem",
         "position": 2,
         "name": "Privacy policy",
-        "item": "https://www.travelvista.uk/privacy.html"
+        "item": "https://www.travelvista.uk/privacy"
       }
     ]
   }
@@ -59,7 +59,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="privacy.html" />
+      <Header current="/privacy" />
       <main id="main">
       <section className="page-hero">
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
@@ -80,7 +80,7 @@ export default function Page() {
           <nav aria-label="Breadcrumb" className="breadcrumb" data-i-aria-label="c766e66518">
             <ol>
               <li>
-                <a data-i="70f8bb9a8a" href="index.html">Home</a>
+                <a data-i="70f8bb9a8a" href="/">Home</a>
               </li>
               <li aria-current="page" data-i="7ceacdcaab">Privacy policy</li>
             </ol>

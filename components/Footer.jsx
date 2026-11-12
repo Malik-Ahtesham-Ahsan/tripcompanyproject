@@ -6,9 +6,9 @@ export default function Footer() {
         <div className="wrap">
           <div className="footer-grid">
             <div>
-              <a aria-label="TravelVista Ltd home" className="footer-logo" data-i-aria-label="e7215721a4" href="index.html">
-                <img alt="TravelVista Ltd" className="logo-img logo-for-light" height="64" loading="lazy" src="assets/logo-horizontal.png" width="241" />
-                <img alt="TravelVista Ltd" className="logo-img logo-for-dark" height="64" loading="lazy" src="assets/logo-horizontal-dark.png" width="241" />
+              <a aria-label="TravelVista Ltd home" className="footer-logo" data-i-aria-label="e7215721a4" href="/">
+                <img alt="TravelVista Ltd" className="logo-img logo-for-light" height="64" loading="lazy" src="/assets/logo-horizontal.png" width="241" />
+                <img alt="TravelVista Ltd" className="logo-img logo-for-dark" height="64" loading="lazy" src="/assets/logo-horizontal-dark.png" width="241" />
               </a>
               <p className="muted" data-i="2953c57360" style={{ "marginTop": "12px", "maxWidth": "34ch" }}>Visa application support and travel bookings for people living in the UK. Based in London.</p>
               <div className="social">
@@ -40,25 +40,25 @@ export default function Footer() {
               <h2 data-i="8238c8eb58">Schengen visas</h2>
               <ul>
                 <li>
-                  <a data-i="c87361fc73" href="schengen-visa.html">Schengen visa guide</a>
+                  <a data-i="c87361fc73" href="/schengen-visa">Schengen visa guide</a>
                 </li>
                 <li>
-                  <a data-i="5b7b21c8b9" href="france-visa-from-uk.html">France visa</a>
+                  <a data-i="5b7b21c8b9" href="/france-visa-from-uk">France visa</a>
                 </li>
                 <li>
-                  <a data-i="61c580383b" href="spain-visa-from-uk.html">Spain visa</a>
+                  <a data-i="61c580383b" href="/spain-visa-from-uk">Spain visa</a>
                 </li>
                 <li>
-                  <a data-i="58d03af574" href="italy-visa-from-uk.html">Italy visa</a>
+                  <a data-i="58d03af574" href="/italy-visa-from-uk">Italy visa</a>
                 </li>
                 <li>
-                  <a data-i="a807a861db" href="germany-visa-from-uk.html">Germany visa</a>
+                  <a data-i="a807a861db" href="/germany-visa-from-uk">Germany visa</a>
                 </li>
                 <li>
-                  <a data-i="e38b419f04" href="netherlands-visa-from-uk.html">Netherlands visa</a>
+                  <a data-i="e38b419f04" href="/netherlands-visa-from-uk">Netherlands visa</a>
                 </li>
                 <li>
-                  <a data-i="322e27ed67" href="schengen-visa.html#countries">All 29 countries</a>
+                  <a data-i="322e27ed67" href="/schengen-visa#countries">All 29 countries</a>
                 </li>
               </ul>
             </div>
@@ -66,25 +66,48 @@ export default function Footer() {
               <h2 data-i="4bab2d8fe1">More</h2>
               <ul>
                 <li>
-                  <a data-i="e23b276b85" href="usa-visa-from-uk.html">USA visa</a>
+                  <a data-i="e23b276b85" href="/usa-visa-from-uk">USA visa</a>
                 </li>
                 <li>
-                  <a data-i="5c6e3ec1e4" href="canada-visa-from-uk.html">Canada visa</a>
+                  <a data-i="5c6e3ec1e4" href="/canada-visa-from-uk">Canada visa</a>
                 </li>
                 <li>
-                  <a data-i="e189338627" href="turkey-visa-from-uk.html">Turkey visa</a>
+                  <a data-i="e189338627" href="/turkey-visa-from-uk">Turkey visa</a>
                 </li>
                 <li>
-                  <a data-i="feac6ceeea" href="dubai-visa-from-uk.html">Dubai visa</a>
+                  <a data-i="feac6ceeea" href="/dubai-visa-from-uk">Dubai visa</a>
                 </li>
                 <li>
-                  <a data-i="80729cc5d8" href="holidays.html">Holidays</a>
+                  <a data-i="80729cc5d8" href="/holidays">Holidays</a>
                 </li>
                 <li>
-                  <a data-i="7ceacdcaab" href="privacy.html">Privacy policy</a>
+                  <a data-i="7ceacdcaab" href="/privacy">Privacy policy</a>
                 </li>
                 <li>
-                  <a data-i="8e07202536" href="refund-policy.html">Refund policy</a>
+                  <a data-i="8e07202536" href="/refund-policy">Refund policy</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 data-i="c5cd918215">Free tools</h2>
+              <ul>
+                <li>
+                  <a data-i="2584a7b356" href="/tools">All free tools</a>
+                </li>
+                <li>
+                  <a data-i="16e51dec1b" href="/visa-checker">Do I need a visa?</a>
+                </li>
+                <li>
+                  <a data-i="e72fb9dca3" href="/cost-calculator">Visa cost calculator</a>
+                </li>
+                <li>
+                  <a data-i="e11ee65b05" href="/schengen-calculator">90/180-day calculator</a>
+                </li>
+                <li>
+                  <a data-i="cc4349278d" href="/document-checklist">Document checklist</a>
+                </li>
+                <li>
+                  <a data-i="634a595095" href="/appointment-updates">Appointment updates</a>
                 </li>
               </ul>
             </div>

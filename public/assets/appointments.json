@@ -1,0 +1,14 @@
+{
+  "_how_to_edit": "Change status to one of: Slots available, Limited, No slots. Put the date you checked in updated as YYYY-MM-DD. Leave status empty if not checked yet. Save and upload this file; the page updates by itself.",
+  "centres": [
+    { "company": "TLScontact", "serves": "France", "city": "London", "status": "", "updated": "" },
+    { "company": "TLScontact", "serves": "France", "city": "Manchester", "status": "", "updated": "" },
+    { "company": "TLScontact", "serves": "France", "city": "Edinburgh", "status": "", "updated": "" },
+    { "company": "VFS Global", "serves": "Italy and other countries", "city": "London", "status": "", "updated": "" },
+    { "company": "VFS Global", "serves": "Italy and other countries", "city": "Manchester", "status": "", "updated": "" },
+    { "company": "VFS Global", "serves": "Italy and other countries", "city": "Edinburgh", "status": "", "updated": "" },
+    { "company": "BLS International", "serves": "Spain", "city": "London", "status": "", "updated": "" },
+    { "company": "BLS International", "serves": "Spain", "city": "Manchester", "status": "", "updated": "" },
+    { "company": "BLS International", "serves": "Spain", "city": "Edinburgh", "status": "", "updated": "" }
+  ]
+}

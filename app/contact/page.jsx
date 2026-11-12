@@ -6,7 +6,7 @@ export const metadata = {
   "title": "Contact TravelVista Ltd | Free Visa Consultation in London",
   "description": "Contact TravelVista Ltd for a free visa consultation. WhatsApp +44 7862 609755, email info@travelvista.uk, or visit 128 Kingsway, London WC2B 6NH.",
   "alternates": {
-    "canonical": "https://www.travelvista.uk/contact.html"
+    "canonical": "https://www.travelvista.uk/contact"
   },
   "robots": {
     "index": true,
@@ -19,7 +19,7 @@ export const metadata = {
     "locale": "en_GB",
     "title": "Contact TravelVista Ltd | Free Visa Consultation in London",
     "description": "Contact TravelVista Ltd for a free visa consultation. WhatsApp +44 7862 609755, email info@travelvista.uk, or visit 128 Kingsway, London WC2B 6NH.",
-    "url": "https://www.travelvista.uk/contact.html",
+    "url": "https://www.travelvista.uk/contact",
     "images": [
       {
         "url": "https://www.travelvista.uk/assets/og-image.jpg",
@@ -116,7 +116,7 @@ const structuredData = [
         "@type": "ListItem",
         "position": 2,
         "name": "Contact",
-        "item": "https://www.travelvista.uk/contact.html"
+        "item": "https://www.travelvista.uk/contact"
       }
     ]
   }
@@ -126,7 +126,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="contact.html" />
+      <Header current="/contact" />
       <main id="main">
       <section className="page-hero">
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
@@ -147,7 +147,7 @@ export default function Page() {
           <nav aria-label="Breadcrumb" className="breadcrumb" data-i-aria-label="c766e66518">
             <ol>
               <li>
-                <a data-i="70f8bb9a8a" href="index.html">Home</a>
+                <a data-i="70f8bb9a8a" href="/">Home</a>
               </li>
               <li aria-current="page" data-i="b37456c453">Contact</li>
             </ol>
@@ -285,9 +285,9 @@ export default function Page() {
               <button className="btn btn-primary" data-i="8f8dd5e3eb" type="submit">Continue to WhatsApp</button>
               <p className="small" data-i="edd02a52e9">
                 {"We use your details only to reply to your enquiry. See our "}
-                <a href="privacy.html">privacy policy</a>
+                <a href="/privacy">privacy policy</a>
                 {" and "}
-                <a href="refund-policy.html">refund policy</a>
+                <a href="/refund-policy">refund policy</a>
                 .
               </p>
               <div className="form-result" hidden="" id="form-result">

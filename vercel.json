@@ -1,7 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
-    { "source": "/index.html", "destination": "/" },
-    { "source": "/:slug.html", "destination": "/:slug" }
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/:slug.html", "destination": "/:slug", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/appointments.json",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache, must-revalidate" }]
+    }
   ]
 }

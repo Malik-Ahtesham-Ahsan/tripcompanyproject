@@ -5,9 +5,9 @@ export default function Header({ current }) {
       <a className="skip" data-i="0a4470d64e" href="#main">Skip to content</a>
       <header className="site-header">
         <div className="wrap bar">
-          <a aria-label="TravelVista Ltd home" className="logo" href="index.html">
-            <img alt="TravelVista" className="logo-img logo-for-light" height="46" src="assets/logo-horizontal.png" width="173" />
-            <img alt="TravelVista" className="logo-img logo-for-dark" height="46" src="assets/logo-horizontal-dark.png" width="173" />
+          <a aria-label="TravelVista Ltd home" className="logo" href="/">
+            <img alt="TravelVista" className="logo-img logo-for-light" height="46" src="/assets/logo-horizontal.png" width="173" />
+            <img alt="TravelVista" className="logo-img logo-for-dark" height="46" src="/assets/logo-horizontal-dark.png" width="173" />
           </a>
           <div className="lang">
             <button aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Change language" className="lang-btn" data-i-aria-label="789b14dfa8" type="button">
@@ -78,7 +78,7 @@ export default function Header({ current }) {
                   <div className="mega-inner">
                     <ul className="mega-list">
                       <li>
-                        <a className="nav-link mega-link" href="schengen-visa.html" aria-current={current === "schengen-visa.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/schengen-visa" aria-current={current === "/schengen-visa" ? "page" : undefined}>
                           <span className="badge">EU</span>
                           <span className="mega-text">
                             <strong data-i="6c35a0be82">Schengen visa from the UK</strong>
@@ -87,7 +87,7 @@ export default function Header({ current }) {
                         </a>
                       </li>
                       <li>
-                        <a className="nav-link mega-link" href="france-visa-from-uk.html" aria-current={current === "france-visa-from-uk.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/france-visa-from-uk" aria-current={current === "/france-visa-from-uk" ? "page" : undefined}>
                           <span className="badge">FR</span>
                           <span className="mega-text">
                             <strong data-i="5b7b21c8b9">France visa</strong>
@@ -96,7 +96,7 @@ export default function Header({ current }) {
                         </a>
                       </li>
                       <li>
-                        <a className="nav-link mega-link" href="spain-visa-from-uk.html" aria-current={current === "spain-visa-from-uk.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/spain-visa-from-uk" aria-current={current === "/spain-visa-from-uk" ? "page" : undefined}>
                           <span className="badge">ES</span>
                           <span className="mega-text">
                             <strong data-i="61c580383b">Spain visa</strong>
@@ -105,7 +105,7 @@ export default function Header({ current }) {
                         </a>
                       </li>
                       <li>
-                        <a className="nav-link mega-link" href="italy-visa-from-uk.html" aria-current={current === "italy-visa-from-uk.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/italy-visa-from-uk" aria-current={current === "/italy-visa-from-uk" ? "page" : undefined}>
                           <span className="badge">IT</span>
                           <span className="mega-text">
                             <strong data-i="58d03af574">Italy visa</strong>
@@ -114,7 +114,7 @@ export default function Header({ current }) {
                         </a>
                       </li>
                       <li>
-                        <a className="nav-link mega-link" href="schengen-visa.html#countries" aria-current={current === "schengen-visa.html#countries" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/schengen-visa#countries" aria-current={current === "/schengen-visa#countries" ? "page" : undefined}>
                           <span className="badge">29</span>
                           <span className="mega-text">
                             <strong data-i="322e27ed67">All 29 countries</strong>
@@ -132,7 +132,7 @@ export default function Header({ current }) {
                   <div className="mega-inner">
                     <ul className="mega-list">
                       <li>
-                        <a className="nav-link mega-link" href="usa-visa-from-uk.html" aria-current={current === "usa-visa-from-uk.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/usa-visa-from-uk" aria-current={current === "/usa-visa-from-uk" ? "page" : undefined}>
                           <span className="badge">US</span>
                           <span className="mega-text">
                             <strong data-i="bbb0a4dfea">USA visitor visa</strong>
@@ -141,7 +141,7 @@ export default function Header({ current }) {
                         </a>
                       </li>
                       <li>
-                        <a className="nav-link mega-link" href="canada-visa-from-uk.html" aria-current={current === "canada-visa-from-uk.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/canada-visa-from-uk" aria-current={current === "/canada-visa-from-uk" ? "page" : undefined}>
                           <span className="badge">CA</span>
                           <span className="mega-text">
                             <strong data-i="d776d27d0b">Canada visitor visa</strong>
@@ -150,7 +150,7 @@ export default function Header({ current }) {
                         </a>
                       </li>
                       <li>
-                        <a className="nav-link mega-link" href="turkey-visa-from-uk.html" aria-current={current === "turkey-visa-from-uk.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/turkey-visa-from-uk" aria-current={current === "/turkey-visa-from-uk" ? "page" : undefined}>
                           <span className="badge">TR</span>
                           <span className="mega-text">
                             <strong data-i="e189338627">Turkey visa</strong>
@@ -159,7 +159,7 @@ export default function Header({ current }) {
                         </a>
                       </li>
                       <li>
-                        <a className="nav-link mega-link" href="dubai-visa-from-uk.html" aria-current={current === "dubai-visa-from-uk.html" ? "page" : undefined}>
+                        <a className="nav-link mega-link" href="/dubai-visa-from-uk" aria-current={current === "/dubai-visa-from-uk" ? "page" : undefined}>
                           <span className="badge">AE</span>
                           <span className="mega-text">
                             <strong data-i="93fd71e8f8">Dubai (UAE) visa</strong>
@@ -172,10 +172,10 @@ export default function Header({ current }) {
                 </div>
               </li>
               <li>
-                <a className="nav-link" data-i="80729cc5d8" href="holidays.html" aria-current={current === "holidays.html" ? "page" : undefined}>Holidays</a>
+                <a className="nav-link" data-i="80729cc5d8" href="/holidays" aria-current={current === "/holidays" ? "page" : undefined}>Holidays</a>
               </li>
               <li>
-                <a className="nav-link" data-i="b37456c453" href="contact.html" aria-current={current === "contact.html" ? "page" : undefined}>Contact</a>
+                <a className="nav-link" data-i="b37456c453" href="/contact" aria-current={current === "/contact" ? "page" : undefined}>Contact</a>
               </li>
             </ul>
             <a className="btn btn-primary btn-sm" data-i="eef4ca437c" href="https://wa.me/447862609755" rel="noopener" target="_blank">Free consultation</a>

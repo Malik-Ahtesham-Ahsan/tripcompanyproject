@@ -6,7 +6,7 @@ export const metadata = {
   "title": "Canada Visitor Visa from the UK | TravelVista",
   "description": "Guidance on Canada visitor visas and the Super Visa for UK residents: who needs one, documents and how to apply online with IRCC. Free consultation.",
   "alternates": {
-    "canonical": "https://www.travelvista.uk/canada-visa-from-uk.html"
+    "canonical": "https://www.travelvista.uk/canada-visa-from-uk"
   },
   "robots": {
     "index": true,
@@ -19,7 +19,7 @@ export const metadata = {
     "locale": "en_GB",
     "title": "Canada Visitor Visa from the UK | TravelVista",
     "description": "Guidance on Canada visitor visas and the Super Visa for UK residents: who needs one, documents and how to apply online with IRCC. Free consultation.",
-    "url": "https://www.travelvista.uk/canada-visa-from-uk.html",
+    "url": "https://www.travelvista.uk/canada-visa-from-uk",
     "images": [
       {
         "url": "https://www.travelvista.uk/assets/og-image.jpg",
@@ -49,7 +49,7 @@ const structuredData = [
         "@type": "ListItem",
         "position": 2,
         "name": "Canada visa",
-        "item": "https://www.travelvista.uk/canada-visa-from-uk.html"
+        "item": "https://www.travelvista.uk/canada-visa-from-uk"
       }
     ]
   },
@@ -97,7 +97,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="canada-visa-from-uk.html" />
+      <Header current="/canada-visa-from-uk" />
       <main id="main">
       <section className="page-hero">
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
@@ -118,7 +118,7 @@ export default function Page() {
           <nav aria-label="Breadcrumb" className="breadcrumb" data-i-aria-label="c766e66518">
             <ol>
               <li>
-                <a data-i="70f8bb9a8a" href="index.html">Home</a>
+                <a data-i="70f8bb9a8a" href="/">Home</a>
               </li>
               <li aria-current="page" data-i="5c6e3ec1e4">Canada visa</li>
             </ol>
@@ -251,7 +251,7 @@ export default function Page() {
                   <span data-i="3aba7bad7f">WhatsApp us</span>
                 </a>
                 {" "}
-                <a className="btn btn-ghost" href="contact.html">
+                <a className="btn btn-ghost" href="/contact">
                   <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
                     <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.3V17h16V7.3z" fill="currentColor"></path>
                   </svg>
@@ -320,7 +320,7 @@ export default function Page() {
               <span data-i="8eb8a88ae3">Chat on WhatsApp</span>
             </a>
             {" "}
-            <a className="btn btn-outline" data-i="ad01ea72e2" href="contact.html">Send an enquiry</a>
+            <a className="btn btn-outline" data-i="ad01ea72e2" href="/contact">Send an enquiry</a>
           </div>
         </div>
       </section>

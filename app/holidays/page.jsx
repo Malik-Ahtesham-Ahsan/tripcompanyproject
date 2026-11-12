@@ -6,7 +6,7 @@ export const metadata = {
   "title": "European Holidays, Flights & Hotels from the UK | TravelVista",
   "description": "Tailored European holidays, flights and hotel bookings from the UK, planned together with your Schengen visa. Get a free quote from TravelVista in London.",
   "alternates": {
-    "canonical": "https://www.travelvista.uk/holidays.html"
+    "canonical": "https://www.travelvista.uk/holidays"
   },
   "robots": {
     "index": true,
@@ -19,7 +19,7 @@ export const metadata = {
     "locale": "en_GB",
     "title": "European Holidays, Flights & Hotels from the UK | TravelVista",
     "description": "Tailored European holidays, flights and hotel bookings from the UK, planned together with your Schengen visa. Get a free quote from TravelVista in London.",
-    "url": "https://www.travelvista.uk/holidays.html",
+    "url": "https://www.travelvista.uk/holidays",
     "images": [
       {
         "url": "https://www.travelvista.uk/assets/og-image.jpg",
@@ -49,7 +49,7 @@ const structuredData = [
         "@type": "ListItem",
         "position": 2,
         "name": "Holidays",
-        "item": "https://www.travelvista.uk/holidays.html"
+        "item": "https://www.travelvista.uk/holidays"
       }
     ]
   }
@@ -59,7 +59,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="holidays.html" />
+      <Header current="/holidays" />
       <main id="main">
       <section className="page-hero">
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
@@ -80,7 +80,7 @@ export default function Page() {
           <nav aria-label="Breadcrumb" className="breadcrumb" data-i-aria-label="c766e66518">
             <ol>
               <li>
-                <a data-i="70f8bb9a8a" href="index.html">Home</a>
+                <a data-i="70f8bb9a8a" href="/">Home</a>
               </li>
               <li aria-current="page" data-i="80729cc5d8">Holidays</li>
             </ol>
@@ -186,7 +186,7 @@ export default function Page() {
               <span data-i="8eb8a88ae3">Chat on WhatsApp</span>
             </a>
             {" "}
-            <a className="btn btn-outline" data-i="ad01ea72e2" href="contact.html">Send an enquiry</a>
+            <a className="btn btn-outline" data-i="ad01ea72e2" href="/contact">Send an enquiry</a>
           </div>
         </div>
       </section>
