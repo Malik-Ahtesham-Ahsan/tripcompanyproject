@@ -15,13 +15,13 @@ export const viewport = {
   themeColor: "#1d3a7a",
 };
 
-// Applies the visitor's saved light/dark choice before the page paints, so there is no flash.
+// Dark is the default theme. Switches to light before the page paints if the visitor chose light.
 const themeScript =
-  'try{var t=localStorage.getItem("tv-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}';
+  'try{var t=localStorage.getItem("tv-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-GB" suppressHydrationWarning>
+    <html lang="en-GB" data-theme="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

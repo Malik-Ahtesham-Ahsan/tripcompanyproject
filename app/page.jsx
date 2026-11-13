@@ -915,6 +915,37 @@ export default function Page() {
           <div className="reviews">
             <article className="review">
               <header className="review-head">
+                <span aria-hidden="true" className="avatar">TC</span>
+                <div>
+                  <strong>Trustpilot customer</strong>
+                  <span className="small">GB · 6 November 2026</span>
+                </div>
+              </header>
+              <span aria-label="Rated 5 out of 5" className="stars" role="img">
+                <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                  <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                </svg>
+                <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                  <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                </svg>
+                <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                  <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                </svg>
+                <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                  <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                </svg>
+                <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                  <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <h3>Quick and easy</h3>
+              <div className="review-text">
+                <p>Quick and easy! Prompt comms and diligent at work! Got my visa in 4 days from the appointment ! Recommend</p>
+              </div>
+              <a className="review-link" href="https://uk.trustpilot.com/reviews/6af6fdf97832d9fafd45d9bc" rel="noopener" target="_blank">Read this review on Trustpilot →</a>
+            </article>
+            <article className="review">
+              <header className="review-head">
                 <span aria-hidden="true" className="avatar">VU</span>
                 <div>
                   <strong>Vareesha Umer</strong>
