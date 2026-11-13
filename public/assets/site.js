@@ -7,6 +7,32 @@
   var pageUrl = function (file) { return CLEAN ? "/" + file.replace(/^index\.html$/, "").replace(/\.html$/, "") : file; };
   // Free visa tools: load their script only on the tool pages
   window.TV = { ASSET: ASSET, CLEAN: CLEAN, pageUrl: pageUrl, WA: WA };
+  // client visa approvals: country filter + larger photo
+  (function () {
+    var sec = document.getElementById("approvals");
+    if (!sec) return;
+    var cards = sec.querySelectorAll(".pf-card");
+    sec.querySelectorAll(".pf-filter button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        sec.querySelectorAll(".pf-filter button").forEach(function (x) { x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        var cc = b.getAttribute("data-cc");
+        cards.forEach(function (c) { c.hidden = !!cc && c.getAttribute("data-cc") !== cc; });
+      });
+    });
+    var dlg = sec.querySelector(".pf-dlg");
+    if (!dlg || typeof dlg.showModal !== "function") return;
+    var img = dlg.querySelector("img");
+    sec.querySelectorAll(".pf-img").forEach(function (b) {
+      b.addEventListener("click", function () {
+        img.src = b.querySelector("img").currentSrc || b.querySelector("img").src;
+        img.alt = "";
+        dlg.showModal();
+      });
+    });
+    dlg.querySelector(".pf-x").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+  })();
+
   if (document.querySelector("[data-tool]")) {
     var ts = document.createElement("script");
     ts.src = ASSET + "tools.js"; ts.defer = true;

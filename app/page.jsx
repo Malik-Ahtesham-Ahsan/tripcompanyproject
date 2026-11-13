@@ -1127,6 +1127,61 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section className="section section-tint" id="approvals">
+        <div className="wrap">
+          <div className="section-head">
+            <h2 data-i="9ff5ebdba2">Recent visa approvals</h2>
+            <p className="muted" data-i="27b1560b77">Real visas our clients received, shared with their written permission. Names, photos and passport numbers are always hidden.</p>
+          </div>
+          <div className="pf-grid">
+            <figure className="pf-card" data-cc="CH">
+              <button aria-label="View larger photo" className="pf-img" data-full="assets/approvals/ch-2026-11-a.jpg" data-i-aria-label="f6aa07a111" type="button">
+                <img alt="" decoding="async" height="768" loading="lazy" src="/assets/approvals/ch-2026-11-a.jpg" width="1122" />
+                {" "}
+                <span className="pf-priv">
+                  <svg aria-hidden="true" fill="none" height="13" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="13">
+                    <rect height="11" rx="2" width="16" x="4" y="10"></rect>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                  </svg>
+                  {" "}
+                  <span data-i="4014effe92">Personal details hidden</span>
+                </span>
+              </button>
+              {" "}
+              <figcaption>
+                <div className="pf-row">
+                  <span className="pf-cc notranslate">CH</span>
+                  <strong data-i="77dcd849e5">Switzerland</strong>
+                  <span className="pf-ok" data-i="41b81eb8db">Approved</span>
+                </div>
+                <p className="small muted">
+                  <span data-i="3058d881a3">Short-stay Schengen visa</span>
+                  {" · "}
+                  <span data-i="8624b4cc8f">Multiple entry</span>
+                </p>
+                <p className="pf-meta small">
+                  <span className="notranslate">November 2026</span>
+                </p>
+              </figcaption>
+            </figure>
+            <div className="pf-cta" style={{ "--span": "2" }}>
+              <p className="eyebrow" data-i="c97854ed73">Your trip to Europe</p>
+              <h3 data-i="9d199b3da3">Want help with your Schengen visa?</h3>
+              <p className="muted" data-i="f7288d91e7">Book a free consultation on WhatsApp. We check your documents and prepare your full file before your appointment.</p>
+              <div className="btn-row">
+                <a className="btn btn-primary" data-i="eef4ca437c" href="https://wa.me/447862609755" rel="noopener" target="_blank">Free consultation</a>
+                <a className="btn btn-ghost" data-i="1eca818629" href="#package">See our package</a>
+              </div>
+            </div>
+          </div>
+          <p className="pf-note small muted" data-i="ba0632f086">Every visa decision is made by the embassy or consulate. Past approvals do not guarantee a future result.</p>
+          <dialog aria-label="Visa photo" className="pf-dlg" data-i-aria-label="3244bc8e73">
+            <button aria-label="Close" className="pf-x" data-i-aria-label="bbfa773e5a" type="button">×</button>
+            <img alt="" />
+            <p className="small muted" data-i="4014effe92">Personal details hidden</p>
+          </dialog>
+        </div>
+      </section>
       <section className="section tools-home">
         <div className="wrap">
           <div className="section-head">
