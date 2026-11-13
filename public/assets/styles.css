@@ -1620,3 +1620,30 @@ html[dir="rtl"] .pf-zoom { right: auto; left: 12px; }
 .pf-card { display: flex; flex-direction: column; }
 .pf-card figcaption { flex: 1; display: flex; flex-direction: column; }
 .pf-card .pf-meta { margin-top: auto !important; }
+/* header with the extra "Visa approvals" link: keep every label on one line */
+@media (min-width: 961px) {
+  .nav a.nav-link, .nav .nav-group > span, .nav .nav-group > button, .nav > .btn { white-space: nowrap; }
+  .site-header.scrolled .bar { max-width: 1200px; }
+}
+@media (min-width: 961px) {
+  .nav { gap: 12px; }
+  .nav ul { gap: 0; }
+  .nav a.nav-link, .nav .nav-trigger { padding: 8px 11px; white-space: nowrap; }
+}
+@media (min-width: 961px) and (max-width: 1320px) {
+  .nav a.nav-link, .nav .nav-trigger { padding: 8px 8px; font-size: .94rem; }
+}
+@media (min-width: 961px) and (max-width: 1180px) {
+  .nav > .btn { display: none; } /* the WhatsApp button stays on screen at every size */
+}
+@media (min-width: 961px) {
+  .theme-btn, .lang, .lang-btn, .bar .logo { flex: none; }
+  .site-header .bar { max-width: 1200px; }
+}
+@media (min-width: 961px) and (max-width: 1080px) {
+  .nav a.nav-link, .nav .nav-trigger { padding: 8px 6px; font-size: .9rem; }
+  .bar { gap: 10px; }
+  .bar .logo-img { height: 40px; }
+}
+#approvals { scroll-margin-top: 96px; }
+caption.sr-only { top: 0; left: 0; } table:has(> caption.sr-only) { position: relative; }

@@ -175,6 +175,9 @@ export default function Header({ current }) {
                 <a className="nav-link" data-i="80729cc5d8" href="/holidays" aria-current={current === "/holidays" ? "page" : undefined}>Holidays</a>
               </li>
               <li>
+                <a className="nav-link" data-i="ff4fb80b4d" href="/#approvals" aria-current={current === "/#approvals" ? "page" : undefined}>Visa approvals</a>
+              </li>
+              <li>
                 <a className="nav-link" data-i="b37456c453" href="/contact" aria-current={current === "/contact" ? "page" : undefined}>Contact</a>
               </li>
             </ul>
