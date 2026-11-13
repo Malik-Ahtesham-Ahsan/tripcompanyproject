@@ -263,127 +263,703 @@ export default function Page() {
             <h2 data-i="30bdde1011">Visa and travel services</h2>
             <p className="muted" data-i="6c67646bf3">One London team for your visa, flights and hotels. Choose a service to see what you need.</p>
           </div>
-          <div className="grid">
-            <a className="card svc" href="/schengen-visa">
-              <span className="card-top">
-                <span className="badge">EU</span>
-                <span className="tag" data-i="fb110f6f0e">29 countries</span>
-              </span>
-              <h3 data-i="e8f1e9ab2e">Schengen visa</h3>
-              <p data-i="a65e0c8136">Full support for short-stay Schengen visas: checklist, forms, appointment and document review.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/france-visa-from-uk">
-              <span className="card-top">
-                <span className="badge">FR</span>
-                <span className="tag" data-i="3c543452c9">TLScontact</span>
-              </span>
-              <h3 data-i="5b7b21c8b9">France visa</h3>
-              <p data-i="f06adad238">France-Visas form, TLScontact appointment and a document check before you go.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/spain-visa-from-uk">
-              <span className="card-top">
-                <span className="badge">ES</span>
-                <span className="tag" data-i="d133f331db">BLS International</span>
-              </span>
-              <h3 data-i="61c580383b">Spain visa</h3>
-              <p data-i="b6b82e802e">Help with BLS appointments in London, Manchester and Edinburgh.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/italy-visa-from-uk">
-              <span className="card-top">
-                <span className="badge">IT</span>
-                <span className="tag" data-i="3b54d2500e">VFS Global</span>
-              </span>
-              <h3 data-i="58d03af574">Italy visa</h3>
-              <p data-i="99e5810ea4">Document preparation and booking support for VFS Global.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/usa-visa-from-uk">
-              <span className="card-top">
-                <span className="badge">US</span>
-                <span className="tag">B1/B2</span>
-              </span>
-              <h3 data-i="bbb0a4dfea">USA visitor visa</h3>
-              <p data-i="56e3da7c25">DS-160 form help, documents and interview preparation.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/canada-visa-from-uk">
-              <span className="card-top">
-                <span className="badge">CA</span>
-                <span className="tag" data-i="c4ad58f74f">{"Visitor & Super Visa"}</span>
-              </span>
-              <h3 data-i="d776d27d0b">Canada visitor visa</h3>
-              <p data-i="f77fe060d0">Guidance on Canada visitor visas and the Super Visa for parents and grandparents.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/turkey-visa-from-uk">
-              <span className="card-top">
-                <span className="badge">TR</span>
-                <span className="tag" data-i="d054fa324f">{"e-Visa & sticker"}</span>
-              </span>
-              <h3 data-i="e189338627">Turkey visa</h3>
-              <p data-i="7e1b8dd0a7">We check if you can use the e-Visa or need a visa from the consulate.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/dubai-visa-from-uk">
-              <span className="card-top">
-                <span className="badge">AE</span>
-                <span className="tag" data-i="26c1f8eb11">UAE</span>
-              </span>
-              <h3 data-i="feac6ceeea">Dubai visa</h3>
-              <p data-i="7785731727">We check your options and help you get the right UAE visit visa.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
-              </span>
-              <span aria-hidden="true" className="swoosh"></span>
-            </a>
-            <a className="card svc" href="/holidays">
-              <span className="card-top">
-                <span className="badge">
-                  <svg aria-hidden="true" height="20" viewBox="0 0 24 24" width="20">
-                    <path d="M21 15.5v-2l-8-5V3.6a1.6 1.6 0 0 0-3.2 0V8.5l-8 5v2l8-2.5V18l-2.2 1.6V21l3.8-1.1 3.8 1.1v-1.4L13 18v-5z" fill="currentColor"></path>
+          <div className="svc2-grid">
+            <a className="svc2 svc2-eu svc2-wide" href="/schengen-visa">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 600 200">
+                  <defs>
+                    <linearGradient id="skyeu" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="suneu">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyeu)" height="200" width="600"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="540" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="330.0" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="480.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="180.0" cy="66" r="0.7"></circle>
+                  <circle cx="520" cy="96" fill="url(#suneu)" r="54"></circle>
+                  <circle className="a-sun" cx="520" cy="96" r="9.9"></circle>
+                  <path className="a-far" d="M0 150 C 90.0 132, 180.0 156, 270.0 144 S 450.0 130, 600 146 V200 H0Z"></path>
+                  <path className="a-near" d="M0 177 C 120.0 165, 240.0 181, 372.0 171 S 528.0 165, 600 175 V200 H0Z"></path>
+                  <g className="a-ring">
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(425.0 74.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(419.6 89.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(405.0 100.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(385.0 104.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(365.0 100.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(350.4 89.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(345.0 74.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(350.4 59.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(365.0 48.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(385.0 44.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(405.0 48.0) scale(.8)"></path>
+                    <path className="a-eustar" d="M0 -6 L1.8 -1.9 L6 -1.9 L2.6 .8 L3.8 5 L0 2.5 L-3.8 5 L-2.6 .8 L-6 -1.9 L-1.8 -1.9 Z" transform="translate(419.6 59.0) scale(.8)"></path>
+                  </g>
+                  <path className="a-mid" d="M34 188 V144 H106 V188 Z M40 188 V154 H48 V188 Z M53 188 V154 H61 V188 Z M66 188 V154 H74 V188 Z M79 188 V154 H87 V188 Z M92 188 V154 H100 V188 Z" fillRule="evenodd"></path>
+                  <rect className="a-mid" height="10" width="80" x="30" y="134"></rect>
+                  <rect className="a-mid" height="8" width="20" x="60" y="126"></rect>
+                  <path className="a-mid" d="M138 188 L143 138 H157 L162 188 Z"></path>
+                  <path className="a-mid" d="M141 138 Q150 126 159 138 Z"></path>
+                  <g transform="translate(150 134)">
+                    <g className="a-sails">
+                      <rect className="a-mid" height="40" transform="rotate(20)" width="4" x="-2" y="-40"></rect>
+                      <rect className="a-line2" height="26" transform="rotate(20)" width="8" x="2" y="-38"></rect>
+                      <rect className="a-mid" height="40" transform="rotate(110)" width="4" x="-2" y="-40"></rect>
+                      <rect className="a-line2" height="26" transform="rotate(110)" width="8" x="2" y="-38"></rect>
+                      <rect className="a-mid" height="40" transform="rotate(200)" width="4" x="-2" y="-40"></rect>
+                      <rect className="a-line2" height="26" transform="rotate(200)" width="8" x="2" y="-38"></rect>
+                      <rect className="a-mid" height="40" transform="rotate(290)" width="4" x="-2" y="-40"></rect>
+                      <rect className="a-line2" height="26" transform="rotate(290)" width="8" x="2" y="-38"></rect>
+                    </g>
+                  </g>
+                  <path className="a-mid" d="M213.7 188.0 L226.6 188.0 Q245.0 160.4 263.4 188.0 L276.3 188.0 L257.9 140.2 L253.3 107.0 L248.7 70.2 L246.3 50.0 L245.0 37.1 L243.7 50.0 L241.3 70.2 L236.7 107.0 L232.1 140.2 Z"></path>
+                  <rect className="a-mid" height="4.6" rx="1" width="35.0" x="227.5" y="137.4"></rect>
+                  <rect className="a-mid" height="3.7" rx="1" width="20.2" x="234.9" y="103.4"></rect>
+                  <rect className="a-mid" height="3.2" rx="1" width="9.2" x="240.4" y="67.5"></rect>
+                  <path className="a-line" d="M232.1 140.2 L257.9 131.9"></path>
+                  <path className="a-line" d="M257.9 140.2 L232.1 131.9"></path>
+                  <path className="a-line" d="M234.1 131.9 L255.9 123.6"></path>
+                  <path className="a-line" d="M255.9 131.9 L234.1 123.6"></path>
+                  <path className="a-line" d="M236.2 123.6 L253.8 115.3"></path>
+                  <path className="a-line" d="M253.8 123.6 L236.2 115.3"></path>
+                  <path className="a-line" d="M238.2 115.3 L251.8 107.0"></path>
+                  <path className="a-line" d="M251.8 115.3 L238.2 107.0"></path>
+                  <g transform="rotate(5 330 188)">
+                    <rect className="a-mid" height="96" rx="3" width="26" x="317" y="92"></rect>
+                    <rect className="a-win" height="2" width="20" x="320" y="98"></rect>
+                    <rect className="a-win" height="2" width="20" x="320" y="111"></rect>
+                    <rect className="a-win" height="2" width="20" x="320" y="124"></rect>
+                    <rect className="a-win" height="2" width="20" x="320" y="137"></rect>
+                    <rect className="a-win" height="2" width="20" x="320" y="150"></rect>
+                    <rect className="a-win" height="2" width="20" x="320" y="163"></rect>
+                    <rect className="a-win" height="2" width="20" x="320" y="176"></rect>
+                    <rect className="a-mid" height="12" rx="2" width="18" x="321" y="82"></rect>
+                  </g>
+                  <path className="a-mid" d="M382 138 L430 120 L478 138 Z"></path>
+                  <rect className="a-mid" height="6" width="96" x="382" y="138"></rect>
+                  <rect className="a-mid" height="40" width="6" x="386.0" y="144"></rect>
+                  <rect className="a-mid" height="40" width="6" x="398.4" y="144"></rect>
+                  <rect className="a-mid" height="40" width="6" x="410.8" y="144"></rect>
+                  <rect className="a-mid" height="40" width="6" x="423.2" y="144"></rect>
+                  <rect className="a-mid" height="40" width="6" x="435.6" y="144"></rect>
+                  <rect className="a-mid" height="40" width="6" x="448.0" y="144"></rect>
+                  <rect className="a-mid" height="40" width="6" x="460.4" y="144"></rect>
+                  <rect className="a-mid" height="40" width="6" x="472.8" y="144"></rect>
+                  <rect className="a-mid" height="6" width="104" x="378" y="182"></rect>
+                  <circle className="a-mid" cx="520" cy="98" r="7"></circle>
+                  <circle className="a-mid" cx="498" cy="122" r="7"></circle>
+                  <circle className="a-mid" cx="542" cy="122" r="7"></circle>
+                  <circle className="a-mid" cx="520" cy="122" r="7"></circle>
+                  <circle className="a-mid" cx="498" cy="146" r="7"></circle>
+                  <circle className="a-mid" cx="542" cy="146" r="7"></circle>
+                  <circle className="a-mid" cx="520" cy="146" r="7"></circle>
+                  <path className="a-line" d="M520 98 L498 146 M520 98 L542 146 M498 122 L542 122 M520 153 V188"></path>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#1e3d9a" height="20" width="30"></rect>
+                    <circle cx="20.60" cy="10.00" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="19.85" cy="12.80" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="17.80" cy="14.85" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="15.00" cy="15.60" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="12.20" cy="14.85" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="10.15" cy="12.80" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="9.40" cy="10.00" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="10.15" cy="7.20" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="12.20" cy="5.15" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="15.00" cy="4.40" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="17.80" cy="5.15" fill="#ffcc00" r=".9"></circle>
+                    <circle cx="19.85" cy="7.20" fill="#ffcc00" r=".9"></circle>
                   </svg>
+                  <span className="svc2-code notranslate">EU</span>
                 </span>
-                <span className="tag" data-i="9cc650af29">{"Flights & hotels"}</span>
               </span>
-              <h3 data-i="80729cc5d8">Holidays</h3>
-              <p data-i="c46f7e5ec7">Flights, hotels and tailored European trips, planned around your visa.</p>
-              <span className="more" data-i="1d1bdd579e">
-                {"Learn more "}
-                <span aria-hidden="true">→</span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="fb110f6f0e">29 countries</span>
+                <h3 data-i="e8f1e9ab2e">Schengen visa</h3>
+                <p data-i="a65e0c8136">Full support for short-stay Schengen visas: checklist, forms, appointment and document review.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
               </span>
-              <span aria-hidden="true" className="swoosh"></span>
+            </a>
+            <a className="svc2 svc2-fr" href="/france-visa-from-uk">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 400 200">
+                  <defs>
+                    <linearGradient id="skyfr" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="sunfr">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyfr)" height="200" width="400"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="340" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="220.00000000000003" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="320.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="120.0" cy="66" r="0.7"></circle>
+                  <circle cx="300" cy="96" fill="url(#sunfr)" r="66"></circle>
+                  <circle className="a-sun" cx="300" cy="96" r="12.100000000000001"></circle>
+                  <path className="a-far" d="M0 150 C 60.0 132, 120.0 156, 180.0 144 S 300.0 130, 400 146 V200 H0Z"></path>
+                  <path className="a-near" d="M0 177 C 80.0 165, 160.0 181, 248.0 171 S 352.0 165, 400 175 V200 H0Z"></path>
+                  <path className="a-mid" d="M166.0 188.0 L180.0 188.0 Q200.0 158.0 220.0 188.0 L234.0 188.0 L214.0 136.0 L209.0 100.0 L204.0 60.0 L201.4 38.0 L200.0 24.0 L198.6 38.0 L196.0 60.0 L191.0 100.0 L186.0 136.0 Z"></path>
+                  <rect className="a-mid" height="5.0" rx="1" width="38.0" x="181.0" y="133.0"></rect>
+                  <rect className="a-mid" height="4.0" rx="1" width="22.0" x="189.0" y="96.0"></rect>
+                  <rect className="a-mid" height="3.5" rx="1" width="10.0" x="195.0" y="57.0"></rect>
+                  <path className="a-line" d="M186.0 136.0 L214.0 127.0"></path>
+                  <path className="a-line" d="M214.0 136.0 L186.0 127.0"></path>
+                  <path className="a-line" d="M188.2 127.0 L211.8 118.0"></path>
+                  <path className="a-line" d="M211.8 127.0 L188.2 118.0"></path>
+                  <path className="a-line" d="M190.4 118.0 L209.6 109.0"></path>
+                  <path className="a-line" d="M209.6 118.0 L190.4 109.0"></path>
+                  <path className="a-line" d="M192.6 109.0 L207.4 100.0"></path>
+                  <path className="a-line" d="M207.4 109.0 L192.6 100.0"></path>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#2b4fae" height="20" width="10"></rect>
+                    <rect fill="#fff" height="20" width="10" x="10"></rect>
+                    <rect fill="#e0424b" height="20" width="10" x="20"></rect>
+                  </svg>
+                  <span className="svc2-code notranslate">FR</span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="3c543452c9">TLScontact</span>
+                <h3 data-i="5b7b21c8b9">France visa</h3>
+                <p data-i="f06adad238">France-Visas form, TLScontact appointment and a document check before you go.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
+            </a>
+            <a className="svc2 svc2-es" href="/spain-visa-from-uk">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 400 200">
+                  <defs>
+                    <linearGradient id="skyes" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="sunes">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyes)" height="200" width="400"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="340" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="220.00000000000003" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="320.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="120.0" cy="66" r="0.7"></circle>
+                  <circle cx="96" cy="100" fill="url(#sunes)" r="66"></circle>
+                  <circle className="a-sun" cx="96" cy="100" r="12.100000000000001"></circle>
+                  <path className="a-far" d="M0 150 C 60.0 132, 120.0 156, 180.0 144 S 300.0 130, 400 146 V200 H0Z"></path>
+                  <path className="a-near" d="M0 177 C 80.0 165, 160.0 181, 248.0 171 S 352.0 165, 400 175 V200 H0Z"></path>
+                  <path className="a-mid" d="M120 188 V142 Q200 118 280 142 V188 Z"></path>
+                  <path className="a-mid" d="M133.5 148 L134.5 114 Q138 90 141.5 114 L142.5 148 Z"></path>
+                  <circle className="a-mid" cx="138" cy="92" r="2.9"></circle>
+                  <path className="a-mid" d="M151.0 148 L152.0 88 Q156 64 160.0 88 L161.0 148 Z"></path>
+                  <circle className="a-mid" cx="156" cy="66" r="3.2"></circle>
+                  <path className="a-mid" d="M171.0 148 L172.0 74 Q176 50 180.0 74 L181.0 148 Z"></path>
+                  <circle className="a-mid" cx="176" cy="52" r="3.2"></circle>
+                  <path className="a-mid" d="M219.0 148 L220.0 78 Q224 54 228.0 78 L229.0 148 Z"></path>
+                  <circle className="a-mid" cx="224" cy="56" r="3.2"></circle>
+                  <path className="a-mid" d="M239.0 148 L240.0 94 Q244 70 248.0 94 L249.0 148 Z"></path>
+                  <circle className="a-mid" cx="244" cy="72" r="3.2"></circle>
+                  <path className="a-mid" d="M257.5 148 L258.5 118 Q262 94 265.5 118 L266.5 148 Z"></path>
+                  <circle className="a-mid" cx="262" cy="96" r="2.9"></circle>
+                  <path className="a-mid" d="M193.5 148 L194.5 48 Q200 24 205.5 48 L206.5 148 Z"></path>
+                  <circle className="a-mid" cx="200" cy="26" r="4.2"></circle>
+                  <rect className="a-win" height="16" rx="3" width="6" x="145" y="154"></rect>
+                  <rect className="a-win" height="16" rx="3" width="6" x="165" y="154"></rect>
+                  <rect className="a-win" height="16" rx="3" width="6" x="185" y="154"></rect>
+                  <rect className="a-win" height="16" rx="3" width="6" x="205" y="154"></rect>
+                  <rect className="a-win" height="16" rx="3" width="6" x="225" y="154"></rect>
+                  <rect className="a-win" height="16" rx="3" width="6" x="245" y="154"></rect>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#c8102e" height="20" width="30"></rect>
+                    <rect fill="#ffc400" height="10" width="30" y="5"></rect>
+                  </svg>
+                  <span className="svc2-code notranslate">ES</span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="d133f331db">BLS International</span>
+                <h3 data-i="61c580383b">Spain visa</h3>
+                <p data-i="b6b82e802e">Help with BLS appointments in London, Manchester and Edinburgh.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
+            </a>
+            <a className="svc2 svc2-it" href="/italy-visa-from-uk">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 400 200">
+                  <defs>
+                    <linearGradient id="skyit" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="sunit">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyit)" height="200" width="400"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="340" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="220.00000000000003" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="320.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="120.0" cy="66" r="0.7"></circle>
+                  <circle cx="320" cy="98" fill="url(#sunit)" r="60"></circle>
+                  <circle className="a-sun" cx="320" cy="98" r="11.0"></circle>
+                  <path className="a-far" d="M0 150 C 60.0 132, 120.0 156, 180.0 144 S 300.0 130, 400 146 V200 H0Z"></path>
+                  <path className="a-near" d="M0 177 C 80.0 165, 160.0 181, 248.0 171 S 352.0 165, 400 175 V200 H0Z"></path>
+                  <path className="a-mid" d="M85.0 186 V118 Q200 96 264.4 110 L264.4 122 L287.4 128 L315.0 138 V186 Z M91.0 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M109.2 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M127.3 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M145.5 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M163.7 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M181.8 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M200.0 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M218.2 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M236.3 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M254.5 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M272.7 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M290.8 166 v-9.0 a6.0 6.0 0 0 1 12.0 0 v9.0 Z M91.0 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M109.2 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M127.3 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M145.5 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M163.7 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M181.8 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M200.0 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M218.2 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M236.3 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M254.5 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M272.7 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M290.8 144 v-8.5 a5.5 5.5 0 0 1 11.0 0 v8.5 Z M91.0 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M106.6 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M122.1 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M137.7 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M153.3 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M168.9 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M184.4 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M200.0 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M215.6 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M231.1 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M246.7 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z M262.3 124 v-7.5 a4.5 4.5 0 0 1 9.0 0 v7.5 Z" fillRule="evenodd"></path>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#169b62" height="20" width="10"></rect>
+                    <rect fill="#fff" height="20" width="10" x="10"></rect>
+                    <rect fill="#d7263d" height="20" width="10" x="20"></rect>
+                  </svg>
+                  <span className="svc2-code notranslate">IT</span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="3b54d2500e">VFS Global</span>
+                <h3 data-i="58d03af574">Italy visa</h3>
+                <p data-i="99e5810ea4">Document preparation and booking support for VFS Global.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
+            </a>
+            <a className="svc2 svc2-us" href="/usa-visa-from-uk">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 400 200">
+                  <defs>
+                    <linearGradient id="skyus" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="sunus">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyus)" height="200" width="400"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="340" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="220.00000000000003" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="320.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="120.0" cy="66" r="0.7"></circle>
+                  <circle cx="320" cy="84" fill="url(#sunus)" r="42"></circle>
+                  <circle className="a-sun" cx="320" cy="84" r="7.700000000000001"></circle>
+                  <rect className="a-far2" height="53" width="17" x="50" y="135"></rect>
+                  <rect className="a-far2" height="80" width="15" x="69" y="108"></rect>
+                  <rect className="a-far2" height="64" width="20" x="86" y="124"></rect>
+                  <rect className="a-far2" height="39" width="16" x="108" y="149"></rect>
+                  <rect className="a-far2" height="35" width="15" x="126" y="153"></rect>
+                  <rect className="a-far2" height="69" width="20" x="143" y="119"></rect>
+                  <rect className="a-far2" height="37" width="18" x="165" y="151"></rect>
+                  <rect className="a-far2" height="51" width="19" x="252" y="137"></rect>
+                  <rect className="a-far2" height="45" width="26" x="273" y="143"></rect>
+                  <rect className="a-far2" height="50" width="15" x="301" y="138"></rect>
+                  <rect className="a-far2" height="35" width="17" x="318" y="153"></rect>
+                  <rect className="a-far2" height="50" width="24" x="337" y="138"></rect>
+                  <path className="a-mid" d="M182 188 V118 H188 V96 H193 V78 H197 V64 H199 V38 H201 V64 H203 V78 H207 V96 H212 V118 H218 V188 Z"></path>
+                  <path className="a-mid" d="M242 188 V106 Q252 84 262 106 V188 Z"></path>
+                  <path className="a-mid" d="M251 88 L252 64 L253 88 Z"></path>
+                  <rect className="a-mid" height="76" width="26" x="130" y="112"></rect>
+                  <rect className="a-mid" height="58" width="20" x="156" y="130"></rect>
+                  <rect className="a-mid" height="64" width="18" x="224" y="124"></rect>
+                  <rect className="a-mid" height="72" width="24" x="268" y="116"></rect>
+                  <rect className="a-mid" height="50" width="20" x="296" y="138"></rect>
+                  <rect className="a-mid" height="54" width="22" x="102" y="134"></rect>
+                  <rect className="a-win" height="4" width="3" x="134" y="120"></rect>
+                  <rect className="a-win" height="4" width="3" x="142" y="120"></rect>
+                  <rect className="a-win" height="4" width="3" x="134" y="130"></rect>
+                  <rect className="a-win" height="4" width="3" x="142" y="130"></rect>
+                  <rect className="a-win" height="4" width="3" x="134" y="140"></rect>
+                  <rect className="a-win" height="4" width="3" x="142" y="140"></rect>
+                  <rect className="a-win" height="4" width="3" x="134" y="150"></rect>
+                  <rect className="a-win" height="4" width="3" x="142" y="150"></rect>
+                  <rect className="a-win" height="4" width="3" x="134" y="160"></rect>
+                  <rect className="a-win" height="4" width="3" x="142" y="160"></rect>
+                  <rect className="a-win" height="4" width="3" x="272" y="124"></rect>
+                  <rect className="a-win" height="4" width="3" x="280" y="124"></rect>
+                  <rect className="a-win" height="4" width="3" x="272" y="134"></rect>
+                  <rect className="a-win" height="4" width="3" x="280" y="134"></rect>
+                  <rect className="a-win" height="4" width="3" x="272" y="144"></rect>
+                  <rect className="a-win" height="4" width="3" x="280" y="144"></rect>
+                  <rect className="a-win" height="4" width="3" x="272" y="154"></rect>
+                  <rect className="a-win" height="4" width="3" x="280" y="154"></rect>
+                  <rect className="a-win" height="4" width="3" x="272" y="164"></rect>
+                  <rect className="a-win" height="4" width="3" x="280" y="164"></rect>
+                  <path className="a-far" d="M0 176 C 60.0 158, 120.0 182, 180.0 170 S 300.0 156, 400 172 V200 H0Z"></path>
+                  <path className="a-near" d="M0 192 C 80.0 180, 160.0 196, 248.0 186 S 352.0 180, 400 190 V200 H0Z"></path>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#fff" height="20" width="30"></rect>
+                    <rect fill="#c8102e" height="1.54" width="30" y="0.00"></rect>
+                    <rect fill="#c8102e" height="1.54" width="30" y="3.08"></rect>
+                    <rect fill="#c8102e" height="1.54" width="30" y="6.15"></rect>
+                    <rect fill="#c8102e" height="1.54" width="30" y="9.23"></rect>
+                    <rect fill="#c8102e" height="1.54" width="30" y="12.31"></rect>
+                    <rect fill="#c8102e" height="1.54" width="30" y="15.38"></rect>
+                    <rect fill="#c8102e" height="1.54" width="30" y="18.46"></rect>
+                    <rect fill="#2b3f8c" height="10.8" width="13"></rect>
+                  </svg>
+                  <span className="svc2-code notranslate">US</span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag">B1/B2</span>
+                <h3 data-i="bbb0a4dfea">USA visitor visa</h3>
+                <p data-i="56e3da7c25">DS-160 form help, documents and interview preparation.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
+            </a>
+            <a className="svc2 svc2-ca" href="/canada-visa-from-uk">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 400 200">
+                  <defs>
+                    <linearGradient id="skyca" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="sunca">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyca)" height="200" width="400"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="340" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="220.00000000000003" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="320.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="120.0" cy="66" r="0.7"></circle>
+                  <circle cx="330" cy="92" fill="url(#sunca)" r="48"></circle>
+                  <circle className="a-sun" cx="330" cy="92" r="8.8"></circle>
+                  <path className="a-far" d="M-10.0 188 L50 118 L110.0 188 Z"></path>
+                  <path className="a-snow" d="M35.6 133.4 L50 118 L64.4 133.4 L56.0 129.9 L50 135.5 L44.0 129.9 Z"></path>
+                  <path className="a-far" d="M85.0 188 L160 84 L235.0 188 Z"></path>
+                  <path className="a-snow" d="M142.0 106.88 L160 84 L178.0 106.88 L167.5 101.68 L160 110.0 L152.5 101.68 Z"></path>
+                  <path className="a-far" d="M210.0 188 L280 102 L350.0 188 Z"></path>
+                  <path className="a-snow" d="M263.2 120.92 L280 102 L296.8 120.92 L287.0 116.62 L280 123.5 L273.0 116.62 Z"></path>
+                  <path className="a-far" d="M305.0 188 L360 128 L415.0 188 Z"></path>
+                  <path className="a-snow" d="M346.8 141.2 L360 128 L373.2 141.2 L365.5 138.2 L360 143.0 L354.5 138.2 Z"></path>
+                  <path className="a-mid" d="M30 148 L21 166.0 H25 L18 180.0 H28 V188 H32 V180.0 H42 L35 166.0 H39 Z"></path>
+                  <path className="a-mid" d="M44 136 L35 159.4 H39 L32 177.6 H42 V188 H46 V177.6 H56 L49 159.4 H53 Z"></path>
+                  <path className="a-mid" d="M60 154 L51 169.3 H55 L48 181.2 H58 V188 H62 V181.2 H72 L65 169.3 H69 Z"></path>
+                  <path className="a-mid" d="M320 142 L311 162.7 H315 L308 178.8 H318 V188 H322 V178.8 H332 L325 162.7 H329 Z"></path>
+                  <path className="a-mid" d="M336 128 L327 155.0 H331 L324 176.0 H334 V188 H338 V176.0 H348 L341 155.0 H345 Z"></path>
+                  <path className="a-mid" d="M352 148 L343 166.0 H347 L340 180.0 H350 V188 H354 V180.0 H364 L357 166.0 H361 Z"></path>
+                  <path className="a-mid" d="M368 138 L359 160.5 H363 L356 178.0 H366 V188 H370 V178.0 H380 L373 160.5 H377 Z"></path>
+                  <path className="a-mid" d="M80 144 L71 163.8 H75 L68 179.2 H78 V188 H82 V179.2 H92 L85 163.8 H89 Z"></path>
+                  <path className="a-far" d="M0 176 C 60.0 158, 120.0 182, 180.0 170 S 300.0 156, 400 172 V200 H0Z"></path>
+                  <path className="a-near" d="M0 192 C 80.0 180, 160.0 196, 248.0 186 S 352.0 180, 400 190 V200 H0Z"></path>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#fff" height="20" width="30"></rect>
+                    <rect fill="#d52b1e" height="20" width="7.5"></rect>
+                    <rect fill="#d52b1e" height="20" width="7.5" x="22.5"></rect>
+                    <path d="M15 4.5 l1 2 1.6-.6-.5 3 1.8-1.5.4 1.2 1.6-.3-.9 2.2.9.5-3.4 2.4.3 1.2-2.3-.4V16h-.9v-1.8l-2.3.4.3-1.2-3.4-2.4.9-.5-.9-2.2 1.6.3.4-1.2 1.8 1.5-.5-3 1.6.6Z" fill="#d52b1e"></path>
+                  </svg>
+                  <span className="svc2-code notranslate">CA</span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="c4ad58f74f">{"Visitor & Super Visa"}</span>
+                <h3 data-i="d776d27d0b">Canada visitor visa</h3>
+                <p data-i="f77fe060d0">Guidance on Canada visitor visas and the Super Visa for parents and grandparents.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
+            </a>
+            <a className="svc2 svc2-tr" href="/turkey-visa-from-uk">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 400 200">
+                  <defs>
+                    <linearGradient id="skytr" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="suntr">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skytr)" height="200" width="400"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="340" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="220.00000000000003" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="320.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="120.0" cy="66" r="0.7"></circle>
+                  <circle cx="306" cy="104" fill="url(#suntr)" r="54"></circle>
+                  <circle className="a-sun" cx="306" cy="104" r="9.9"></circle>
+                  <path className="a-far" d="M0 150 C 60.0 132, 120.0 156, 180.0 144 S 300.0 130, 400 146 V200 H0Z"></path>
+                  <path className="a-near" d="M0 177 C 80.0 165, 160.0 181, 248.0 171 S 352.0 165, 400 175 V200 H0Z"></path>
+                  <path className="a-mid" d="M130 188 V158 H150 Q150 142 166 142 Q174 118 200 114 Q226 118 234 142 Q250 142 250 158 H270 V188 Z"></path>
+                  <rect className="a-mid" height="14" width="3" x="198.5" y="102"></rect>
+                  <path className="a-mid" d="M104.5 188 V98 L108 84 L111.5 98 V188 Z"></path>
+                  <rect className="a-mid" height="3" rx="1" width="10" x="103" y="123.52"></rect>
+                  <path className="a-mid" d="M116.5 188 V82 L120 68 L123.5 82 V188 Z"></path>
+                  <rect className="a-mid" height="3" rx="1" width="10" x="115" y="113.6"></rect>
+                  <path className="a-mid" d="M276.5 188 V82 L280 68 L283.5 82 V188 Z"></path>
+                  <rect className="a-mid" height="3" rx="1" width="10" x="275" y="113.6"></rect>
+                  <path className="a-mid" d="M288.5 188 V98 L292 84 L295.5 98 V188 Z"></path>
+                  <rect className="a-mid" height="3" rx="1" width="10" x="287" y="123.52"></rect>
+                  <rect className="a-win" height="11" rx="2.5" width="5" x="160" y="164"></rect>
+                  <rect className="a-win" height="11" rx="2.5" width="5" x="178" y="164"></rect>
+                  <rect className="a-win" height="11" rx="2.5" width="5" x="196" y="164"></rect>
+                  <rect className="a-win" height="11" rx="2.5" width="5" x="214" y="164"></rect>
+                  <rect className="a-win" height="11" rx="2.5" width="5" x="232" y="164"></rect>
+                  <g className="a-float a-float0">
+                    <path className="a-balloon" d="M92 62 A12 12 0 1 1 116 62 Q111.2 72.8 107.0 77.6 H101.0 Q96.8 72.8 92 62 Z"></path>
+                    <rect className="a-balloon" height="4.199999999999999" rx="1" width="5.28" x="101.36" y="79.4"></rect>
+                  </g>
+                  <g className="a-float a-float1">
+                    <path className="a-balloon" d="M255 44 A9 9 0 1 1 273 44 Q269.4 52.1 266.25 55.7 H261.75 Q258.6 52.1 255 44 Z"></path>
+                    <rect className="a-balloon" height="3.15" rx="1" width="3.96" x="262.02" y="57.05"></rect>
+                  </g>
+                  <g className="a-float a-float2">
+                    <path className="a-balloon" d="M302 78 A6 6 0 1 1 314 78 Q311.6 83.4 309.5 85.8 H306.5 Q304.4 83.4 302 78 Z"></path>
+                    <rect className="a-balloon" height="2.0999999999999996" rx="1" width="2.64" x="306.68" y="86.7"></rect>
+                  </g>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#e30a17" height="20" width="30"></rect>
+                    <circle cx="11.5" cy="10" fill="#fff" r="5"></circle>
+                    <circle cx="12.8" cy="10" fill="#e30a17" r="4"></circle>
+                    <path d="M17.2 10 l2.9-1 -1.8 2.5 0-3.1 1.8 2.5 Z" fill="#fff"></path>
+                  </svg>
+                  <span className="svc2-code notranslate">TR</span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="d054fa324f">{"e-Visa & sticker"}</span>
+                <h3 data-i="e189338627">Turkey visa</h3>
+                <p data-i="7e1b8dd0a7">We check if you can use the e-Visa or need a visa from the consulate.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
+            </a>
+            <a className="svc2 svc2-ae" href="/dubai-visa-from-uk">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 400 200">
+                  <defs>
+                    <linearGradient id="skyae" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="sunae">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyae)" height="200" width="400"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="340" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="220.00000000000003" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="320.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="120.0" cy="66" r="0.7"></circle>
+                  <circle cx="316" cy="104" fill="url(#sunae)" r="66"></circle>
+                  <circle className="a-sun" cx="316" cy="104" r="12.100000000000001"></circle>
+                  <rect className="a-far2" height="66" rx="2" width="22" x="80" y="122"></rect>
+                  <rect className="a-far2" height="84" rx="2" width="16" x="106" y="104"></rect>
+                  <rect className="a-far2" height="58" rx="2" width="20" x="126" y="130"></rect>
+                  <rect className="a-far2" height="74" rx="2" width="18" x="240" y="114"></rect>
+                  <rect className="a-far2" height="92" rx="2" width="24" x="262" y="96"></rect>
+                  <rect className="a-far2" height="60" rx="2" width="16" x="290" y="128"></rect>
+                  <rect className="a-far2" height="70" rx="2" width="22" x="312" y="118"></rect>
+                  <path className="a-mid" d="M178 188 L182 148 L187 144 L189 108 L193 102 L194 70 L197 64 L198 38 L200 16 L202 38 L203 60 L206 66 L208 96 L212 102 L214 136 L219 142 L222 188 Z"></path>
+                  <path className="a-mid" d="M136 188 V114 Q170 128 168 188 Z"></path>
+                  <rect className="a-mid" height="84" width="3" x="134" y="104"></rect>
+                  <path className="a-dune" d="M0 176 Q100 160 200 176 T400 172 V200 H0Z"></path>
+                </svg>
+                <span className="svc2-chip">
+                  <svg aria-hidden="true" className="svc2-flagsvg" focusable="false" viewBox="0 0 30 20">
+                    <rect fill="#00843d" height="6.7" width="30"></rect>
+                    <rect fill="#fff" height="6.6" width="30" y="6.7"></rect>
+                    <rect fill="#111" height="6.7" width="30" y="13.3"></rect>
+                    <rect fill="#e0242f" height="20" width="8"></rect>
+                  </svg>
+                  <span className="svc2-code notranslate">AE</span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="26c1f8eb11">UAE</span>
+                <h3 data-i="feac6ceeea">Dubai visa</h3>
+                <p data-i="7785731727">We check your options and help you get the right UAE visit visa.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
+            </a>
+            <a className="svc2 svc2-hol svc2-wide" href="/holidays">
+              <span className="svc2-art">
+                <svg aria-hidden="true" className="svc2-svg" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 900 200">
+                  <defs>
+                    <linearGradient id="skyhol" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" style={{ "stopColor": "var(--sky1)" }}></stop>
+                      <stop offset="1" style={{ "stopColor": "var(--sky2)" }}></stop>
+                    </linearGradient>
+                    <radialgradient id="sunhol">
+                      <stop offset="0" stop-opacity=".95" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset=".35" stop-opacity=".35" style={{ "stopColor": "var(--sun)" }}></stop>
+                      <stop offset="1" stop-opacity="0" style={{ "stopColor": "var(--sun)" }}></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect fill="url(#skyhol)" height="200" width="900"></rect>
+                  <circle className="a-star" cx="40" cy="30" r="1.2"></circle>
+                  <circle className="a-star" cx="90" cy="18" r="0.9"></circle>
+                  <circle className="a-star" cx="150" cy="40" r="1.1"></circle>
+                  <circle className="a-star" cx="210" cy="16" r="0.8"></circle>
+                  <circle className="a-star" cx="260" cy="34" r="1"></circle>
+                  <circle className="a-star" cx="370" cy="22" r="0.9"></circle>
+                  <circle className="a-star" cx="840" cy="70" r="1"></circle>
+                  <circle className="a-star" cx="495.00000000000006" cy="60" r="0.8"></circle>
+                  <circle className="a-star" cx="720.0" cy="12" r="1.1"></circle>
+                  <circle className="a-star" cx="270.0" cy="66" r="0.7"></circle>
+                  <circle cx="780" cy="92" fill="url(#sunhol)" r="60"></circle>
+                  <circle className="a-sun" cx="780" cy="92" r="11.0"></circle>
+                  <path className="a-route" d="M90 140 C 260 38, 560 38, 650 126"></path>
+                  <path className="a-pin" d="M90 140 c-7 -9 -11 -14 -11 -20 a11 11 0 1 1 22 0 c0 6 -4 11 -11 20 Z"></path>
+                  <circle className="a-sky-dot" cx="90" cy="120" r="4"></circle>
+                  <path className="a-pin" d="M650 126 c-7 -9 -11 -14 -11 -20 a11 11 0 1 1 22 0 c0 6 -4 11 -11 20 Z"></path>
+                  <circle className="a-sky-dot" cx="650" cy="106" r="4"></circle>
+                  <g className="a-fly">
+                    <g className="a-plane" transform="translate(378.0 70) rotate(6) scale(1.7)">
+                      <path d="M-14 0 L10 -2 Q16 0 10 2 L-14 0 Z M-2 -1 L-8 -12 H-4 L6 -1 Z M-2 1 L-8 12 H-4 L6 1 Z M-12 0 L-15 -5 H-13 L-9 -1 Z M-12 0 L-15 5 H-13 L-9 1 Z"></path>
+                    </g>
+                  </g>
+                  <g className="a-drift">
+                    <path className="a-cloud" d="M-30 10 a12 12 0 0 1 8 -20 a16 16 0 0 1 30 -2 a11 11 0 0 1 20 10 a9 9 0 0 1 2 12 Z" transform="translate(220 92) scale(0.9)"></path>
+                  </g>
+                  <g className="a-drift">
+                    <path className="a-cloud" d="M-30 10 a12 12 0 0 1 8 -20 a16 16 0 0 1 30 -2 a11 11 0 0 1 20 10 a9 9 0 0 1 2 12 Z" transform="translate(560 78) scale(0.8)"></path>
+                  </g>
+                  <g className="a-drift">
+                    <path className="a-cloud" d="M-30 10 a12 12 0 0 1 8 -20 a16 16 0 0 1 30 -2 a11 11 0 0 1 20 10 a9 9 0 0 1 2 12 Z" transform="translate(700 112) scale(0.6)"></path>
+                  </g>
+                  <path className="a-sea" d="M0 166 Q225.0 158 450.0 166 T900 166 V208 H0Z"></path>
+                  <path className="a-mid" d="M767 188 Q770 140.0 776.5 92 H779.5 Q773 140.0 773 188 Z"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(778 92) rotate(-160)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(778 92) rotate(-110)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(778 92) rotate(-40)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(778 92) rotate(10)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(778 92) rotate(60)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(778 92) rotate(200)"></path>
+                  <path className="a-mid" d="M797 188 Q800 152.0 792.5 116 H795.5 Q803 152.0 803 188 Z"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(794 116) rotate(-160)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(794 116) rotate(-110)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(794 116) rotate(-40)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(794 116) rotate(10)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(794 116) rotate(60)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(794 116) rotate(200)"></path>
+                  <path className="a-mid" d="M837 188 Q840 146.0 848.5 104 H851.5 Q843 146.0 843 188 Z"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(850 104) rotate(-160)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(850 104) rotate(-110)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(850 104) rotate(-40)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(850 104) rotate(10)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(850 104) rotate(60)"></path>
+                  <path className="a-mid" d="M0 0 Q14 -10 30 2 Q14 -4 0 3 Z" transform="translate(850 104) rotate(200)"></path>
+                </svg>
+                <span className="svc2-chip svc2-chip-plane">
+                  <span aria-hidden="true" className="svc2-planeic">
+                    <svg aria-hidden="true" height="20" viewBox="0 0 24 24" width="20">
+                      <path d="M21 15.5v-2l-8-5V3.6a1.6 1.6 0 0 0-3.2 0V8.5l-8 5v2l8-2.5V18l-2.2 1.6V21l3.8-1.1 3.8 1.1v-1.4L13 18v-5z" fill="currentColor"></path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+              <span className="svc2-body">
+                <span className="svc2-tag" data-i="9cc650af29">{"Flights & hotels"}</span>
+                <h3 data-i="80729cc5d8">Holidays</h3>
+                <p data-i="c46f7e5ec7">Flights, hotels and tailored European trips, planned around your visa.</p>
+                <span className="svc2-cta">
+                  <span data-i="824d76b124">Learn more</span>
+                  <span aria-hidden="true" className="svc2-arrow">→</span>
+                </span>
+              </span>
             </a>
           </div>
         </div>
