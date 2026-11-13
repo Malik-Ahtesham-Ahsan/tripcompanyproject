@@ -908,101 +908,110 @@ export default function Page() {
       </div>
       <section className="section" id="reviews">
         <div className="wrap">
-          <div className="reviews-top">
-            <div className="section-head">
-              <h2 data-i="0e3b7945cd">What our clients say</h2>
-              <p className="muted" data-i="92faa310f7">Reviews from our clients on Trustpilot, an independent review website.</p>
-            </div>
-            <aside aria-label="Our Trustpilot rating" className="tp-summary" data-i-aria-label="ffa76970c5">
-              <div className="tp-top">
-                <p className="tp-score">
-                  <strong>4.0</strong>
-                  <span data-i="02113fe140">out of 5</span>
-                </p>
-                <div className="tp-meta">
-                  <span className="tp-label notranslate">Great</span>
-                  {" "}
-                  <span aria-label="4.0 / 5" className="tp-stars" role="img">
-                    <span className="tp-stars-bg">
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                    </span>
-                    <span className="tp-stars-fg" style={{ "width": "80.0%" }}>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                      <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-                      </svg>
-                    </span>
+          <div className="section-head">
+            <h2 data-i="0e3b7945cd">What our clients say</h2>
+            <p className="muted" data-i="92faa310f7">Reviews from our clients on Trustpilot, an independent review website.</p>
+          </div>
+          <aside aria-label="Our Trustpilot rating" className="tp-summary" data-i-aria-label="ffa76970c5">
+            <div className="tp-top">
+              <p className="tp-score">
+                <strong>4.0</strong>
+                <span data-i="02113fe140">out of 5</span>
+              </p>
+              <div className="tp-meta">
+                <span className="tp-label notranslate">Great</span>
+                {" "}
+                <span aria-label="4.0 / 5" className="tp-stars" role="img">
+                  <span className="tp-stars-bg">
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
                   </span>
-                  {" "}
-                  <span className="small">
-                    <b className="notranslate">3</b>
-                    {" "}
-                    <span data-i="b9c8fdc28e">reviews on Trustpilot</span>
+                  <span className="tp-stars-fg" style={{ "width": "80.0%" }}>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18">
+                      <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                    </svg>
                   </span>
-                </div>
+                </span>
+                {" "}
+                <span className="small">
+                  <b className="notranslate">3</b>
+                  {" "}
+                  <span data-i="b9c8fdc28e">reviews on Trustpilot</span>
+                </span>
               </div>
-              <ul aria-label="Reviews by star rating" className="tp-bars" data-i-aria-label="275fcdab76">
-                <li>
-                  <span data-i="6766f72882">5-star</span>
-                  <span className="tp-bar">
-                    <i style={{ "width": "100%" }}></i>
-                  </span>
-                  <span className="tp-n">3</span>
-                </li>
-                <li>
-                  <span data-i="ad3bb3f2d3">4-star</span>
-                  <span className="tp-bar">
-                    <i style={{ "width": "0%" }}></i>
-                  </span>
-                  <span className="tp-n">0</span>
-                </li>
-                <li>
-                  <span data-i="9a4f270a65">3-star</span>
-                  <span className="tp-bar">
-                    <i style={{ "width": "0%" }}></i>
-                  </span>
-                  <span className="tp-n">0</span>
-                </li>
-                <li>
-                  <span data-i="da6ed691b4">2-star</span>
-                  <span className="tp-bar">
-                    <i style={{ "width": "0%" }}></i>
-                  </span>
-                  <span className="tp-n">0</span>
-                </li>
-                <li>
-                  <span data-i="1f84e638e6">1-star</span>
-                  <span className="tp-bar">
-                    <i style={{ "width": "0%" }}></i>
-                  </span>
-                  <span className="tp-n">0</span>
-                </li>
-              </ul>
+            </div>
+            <ul aria-label="Reviews by star rating" className="tp-bars" data-i-aria-label="275fcdab76">
+              <li>
+                <span data-i="6766f72882">5-star</span>
+                <span className="tp-bar">
+                  <i style={{ "width": "100%" }}></i>
+                </span>
+                <span className="tp-n">3</span>
+              </li>
+              <li>
+                <span data-i="ad3bb3f2d3">4-star</span>
+                <span className="tp-bar">
+                  <i style={{ "width": "0%" }}></i>
+                </span>
+                <span className="tp-n">0</span>
+              </li>
+              <li>
+                <span data-i="9a4f270a65">3-star</span>
+                <span className="tp-bar">
+                  <i style={{ "width": "0%" }}></i>
+                </span>
+                <span className="tp-n">0</span>
+              </li>
+              <li>
+                <span data-i="da6ed691b4">2-star</span>
+                <span className="tp-bar">
+                  <i style={{ "width": "0%" }}></i>
+                </span>
+                <span className="tp-n">0</span>
+              </li>
+              <li>
+                <span data-i="1f84e638e6">1-star</span>
+                <span className="tp-bar">
+                  <i style={{ "width": "0%" }}></i>
+                </span>
+                <span className="tp-n">0</span>
+              </li>
+            </ul>
+            <div className="tp-actions">
+              <a className="btn btn-primary" href="https://uk.trustpilot.com/review/travelvista.uk" rel="noopener" target="_blank">
+                <svg aria-hidden="true" height="20" viewBox="0 0 24 24" width="20">
+                  <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
+                </svg>
+                {" "}
+                <span data-i="f29d98f084">See all reviews on Trustpilot</span>
+              </a>
+              {" "}
+              <a className="btn btn-ghost" data-i="935dc45f20" href="https://uk.trustpilot.com/evaluate/travelvista.uk" rel="noopener" target="_blank">Leave a review</a>
               <p className="tp-foot small">
                 <span data-i="5e44acac4f">
                   {"TrustScore from "}
@@ -1013,8 +1022,8 @@ export default function Page() {
                 {" "}
                 <span className="notranslate">13 November 2026</span>
               </p>
-            </aside>
-          </div>
+            </div>
+          </aside>
           <div className="reviews">
             <article className="review">
               <header className="review-head">
@@ -1115,17 +1124,6 @@ export default function Page() {
               </div>
               <a className="review-link" href="https://uk.trustpilot.com/reviews/6aedbe6e518fd57441f96f6e" rel="noopener" target="_blank">Read this review on Trustpilot →</a>
             </article>
-          </div>
-          <div className="btn-row" style={{ "marginTop": "24px" }}>
-            <a className="btn btn-primary" href="https://uk.trustpilot.com/review/travelvista.uk" rel="noopener" target="_blank">
-              <svg aria-hidden="true" height="20" viewBox="0 0 24 24" width="20">
-                <path d="M12 2.5l2.6 7h7.4l-6 4.4 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.4h7.4z" fill="currentColor"></path>
-              </svg>
-              {" "}
-              <span data-i="f29d98f084">See all reviews on Trustpilot</span>
-            </a>
-            {" "}
-            <a className="btn btn-ghost" data-i="935dc45f20" href="https://uk.trustpilot.com/evaluate/travelvista.uk" rel="noopener" target="_blank">Leave a review</a>
           </div>
         </div>
       </section>

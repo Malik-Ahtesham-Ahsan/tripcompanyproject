@@ -1532,3 +1532,25 @@ html[dir="rtl"] .tool-go span { display: inline-block; transform: scaleX(-1); }
 html[dir="rtl"] .tp-stars-fg { inset: 0 0 0 auto; direction: rtl; }
 html[dir="rtl"] .tp-bar i { margin-left: auto; }
 .tp-stars svg { flex: none; }
+/* rating summary as one wide bar under the heading (replaces the side card) */
+.tp-summary { grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 20px 40px; padding: 22px 28px; margin-bottom: 28px; }
+.tp-summary .tp-top { padding-right: 40px; border-right: 1px solid var(--line); }
+.tp-summary .tp-bars { gap: 7px; max-width: 520px; width: 100%; }
+.tp-actions { display: grid; gap: 10px; justify-items: stretch; min-width: 0; }
+.tp-actions .btn { justify-content: center; white-space: nowrap; }
+.tp-actions .tp-foot { text-align: center; }
+html[dir="rtl"] .tp-summary .tp-top { padding-right: 0; border-right: 0; padding-left: 40px; border-left: 1px solid var(--line); }
+@media (max-width: 1080px) {
+  .tp-summary { grid-template-columns: auto minmax(0, 1fr); }
+  .tp-actions { grid-column: 1 / -1; grid-template-columns: auto auto 1fr; align-items: center; justify-items: start; }
+  .tp-actions .tp-foot { text-align: left; }
+  html[dir="rtl"] .tp-actions .tp-foot { text-align: right; }
+}
+@media (max-width: 720px) {
+  .tp-summary { grid-template-columns: minmax(0, 1fr); padding: 20px; gap: 18px; }
+  .tp-summary .tp-top, html[dir="rtl"] .tp-summary .tp-top { padding: 0 0 16px; border: 0; border-bottom: 1px solid var(--line); }
+  .tp-summary .tp-bars { max-width: none; }
+  .tp-actions { grid-template-columns: minmax(0, 1fr); justify-items: stretch; }
+  .tp-actions .btn { white-space: normal; }
+  .tp-actions .tp-foot, html[dir="rtl"] .tp-actions .tp-foot { text-align: center; }
+}
