@@ -1870,3 +1870,4 @@ html[dir="rtl"] .jy::after { right: auto; left: -36px; transform: scaleX(-1); }
 }
 @media (prefers-reduced-motion: reduce) { .jy { opacity: 1; transform: none; } .journey * { animation: none !important; } .hw-tick { stroke-dashoffset: 0; } }
 @media (max-width: 640px) { .jy:nth-child(2n)::after { display: block; } .jy:last-child::after { display: none; } }
+.form-result[hidden], .err[hidden] { display: none; }

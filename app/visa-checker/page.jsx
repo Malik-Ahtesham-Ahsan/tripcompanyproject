@@ -101,23 +101,23 @@ export default function Page() {
       <section className="section">
         <div className="wrap">
           <div className="tool-layout" data-tool="checker">
-            <form className="panel form tool-form" id="vc-form" noValidate="">
+            <form className="panel form tool-form" id="vc-form" noValidate={true}>
               <h2 className="tool-h">Your details</h2>
               <div className="field">
                 <label htmlFor="vc-nat">Passport nationality</label>
                 {" "}
-                <input aria-describedby="vc-nat-help vc-nat-err" autoComplete="off" id="vc-nat" list="vc-nat-list" placeholder="Start typing, for example Pakistan" required="" />
+                <input aria-describedby="vc-nat-help vc-nat-err" autoComplete="off" id="vc-nat" list="vc-nat-list" placeholder="Start typing, for example Pakistan" required={true} />
                 {" "}
                 <datalist id="vc-nat-list"></datalist>
                 {" "}
                 <span className="small" id="vc-nat-help">The country on the front of your passport.</span>
                 {" "}
-                <span className="err" hidden="" id="vc-nat-err">Choose a nationality from the list.</span>
+                <span className="err" hidden={true} id="vc-nat-err">Choose a nationality from the list.</span>
               </div>
               <div className="field">
                 <label htmlFor="vc-status">Your UK status</label>
                 {" "}
-                <select aria-describedby="vc-status-err" id="vc-status" required="">
+                <select aria-describedby="vc-status-err" id="vc-status" required={true}>
                   <option value="">Choose your UK status</option>
                   <option>British citizen</option>
                   <option>ILR / settled status</option>
@@ -129,12 +129,12 @@ export default function Page() {
                   <option>Other</option>
                 </select>
                 {" "}
-                <span className="err" hidden="" id="vc-status-err">Choose your UK status.</span>
+                <span className="err" hidden={true} id="vc-status-err">Choose your UK status.</span>
               </div>
               <div className="field">
                 <label htmlFor="vc-dest">Where are you going?</label>
                 {" "}
-                <select id="vc-dest" required="">
+                <select id="vc-dest" required={true}>
                   <optgroup label="Schengen countries">
                     <option>Austria</option>
                     <option>Belgium</option>

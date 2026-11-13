@@ -101,7 +101,7 @@ export default function Page() {
       <section className="section">
         <div className="wrap">
           <div className="tool-stack" data-tool="days">
-            <form className="panel form tool-form" id="sd-form" noValidate="">
+            <form className="panel form tool-form" id="sd-form" noValidate={true}>
               <h2 className="tool-h">Your trips</h2>
               <p className="small">Add every trip in the last 180 days and any trips you have planned.</p>
               <div className="trip-list" id="sd-trips"></div>
@@ -115,7 +115,7 @@ export default function Page() {
                   <span className="small" id="sd-check-help">We count the 180 days up to this date.</span>
                 </div>
               </div>
-              <span className="err" hidden="" id="sd-err" role="alert"></span>
+              <span className="err" hidden={true} id="sd-err" role="alert"></span>
               {" "}
               <button className="btn btn-primary" type="submit">Calculate</button>
             </form>

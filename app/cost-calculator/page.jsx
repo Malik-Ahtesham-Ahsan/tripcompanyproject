@@ -101,7 +101,7 @@ export default function Page() {
       <section className="section">
         <div className="wrap">
           <div className="tool-layout" data-tool="cost">
-            <form className="panel form tool-form" id="cc-form" noValidate="">
+            <form className="panel form tool-form" id="cc-form" noValidate={true}>
               <h2 className="tool-h">Who is applying?</h2>
               <div className="form-grid tool-3">
                 <div className="field">

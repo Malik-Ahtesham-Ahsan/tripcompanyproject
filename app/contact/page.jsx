@@ -237,17 +237,17 @@ export default function Page() {
           <div className="panel">
             <h2 data-i="ad01ea72e2" style={{ "fontSize": "var(--step-2)" }}>Send an enquiry</h2>
             <p className="muted" data-i="2318632d00" style={{ "margin": "8px 0 18px" }}>Fill in the form and your message opens in WhatsApp, ready to send.</p>
-            <form className="form" id="enquiry" noValidate="">
+            <form className="form" id="enquiry" noValidate={true}>
               <div className="form-grid">
                 <div className="field">
                   <label data-i="ca27b75468" htmlFor="f-name">Full name *</label>
-                  <input autoComplete="name" id="f-name" name="name" required="" />
-                  <span className="err" data-i="dacddcd922" hidden="" id="f-name-err">Enter your name.</span>
+                  <input autoComplete="name" id="f-name" name="name" required={true} />
+                  <span className="err" data-i="dacddcd922" hidden={true} id="f-name-err">Enter your name.</span>
                 </div>
                 <div className="field">
                   <label data-i="187a522183" htmlFor="f-phone">Phone *</label>
-                  <input autoComplete="tel" id="f-phone" name="phone" required="" type="tel" />
-                  <span className="err" data-i="ea935d431d" hidden="" id="f-phone-err">Enter a phone number we can reach you on.</span>
+                  <input autoComplete="tel" id="f-phone" name="phone" required={true} type="tel" />
+                  <span className="err" data-i="ea935d431d" hidden={true} id="f-phone-err">Enter a phone number we can reach you on.</span>
                 </div>
                 <div className="field">
                   <label data-i="84add5b295" htmlFor="f-email">Email</label>
@@ -290,7 +290,7 @@ export default function Page() {
                 <a href="/refund-policy">refund policy</a>
                 .
               </p>
-              <div className="form-result" hidden="" id="form-result">
+              <div className="form-result" hidden={true} id="form-result">
                 <strong data-i="b6f4d1d5d7">Your message is ready.</strong>
                 <p className="small" data-i="f55fb356b0">Tap the button to open WhatsApp and send it to us.</p>
                 <a className="btn btn-wa" href="https://wa.me/447862609755" id="wa-send" rel="noopener" target="_blank">

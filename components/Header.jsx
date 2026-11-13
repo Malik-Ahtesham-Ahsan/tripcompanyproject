@@ -1,7 +1,12 @@
-// Site header. `current` is the page file name, used to mark the active menu link.
+// Site header (v1). `current` is the page file name, used to mark the active menu link.
+// The stylesheets for this page style are declared here and hoisted into <head> by React.
 export default function Header({ current }) {
   return (
     <>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link rel="stylesheet" precedence="default" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" />
+      <link rel="stylesheet" precedence="default" href="/assets/styles.css" />
       <a className="skip" data-i="0a4470d64e" href="#main">Skip to content</a>
       <header className="site-header">
         <div className="wrap bar">

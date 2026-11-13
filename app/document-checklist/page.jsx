@@ -101,7 +101,7 @@ export default function Page() {
       <section className="section">
         <div className="wrap">
           <div className="tool-stack" data-tool="docs">
-            <form className="panel form tool-form" id="dc-form" noValidate="">
+            <form className="panel form tool-form" id="dc-form" noValidate={true}>
               <div className="form-grid tool-3">
                 <div className="field">
                   <label htmlFor="dc-job">Your situation</label>

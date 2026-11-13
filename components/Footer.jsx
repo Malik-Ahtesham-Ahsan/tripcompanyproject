@@ -1,4 +1,4 @@
-// Site footer and floating WhatsApp button (same on every page).
+// Site footer and floating WhatsApp button (v1).
 export default function Footer() {
   return (
     <>
