@@ -1133,10 +1133,17 @@ export default function Page() {
             <h2 data-i="9ff5ebdba2">Recent visa approvals</h2>
             <p className="muted" data-i="27b1560b77">Real visas our clients received, shared with their written permission. Names, photos and passport numbers are always hidden.</p>
           </div>
+          <div aria-label="Filter by country" className="pf-filter" data-i-aria-label="2b97e1de26" role="group">
+            <button aria-pressed="true" className="on" data-cc="" data-i="6a72085653" type="button">All</button>
+            <button aria-pressed="false" data-cc="CH" data-i="77dcd849e5" type="button">Switzerland</button>
+            <button aria-pressed="false" data-cc="IS" data-i="b3c92eecf0" type="button">Iceland</button>
+          </div>
           <div className="pf-grid">
             <figure className="pf-card" data-cc="CH">
               <button aria-label="View larger photo" className="pf-img" data-full="assets/approvals/ch-2026-11-a.jpg" data-i-aria-label="f6aa07a111" type="button">
                 <img alt="" decoding="async" height="768" loading="lazy" src="/assets/approvals/ch-2026-11-a.jpg" width="1122" />
+                {" "}
+                <span aria-hidden="true" className="pf-shade"></span>
                 {" "}
                 <span className="pf-priv">
                   <svg aria-hidden="true" fill="none" height="13" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="13">
@@ -1146,25 +1153,96 @@ export default function Page() {
                   {" "}
                   <span data-i="4014effe92">Personal details hidden</span>
                 </span>
+                {" "}
+                <span className="pf-ok">
+                  <svg aria-hidden="true" fill="none" height="13" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" width="13">
+                    <path d="M5 12.5l4.5 4.5L19 7.5"></path>
+                  </svg>
+                  {" "}
+                  <span data-i="41b81eb8db">Approved</span>
+                </span>
+                {" "}
+                <span className="pf-title">
+                  <span className="pf-cc notranslate">CH</span>
+                  <strong data-i="77dcd849e5">Switzerland</strong>
+                </span>
+                {" "}
+                <span aria-hidden="true" className="pf-zoom">
+                  <svg aria-hidden="true" fill="none" height="16" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="M16 16l4.5 4.5M11 8v6M8 11h6"></path>
+                  </svg>
+                </span>
               </button>
               {" "}
               <figcaption>
-                <div className="pf-row">
-                  <span className="pf-cc notranslate">CH</span>
-                  <strong data-i="77dcd849e5">Switzerland</strong>
-                  <span className="pf-ok" data-i="41b81eb8db">Approved</span>
+                <div className="pf-chips">
+                  <span className="pf-chip" data-i="3058d881a3">Short-stay Schengen visa</span>
+                  <span className="pf-chip" data-i="8624b4cc8f">Multiple entry</span>
+                  <span className="pf-chip" data-i="7d62dd12af">Tourism</span>
                 </div>
-                <p className="small muted">
-                  <span data-i="3058d881a3">Short-stay Schengen visa</span>
-                  {" · "}
-                  <span data-i="8624b4cc8f">Multiple entry</span>
-                </p>
                 <p className="pf-meta small">
+                  <svg aria-hidden="true" fill="none" height="15" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="15">
+                    <rect height="15.5" rx="2.5" width="17" x="3.5" y="5"></rect>
+                    <path d="M3.5 10h17M8 3v4M16 3v4"></path>
+                  </svg>
+                  <span data-i="3b6f9e775d">Approved in</span>
                   <span className="notranslate">November 2026</span>
                 </p>
               </figcaption>
             </figure>
-            <div className="pf-cta" style={{ "--span": "2" }}>
+            <figure className="pf-card" data-cc="IS">
+              <button aria-label="View larger photo" className="pf-img" data-full="assets/approvals/is-2026-09-a.jpg" data-i-aria-label="f6aa07a111" type="button">
+                <img alt="" decoding="async" height="571" loading="lazy" src="/assets/approvals/is-2026-09-a.jpg" width="898" />
+                {" "}
+                <span aria-hidden="true" className="pf-shade"></span>
+                {" "}
+                <span className="pf-priv">
+                  <svg aria-hidden="true" fill="none" height="13" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="13">
+                    <rect height="11" rx="2" width="16" x="4" y="10"></rect>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                  </svg>
+                  {" "}
+                  <span data-i="4014effe92">Personal details hidden</span>
+                </span>
+                {" "}
+                <span className="pf-ok">
+                  <svg aria-hidden="true" fill="none" height="13" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" width="13">
+                    <path d="M5 12.5l4.5 4.5L19 7.5"></path>
+                  </svg>
+                  {" "}
+                  <span data-i="41b81eb8db">Approved</span>
+                </span>
+                {" "}
+                <span className="pf-title">
+                  <span className="pf-cc notranslate">IS</span>
+                  <strong data-i="b3c92eecf0">Iceland</strong>
+                </span>
+                {" "}
+                <span aria-hidden="true" className="pf-zoom">
+                  <svg aria-hidden="true" fill="none" height="16" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="M16 16l4.5 4.5M11 8v6M8 11h6"></path>
+                  </svg>
+                </span>
+              </button>
+              {" "}
+              <figcaption>
+                <div className="pf-chips">
+                  <span className="pf-chip" data-i="3058d881a3">Short-stay Schengen visa</span>
+                  <span className="pf-chip" data-i="8624b4cc8f">Multiple entry</span>
+                </div>
+                <p className="pf-meta small">
+                  <svg aria-hidden="true" fill="none" height="15" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="15">
+                    <rect height="15.5" rx="2.5" width="17" x="3.5" y="5"></rect>
+                    <path d="M3.5 10h17M8 3v4M16 3v4"></path>
+                  </svg>
+                  <span data-i="3b6f9e775d">Approved in</span>
+                  <span className="notranslate">September 2026</span>
+                </p>
+              </figcaption>
+            </figure>
+            <div className="pf-cta" style={{ "--span": "1" }}>
               <p className="eyebrow" data-i="c97854ed73">Your trip to Europe</p>
               <h3 data-i="9d199b3da3">Want help with your Schengen visa?</h3>
               <p className="muted" data-i="f7288d91e7">Book a free consultation on WhatsApp. We check your documents and prepare your full file before your appointment.</p>
