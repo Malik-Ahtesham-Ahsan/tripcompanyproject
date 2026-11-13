@@ -310,7 +310,7 @@
       return h.join("");
     };
     var position = function () {
-      if (window.innerWidth < 860) { card.style.left = ""; card.style.top = ""; return; }
+      if (window.innerWidth <= 1100) { card.style.left = ""; card.style.top = ""; return; }
       var R = gEl.getBoundingClientRect(), cw = card.offsetWidth, ch = card.offsetHeight;
       var minX = Math.max(8, 12 - R.left), maxX = Math.min(R.width, window.innerWidth - R.left) - cw - 12;
       var minY = Math.max(8, 90 - R.top), maxY = Math.min(R.height, window.innerHeight - R.top) - ch - 12;
