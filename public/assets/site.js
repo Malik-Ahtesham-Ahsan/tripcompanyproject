@@ -8,6 +8,19 @@
   // Free visa tools: load their script only on the tool pages
   window.TV = { ASSET: ASSET, CLEAN: CLEAN, pageUrl: pageUrl, WA: WA };
 
+
+  // How it works: reveal each step and start its animation when it scrolls into view
+  (function () {
+    var steps = document.querySelectorAll(".jy");
+    if (!steps.length) return;
+    if (!("IntersectionObserver" in window)) { steps.forEach(function (s) { s.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { var i = [].indexOf.call(steps, e.target); setTimeout(function () { e.target.classList.add("in"); }, (i % 3) * 140); io.unobserve(e.target); }
+      });
+    }, { threshold: .25 });
+    steps.forEach(function (s) { io.observe(s); });
+  })();
   // service cards: gentle 3D tilt and spotlight that follow the mouse
   (function () {
     if (!window.matchMedia || !matchMedia("(hover: hover) and (pointer: fine)").matches) return;

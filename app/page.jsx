@@ -1305,30 +1305,287 @@ export default function Page() {
             <h2 data-i="1dd6a17cb4">How it works</h2>
             <p className="muted" data-i="8f34852b45">You send your query. We do the paperwork and book your appointment. You attend with a complete, checked file.</p>
           </div>
-          <ol className="steps">
-            <li>
-              <h3 data-i="5f49e1ce7b">Send your query</h3>
-              <p data-i="cbc54feb1f">Message us on WhatsApp or use the enquiry form. Tell us your passport, UK status, destination and travel dates.</p>
+          <ol className="journey">
+            <li className="jy jy-1">
+              <div className="jy-art">
+                <svg aria-hidden="true" className="hw-svg" focusable="false" viewBox="0 0 320 180">
+                  <circle className="hw-halo" cx="160" cy="92" r="78"></circle>
+                  <circle className="hw-halo2" cx="160" cy="92" r="58"></circle>
+                  <g transform="translate(78 92) scale(1.05)">
+                    <path className="hw-shirt" d="M-22 44 Q-22 14 0 14 Q22 14 22 44 Z"></path>
+                    <circle className="hw-skin" cx="0" cy="0" r="12"></circle>
+                    <path className="hw-hair" d="M-12 -2 Q-12 -14 0 -14 Q12 -14 12 -2 Q8 -9 0 -9 Q-8 -9 -12 -2 Z"></path>
+                  </g>
+                  <g className="hw-phone">
+                    <rect className="hw-device" height="134" rx="14" width="84" x="138" y="34"></rect>
+                    <rect className="hw-screen" height="112" rx="6" width="72" x="144" y="46"></rect>
+                    <rect className="hw-wa" height="16" rx="6" width="72" x="144" y="46"></rect>
+                    <circle className="hw-white" cx="153" cy="54" r="4"></circle>
+                    <rect className="hw-white" height="4" rx="2" width="30" x="160" y="52"></rect>
+                    <g className="hw-b1">
+                      <rect className="hw-bubble-in" height="18" rx="6" width="52" x="150" y="70"></rect>
+                      <rect className="hw-line" height="3" rx="1.5" width="38" x="155" y="76"></rect>
+                      <rect className="hw-line" height="3" rx="1.5" width="26" x="155" y="81"></rect>
+                    </g>
+                    <g className="hw-b2">
+                      <rect className="hw-bubble-out" height="18" rx="6" width="50" x="160" y="96"></rect>
+                      <rect className="hw-line-out" height="3" rx="1.5" width="36" x="165" y="102"></rect>
+                      <rect className="hw-line-out" height="3" rx="1.5" width="22" x="165" y="107"></rect>
+                    </g>
+                    <g className="hw-typing">
+                      <rect className="hw-bubble-in" height="14" rx="7" width="30" x="150" y="122"></rect>
+                      <circle className="hw-dot hw-d1" cx="158" cy="129" r="2"></circle>
+                      <circle className="hw-dot hw-d2" cx="165" cy="129" r="2"></circle>
+                      <circle className="hw-dot hw-d3" cx="172" cy="129" r="2"></circle>
+                    </g>
+                  </g>
+                  <g className="hw-plane">
+                    <path className="hw-accent" d="M232 40 L268 28 L254 58 L248 46 Z"></path>
+                    <path className="hw-accent2" d="M248 46 L268 28 L252 50 Z"></path>
+                  </g>
+                  <path className="hw-trail" d="M214 66 Q226 54 236 48"></path>
+                </svg>
+                <span aria-hidden="true" className="jy-num">01</span>
+              </div>
+              <div className="jy-body">
+                <span className="jy-who jy-you" data-i="905cb326c7">You</span>
+                <h3 data-i="5f49e1ce7b">Send your query</h3>
+                <p data-i="cbc54feb1f">Message us on WhatsApp or use the enquiry form. Tell us your passport, UK status, destination and travel dates.</p>
+              </div>
             </li>
-            <li>
-              <h3 data-i="f67e64b8a8">Get your document list</h3>
-              <p data-i="781e01a969">We confirm which visa you need and send you a checklist made for your case.</p>
+            <li className="jy jy-2">
+              <div className="jy-art">
+                <svg aria-hidden="true" className="hw-svg" focusable="false" viewBox="0 0 320 180">
+                  <circle className="hw-halo" cx="160" cy="92" r="78"></circle>
+                  <circle className="hw-halo2" cx="160" cy="92" r="58"></circle>
+                  <rect className="hw-paper" height="130" rx="10" width="124" x="110" y="38"></rect>
+                  <rect className="hw-clip" height="16" rx="5" width="52" x="146" y="30"></rect>
+                  <circle className="hw-screen" cx="172" cy="34" r="3"></circle>
+                  <rect className="hw-line-d" height="5" rx="2.5" width="70" x="128" y="54"></rect>
+                  <g transform="translate(0 0)">
+                    <rect className="hw-box" height="14" rx="3" width="14" x="128" y="66"></rect>
+                    <path className="hw-tick hw-t0" d="M-5 0 l3.5 3.5 L6 -4" transform="translate(135 73)"></path>
+                    <rect className="hw-line-d" height="4" rx="2" width="62" x="150" y="68"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="40" x="150" y="76"></rect>
+                  </g>
+                  <g transform="translate(0 22)">
+                    <rect className="hw-box" height="14" rx="3" width="14" x="128" y="66"></rect>
+                    <path className="hw-tick hw-t1" d="M-5 0 l3.5 3.5 L6 -4" transform="translate(135 73)"></path>
+                    <rect className="hw-line-d" height="4" rx="2" width="50" x="150" y="68"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="54" x="150" y="76"></rect>
+                  </g>
+                  <g transform="translate(0 44)">
+                    <rect className="hw-box" height="14" rx="3" width="14" x="128" y="66"></rect>
+                    <path className="hw-tick hw-t2" d="M-5 0 l3.5 3.5 L6 -4" transform="translate(135 73)"></path>
+                    <rect className="hw-line-d" height="4" rx="2" width="66" x="150" y="68"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="30" x="150" y="76"></rect>
+                  </g>
+                  <g transform="translate(0 66)">
+                    <rect className="hw-box" height="14" rx="3" width="14" x="128" y="66"></rect>
+                    <path className="hw-tick hw-t3" d="M-5 0 l3.5 3.5 L6 -4" transform="translate(135 73)"></path>
+                    <rect className="hw-line-d" height="4" rx="2" width="44" x="150" y="68"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="48" x="150" y="76"></rect>
+                  </g>
+                  <g transform="translate(262 104) scale(0.9)">
+                    <path className="hw-shirt2" d="M-22 44 Q-22 14 0 14 Q22 14 22 44 Z"></path>
+                    <circle className="hw-skin" cx="0" cy="0" r="12"></circle>
+                    <path className="hw-hair" d="M-12 -2 Q-12 -14 0 -14 Q12 -14 12 -2 Q8 -9 0 -9 Q-8 -9 -12 -2 Z"></path>
+                  </g>
+                  <g className="hw-badge">
+                    <circle className="hw-ok" cx="232" cy="50" r="13"></circle>
+                    <path className="hw-white-s" d="M-5 0 l3.5 3.5 L6 -4" transform="translate(232 50)"></path>
+                  </g>
+                </svg>
+                <span aria-hidden="true" className="jy-num">02</span>
+              </div>
+              <div className="jy-body">
+                <span className="jy-who jy-we" data-i="a24ae9faf6">We</span>
+                <h3 data-i="f67e64b8a8">Get your document list</h3>
+                <p data-i="781e01a969">We confirm which visa you need and send you a checklist made for your case.</p>
+              </div>
             </li>
-            <li>
-              <h3 data-i="74bc612b50">Send us your documents</h3>
-              <p data-i="b2a7a2e8ef">Share copies of your passport, UK status, bank statements and work or study letters.</p>
+            <li className="jy jy-3">
+              <div className="jy-art">
+                <svg aria-hidden="true" className="hw-svg" focusable="false" viewBox="0 0 320 180">
+                  <circle className="hw-halo" cx="160" cy="92" r="78"></circle>
+                  <circle className="hw-halo2" cx="160" cy="92" r="58"></circle>
+                  <path className="hw-folder-b" d="M168 104 h44 l8 8 h44 v58 h-96 Z"></path>
+                  <rect className="hw-folder" height="52" rx="5" width="96" x="168" y="118"></rect>
+                  <g className="hw-up">
+                    <circle className="hw-ok" cx="216" cy="144" r="11"></circle>
+                    <path className="hw-white-s" d="M216 150 V138 M210 143 L216 137 L222 143"></path>
+                  </g>
+                  <g className="hw-fly hw-f1">
+                    <rect className="hw-passport" height="60" rx="5" width="44" x="56" y="58"></rect>
+                    <circle className="hw-gold" cx="78" cy="82" r="9"></circle>
+                    <rect className="hw-gold" height="3" rx="1.5" width="24" x="66" y="98"></rect>
+                  </g>
+                  <g className="hw-fly hw-f2">
+                    <rect className="hw-paper" height="60" rx="5" width="46" x="96" y="96"></rect>
+                    <rect className="hw-line-d" height="4" rx="2" width="26" x="104" y="106"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="30" x="104" y="116"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="22" x="104" y="123"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="28" x="104" y="130"></rect>
+                    <path className="hw-chart" d="M104 148 l7 -6 6 3 8 -9 6 4"></path>
+                  </g>
+                  <g className="hw-fly hw-f3">
+                    <rect className="hw-paper" height="52" rx="5" width="40" x="118" y="36"></rect>
+                    <rect className="hw-line-d" height="4" rx="2" width="20" x="125" y="45"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="26" x="125" y="55"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="20" x="125" y="62"></rect>
+                    <rect className="hw-line-l" height="3" rx="1.5" width="24" x="125" y="69"></rect>
+                  </g>
+                  <path className="hw-trail" d="M146 70 Q176 70 194 100"></path>
+                </svg>
+                <span aria-hidden="true" className="jy-num">03</span>
+              </div>
+              <div className="jy-body">
+                <span className="jy-who jy-you" data-i="905cb326c7">You</span>
+                <h3 data-i="74bc612b50">Send us your documents</h3>
+                <p data-i="b2a7a2e8ef">Share copies of your passport, UK status, bank statements and work or study letters.</p>
+              </div>
             </li>
-            <li>
-              <h3 data-i="cec0dab072">We prepare your file</h3>
-              <p data-i="7a4a90a445">We complete your application form, write your cover letter, arrange your travel plan and check every document.</p>
+            <li className="jy jy-4">
+              <div className="jy-art">
+                <svg aria-hidden="true" className="hw-svg" focusable="false" viewBox="0 0 320 180">
+                  <circle className="hw-halo" cx="160" cy="92" r="78"></circle>
+                  <circle className="hw-halo2" cx="160" cy="92" r="58"></circle>
+                  <rect className="hw-paper hw-back" height="122" rx="8" transform="rotate(-6 156 108)" width="104" x="104" y="40"></rect>
+                  <rect className="hw-paper" height="128" rx="8" width="104" x="112" y="36"></rect>
+                  <rect className="hw-line-d" height="5" rx="2.5" width="56" x="126" y="56"></rect>
+                  <rect className="hw-line-l" height="3.5" rx="1.75" width="74" x="126" y="70"></rect>
+                  <rect className="hw-line-l" height="3.5" rx="1.75" width="66" x="126" y="80"></rect>
+                  <rect className="hw-line-l" height="3.5" rx="1.75" width="76" x="126" y="90"></rect>
+                  <rect className="hw-line-l" height="3.5" rx="1.75" width="58" x="126" y="100"></rect>
+                  <rect className="hw-line-l" height="3.5" rx="1.75" width="70" x="126" y="110"></rect>
+                  <rect className="hw-line-l" height="3.5" rx="1.75" width="50" x="126" y="120"></rect>
+                  <rect className="hw-field" height="22" rx="4" width="40" x="126" y="130"></rect>
+                  <rect className="hw-field" height="22" rx="4" width="30" x="172" y="130"></rect>
+                  <g className="hw-mag">
+                    <circle className="hw-glass" cx="196" cy="92" r="20"></circle>
+                    <circle className="hw-ring" cx="196" cy="92" r="20"></circle>
+                    <path className="hw-handle" d="M210 106 L232 128"></path>
+                  </g>
+                  <g className="hw-stamp">
+                    <circle className="hw-stamp-c" cx="96" cy="140" r="22"></circle>
+                    <circle className="hw-stamp-c2" cx="96" cy="140" r="16"></circle>
+                    <path className="hw-stamp-t" d="M-7 0 l5 5 L9 -6" transform="translate(96 140)"></path>
+                  </g>
+                  <g transform="translate(264 104) scale(0.9)">
+                    <path className="hw-shirt3" d="M-22 44 Q-22 14 0 14 Q22 14 22 44 Z"></path>
+                    <circle className="hw-skin" cx="0" cy="0" r="12"></circle>
+                    <path className="hw-hair" d="M-12 -2 Q-12 -14 0 -14 Q12 -14 12 -2 Q8 -9 0 -9 Q-8 -9 -12 -2 Z"></path>
+                  </g>
+                </svg>
+                <span aria-hidden="true" className="jy-num">04</span>
+              </div>
+              <div className="jy-body">
+                <span className="jy-who jy-we" data-i="a24ae9faf6">We</span>
+                <h3 data-i="cec0dab072">We prepare your file</h3>
+                <p data-i="7a4a90a445">We complete your application form, write your cover letter, arrange your travel plan and check every document.</p>
+              </div>
             </li>
-            <li>
-              <h3 data-i="04383c3b1f">We book your appointment</h3>
-              <p data-i="a29ae33318">We book the earliest appointment available at the visa centre and send you the date and time.</p>
+            <li className="jy jy-5">
+              <div className="jy-art">
+                <svg aria-hidden="true" className="hw-svg" focusable="false" viewBox="0 0 320 180">
+                  <circle className="hw-halo" cx="160" cy="92" r="78"></circle>
+                  <circle className="hw-halo2" cx="160" cy="92" r="58"></circle>
+                  <rect className="hw-paper" height="124" rx="12" width="116" x="104" y="44"></rect>
+                  <rect className="hw-cal-top" height="28" rx="12" width="116" x="104" y="44"></rect>
+                  <rect className="hw-cal-top" height="12" width="116" x="104" y="60"></rect>
+                  <rect className="hw-ring-pin" height="16" rx="3" width="6" x="128" y="36"></rect>
+                  <rect className="hw-ring-pin" height="16" rx="3" width="6" x="190" y="36"></rect>
+                  <rect className="hw-white" height="5" rx="2.5" width="44" x="140" y="54"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="116" y="82"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="132" y="82"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="148" y="82"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="164" y="82"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="180" y="82"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="196" y="82"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="116" y="98"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="132" y="98"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="148" y="98"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="164" y="98"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="180" y="98"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="196" y="98"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="116" y="114"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="132" y="114"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="148" y="114"></rect>
+                  <rect className="hw-cell-on" height="12" rx="3" width="12" x="164" y="114"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="180" y="114"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="196" y="114"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="116" y="130"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="132" y="130"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="148" y="130"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="164" y="130"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="180" y="130"></rect>
+                  <rect className="hw-cell" height="12" rx="3" width="12" x="196" y="130"></rect>
+                  <circle className="hw-pulse" cx="170" cy="120" r="10"></circle>
+                  <g className="hw-clock">
+                    <circle className="hw-paper" cx="246" cy="128" r="28"></circle>
+                    <circle className="hw-ring2" cx="246" cy="128" r="28"></circle>
+                    <path className="hw-hand hw-hand-m" d="M246 128 V110"></path>
+                    <path className="hw-hand hw-hand-h" d="M246 128 L258 134"></path>
+                    <circle className="hw-accent" cx="246" cy="128" r="3"></circle>
+                  </g>
+                  <g className="hw-confirm">
+                    <rect className="hw-ok" height="24" rx="12" width="64" x="46" y="58"></rect>
+                    <path className="hw-white-s" d="M-5 0 l3.5 3.5 L6 -4" transform="translate(60 70)"></path>
+                    <rect className="hw-white" height="5" rx="2.5" width="30" x="70" y="67"></rect>
+                  </g>
+                </svg>
+                <span aria-hidden="true" className="jy-num">05</span>
+              </div>
+              <div className="jy-body">
+                <span className="jy-who jy-we" data-i="a24ae9faf6">We</span>
+                <h3 data-i="04383c3b1f">We book your appointment</h3>
+                <p data-i="a29ae33318">We book the earliest appointment available at the visa centre and send you the date and time.</p>
+              </div>
             </li>
-            <li>
-              <h3 data-i="97d60cc7b3">Attend with your file</h3>
-              <p data-i="e8010bf524">You take your ready file to the appointment and give your fingerprints. We help you follow your application until the decision.</p>
+            <li className="jy jy-6">
+              <div className="jy-art">
+                <svg aria-hidden="true" className="hw-svg" focusable="false" viewBox="0 0 320 180">
+                  <circle className="hw-halo" cx="160" cy="92" r="78"></circle>
+                  <circle className="hw-halo2" cx="160" cy="92" r="58"></circle>
+                  <g transform="translate(-14 4) scale(.96)">
+                    <path className="hw-build" d="M188 62 L250 40 L312 62 Z"></path>
+                    <rect className="hw-build" height="8" width="112" x="194" y="62"></rect>
+                    <rect className="hw-build" height="66" width="10" x="200" y="74"></rect>
+                    <rect className="hw-build" height="66" width="10" x="224" y="74"></rect>
+                    <rect className="hw-build" height="66" width="10" x="248" y="74"></rect>
+                    <rect className="hw-build" height="66" width="10" x="272" y="74"></rect>
+                    <rect className="hw-build" height="66" width="10" x="296" y="74"></rect>
+                    <rect className="hw-build" height="10" width="120" x="190" y="140"></rect>
+                  </g>
+                  <g transform="translate(108 84) scale(1.1)">
+                    <path className="hw-shirt" d="M-22 44 Q-22 14 0 14 Q22 14 22 44 Z"></path>
+                    <circle className="hw-skin" cx="0" cy="0" r="12"></circle>
+                    <path className="hw-hair" d="M-12 -2 Q-12 -14 0 -14 Q12 -14 12 -2 Q8 -9 0 -9 Q-8 -9 -12 -2 Z"></path>
+                  </g>
+                  <rect className="hw-folder" height="38" rx="4" transform="rotate(-8 133 129)" width="30" x="118" y="110"></rect>
+                  <g className="hw-scanner">
+                    <rect className="hw-device" height="44" rx="8" width="58" x="150" y="128"></rect>
+                    <rect className="hw-screen" height="30" rx="4" width="42" x="158" y="134"></rect>
+                    <g className="hw-fp" transform="translate(179 149)">
+                      <path className="hw-fp-l" d="M-3 4 Q-3 -3 0 -3 Q3 -3 3 4"></path>
+                      <path className="hw-fp-l" d="M-6 4 Q-6 -6 0 -6 Q6 -6 6 4"></path>
+                      <path className="hw-fp-l" d="M-9 4 Q-9 -9 0 -9 Q9 -9 9 4"></path>
+                      <path className="hw-fp-l" d="M-12 4 Q-12 -12 0 -12 Q12 -12 12 4"></path>
+                    </g>
+                    <rect className="hw-scan" height="3" rx="1.5" width="42" x="158" y="134"></rect>
+                  </g>
+                  <g className="hw-done">
+                    <circle className="hw-ok" cx="214" cy="118" r="11"></circle>
+                    <path className="hw-white-s" d="M-5 0 l3.5 3.5 L6 -4" transform="translate(214 118)"></path>
+                  </g>
+                </svg>
+                <span aria-hidden="true" className="jy-num">06</span>
+              </div>
+              <div className="jy-body">
+                <span className="jy-who jy-you" data-i="905cb326c7">You</span>
+                <h3 data-i="97d60cc7b3">Attend with your file</h3>
+                <p data-i="e8010bf524">You take your ready file to the appointment and give your fingerprints. We help you follow your application until the decision.</p>
+              </div>
             </li>
           </ol>
         </div>
