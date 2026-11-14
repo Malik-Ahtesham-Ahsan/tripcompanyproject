@@ -1,10 +1,10 @@
 import Script from "next/script";
 
-// Site footer and floating WhatsApp button (v2).
+// Site footer and floating WhatsApp button (v2i).
 export default function Footer2() {
   return (
     <>
-      <footer className="site-footer v-foot">
+      <footer className="v-foot">
         <div className="v-wrap">
           <div className="v-foot-top">
             <p className="v-foot-slogan">

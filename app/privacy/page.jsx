@@ -1,5 +1,5 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header2i from "../../components/Header2i";
+import Footer2 from "../../components/Footer2";
 import JsonLd from "../../components/JsonLd";
 
 export const metadata = {
@@ -59,9 +59,12 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="/privacy" />
+      <Header2i current="/privacy" />
       <main id="main">
-      <section className="page-hero">
+      <section className="page-hero v-inhero">
+        <div aria-hidden="true" className="v-ph-img">
+          <img alt="" className="" fetchpriority="high" height="900" sizes="100vw" src={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1920&h=900"} srcset={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=480&h=225 480w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=800&h=375 800w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1200&h=562 1200w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1600&h=750 1600w"} width="1920" />
+        </div>
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
           <path className="fp" d="M620 330 C 760 230, 860 290, 980 170 S 1180 30, 1330 60" id="fp75" pathLength="1000"></path>
           {" "}
@@ -297,7 +300,7 @@ export default function Page() {
         </div>
       </div>
       </main>
-      <Footer />
+      <Footer2 />
     </>
   );
 }

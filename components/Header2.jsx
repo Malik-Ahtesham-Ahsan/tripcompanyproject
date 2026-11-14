@@ -8,13 +8,14 @@ export default function Header2({ current }) {
       <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
       <link rel="stylesheet" precedence="default" href="/assets/v2/shared.css" />
       <link rel="stylesheet" precedence="default" href="/assets/v2/v2.css" />
+      <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add(\"v2\");document.documentElement.classList.remove(\"v2-inner\")" }} />
       <a className="skip" data-i="0a4470d64e" href="#main">Skip to content</a>
       <header className="site-header v-head">
         <div className="v-bar">
           <a aria-label="TravelVista Ltd home" className="v-logo" data-i-aria-label="e7215721a4" href="/">
             <img alt="TravelVista" height="46" src="/assets/logo-horizontal-dark.png" width="173" />
           </a>
-          <nav aria-label="Main" className="nav v-nav" data-i-aria-label="62bce9422f" id="nav">
+          <nav aria-label="Main" className="v-nav" data-i-aria-label="62bce9422f" id="nav">
             <ul>
               <li>
                 <a className="v-nl" data-i="70f8bb9a8a" href="/" aria-current={current === "/" ? "page" : undefined}>Home</a>

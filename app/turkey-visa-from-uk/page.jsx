@@ -1,5 +1,5 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header2i from "../../components/Header2i";
+import Footer2 from "../../components/Footer2";
 import JsonLd from "../../components/JsonLd";
 
 export const metadata = {
@@ -89,9 +89,12 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header current="/turkey-visa-from-uk" />
+      <Header2i current="/turkey-visa-from-uk" />
       <main id="main">
-      <section className="page-hero">
+      <section className="page-hero v-inhero">
+        <div aria-hidden="true" className="v-ph-img">
+          <img alt="" className="" fetchpriority="high" height="900" sizes="100vw" src={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1920&h=900"} srcset={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=480&h=225 480w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=800&h=375 800w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1200&h=562 1200w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1600&h=750 1600w"} width="1920" />
+        </div>
         <svg aria-hidden="true" className="flight flight-hero" focusable="false" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1240 300">
           <path className="fp" d="M620 330 C 760 230, 860 290, 980 170 S 1180 30, 1330 60" id="fp68" pathLength="1000"></path>
           {" "}
@@ -195,10 +198,7 @@ export default function Page() {
           <aside>
             <div className="side-box">
               <div className="side-head">
-                <span className="side-chip" data-i="d684b7391e">
-                  {"Schengen package · "}
-                  <b>£89</b>
-                </span>
+                <span className="side-chip" data-i="18a7959cf1">Free first consultation</span>
                 <h2 data-i="f85a35dbd0">Get help with your Turkey visa</h2>
                 <p data-i="f41fd943ac">Tell us your passport and UK status and we will tell you which option fits.</p>
                 <span aria-hidden="true" className="side-orbit"></span>
@@ -309,7 +309,7 @@ export default function Page() {
         </div>
       </section>
       </main>
-      <Footer />
+      <Footer2 />
     </>
   );
 }
