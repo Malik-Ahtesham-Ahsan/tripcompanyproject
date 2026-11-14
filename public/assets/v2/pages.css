@@ -225,3 +225,6 @@ html[dir="rtl"].v2-inner .faq summary::after { right: auto; left: 0; }
 .v2-inner .section-head h2, .v2-inner .content section > h2 { text-wrap: balance; }
 .v2-inner .content p, .v2-inner .section-head p { text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) { .v2-inner .v-ph-img img { animation: none; } }
+/* "On this page" list inside the dark sidebar: the current section stays readable */
+.v2-inner .side-box .toc a.active, .v2-inner aside .toc a.active { background: rgba(255,255,255,.08); color: #fff; box-shadow: inset 2px 0 0 var(--gold); }
+.v2-inner .side-box .toc a.active::before, .v2-inner aside .toc a.active::before { color: var(--gold); }

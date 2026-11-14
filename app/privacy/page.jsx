@@ -1,5 +1,5 @@
-import Header2i from "../../components/Header2i";
-import Footer2 from "../../components/Footer2";
+import Header3i from "../../components/Header3i";
+import Footer3 from "../../components/Footer3";
 import JsonLd from "../../components/JsonLd";
 
 export const metadata = {
@@ -59,7 +59,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header2i current="/privacy" />
+      <Header3i current="/privacy" />
       <main id="main">
       <section className="page-hero v-inhero">
         <div aria-hidden="true" className="v-ph-img">
@@ -300,7 +300,7 @@ export default function Page() {
         </div>
       </div>
       </main>
-      <Footer2 />
+      <Footer3 />
     </>
   );
 }

@@ -1,5 +1,5 @@
-import Header2 from "../components/Header2";
-import Footer2 from "../components/Footer2";
+import Header3 from "../components/Header3";
+import Footer3 from "../components/Footer3";
 import JsonLd from "../components/JsonLd";
 
 export const metadata = {
@@ -154,9 +154,52 @@ export default function Page() {
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header2 current="/" />
+      <Header3 current="/" />
       <main id="main">
-      <section aria-labelledby="hero-title" className="v-hero">
+      <section aria-labelledby="hero-title" className="v3-hero">
+        <div aria-hidden="true" className="v3-hero-media">
+          <img alt="" className="v3-hero-img" fetchpriority="high" height="1500" sizes="100vw" src={"https://images.unsplash.com/photo-1502464229295-67f6289dddfc?auto=format&fit=crop&q=72&w=2400&h=1500"} srcset={"https://images.unsplash.com/photo-1502464229295-67f6289dddfc?auto=format&fit=crop&q=72&w=480&h=300 480w, https://images.unsplash.com/photo-1502464229295-67f6289dddfc?auto=format&fit=crop&q=72&w=800&h=500 800w, https://images.unsplash.com/photo-1502464229295-67f6289dddfc?auto=format&fit=crop&q=72&w=1200&h=750 1200w, https://images.unsplash.com/photo-1502464229295-67f6289dddfc?auto=format&fit=crop&q=72&w=1600&h=1000 1600w"} width="2400" />
+        </div>
+        <div aria-hidden="true" className="v3-hero-shade"></div>
+        <div className="v-wrap v3-hero-in">
+          <p className="v3-eye v3-eye-gold" data-i="2a9391c9f8">
+            <span aria-hidden="true" className="v3-rule"></span>
+            TravelVista · London
+          </p>
+          <h1 className="v3-display" id="hero-title">
+            <span className="v3-ln">
+              <span data-i="f73bebc3a6">The world is waiting.</span>
+            </span>
+            {" "}
+            <span className="v3-ln">
+              <em data-i="e0cd5e40cd">We’ll take care of the details.</em>
+            </span>
+          </h1>
+          <p className="v3-hero-lead" data-i="97226a5b8e">From visa assistance to unforgettable journeys, discover a more considered way to travel with TravelVista.</p>
+          <div className="v3-ctas">
+            <a className="v3-btn v3-btn-light" href="#services">
+              <span data-i="01fa0051e2">Explore Our Services</span>
+              {" "}
+              <span aria-hidden="true" className="v-arr">
+                <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+            {" "}
+            <a className="v3-btn v3-btn-ghost" data-i="02d59877b8" href="/contact">Begin Your Journey</a>
+          </div>
+        </div>
+        <p aria-hidden="true" className="v3-hero-cap" data-i="d1923d7c1b">
+          <span>01</span>
+          {" Seceda, the Dolomites, Italy"}
+        </p>
+        <a aria-label="Scroll to the next section" className="v3-scrollcue" data-i-aria-label="cc143a205b" href="#globe">
+          <span data-i="090a3c8078">Scroll</span>
+          <i></i>
+        </a>
+      </section>
+      <section aria-labelledby="globe-title" className="v-hero v3-globesec" id="globe">
         <div aria-hidden="true" className="v-stars"></div>
         <div aria-label="Interactive 3D globe. Drag to rotate, scroll or pinch to zoom, select a country to open its visa guide." className="v-globe" data-i-aria-label="2883812e1b" data-routes={"[{\"n\": \"Paris\", \"s\": \"france-visa-from-uk.html\", \"lat\": 48.86, \"lng\": 2.35, \"c\": \"FR\"}, {\"n\": \"New York\", \"s\": \"usa-visa-from-uk.html\", \"lat\": 40.71, \"lng\": -74.0, \"c\": \"US\"}, {\"n\": \"Dubai\", \"s\": \"dubai-visa-from-uk.html\", \"lat\": 25.2, \"lng\": 55.27, \"c\": \"AE\"}, {\"n\": \"Rome\", \"s\": \"italy-visa-from-uk.html\", \"lat\": 41.9, \"lng\": 12.5, \"c\": \"IT\"}, {\"n\": \"Toronto\", \"s\": \"canada-visa-from-uk.html\", \"lat\": 43.65, \"lng\": -79.38, \"c\": \"CA\"}, {\"n\": \"Amsterdam\", \"s\": \"netherlands-visa-from-uk.html\", \"lat\": 52.37, \"lng\": 4.9, \"c\": \"NL\"}, {\"n\": \"Madrid\", \"s\": \"spain-visa-from-uk.html\", \"lat\": 40.42, \"lng\": -3.7, \"c\": \"ES\"}, {\"n\": \"Zurich\", \"s\": \"switzerland-visa-from-uk.html\", \"lat\": 47.37, \"lng\": 8.54, \"c\": \"CH\"}]"} role="group">
           <div aria-hidden="true" className="v-globe-static"></div>
@@ -203,29 +246,16 @@ export default function Page() {
         </div>
         <div className="v-wrap v-hero-in">
           <div className="v-hero-copy">
-            <p className="v-eyebrow v-eyebrow-gold" data-i="f3bc726e43">
+            <p className="v-eyebrow v-eyebrow-gold" data-i="54caf52bec">
               <span aria-hidden="true" className="v-rule"></span>
-              {"Global Travel & Visa Solutions"}
+              From London to the world
             </p>
-            <h1 className="v-h1" id="hero-title">
-              <span className="v-line" data-i="6d9f0bed69">Explore the World.</span>
+            <h2 className="v-h1 v3-gh" id="globe-title">
+              <span className="v-line" data-i="aa7a0c92f3">Where will you</span>
               {" "}
-              <span className="v-line v-serif" data-i="4d7992efb0">We’ll Handle the Journey.</span>
-            </h1>
-            <p className="v-lead" data-i="c5d83b2c55">Expert visa assistance, appointment management and personalised travel solutions for UK residents. From European destinations to worldwide adventures, TravelVista makes your international travel simpler.</p>
-            <div className="v-ctas">
-              <a className="v-btn v-btn-red" href="#services">
-                <span data-i="01fa0051e2">Explore Our Services</span>
-                {" "}
-                <span aria-hidden="true" className="v-arr">
-                  <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                    <path d="M5 12h14M13 6l6 6-6 6"></path>
-                  </svg>
-                </span>
-              </a>
-              {" "}
-              <a className="v-btn v-btn-line" data-i="43bcbb7183" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20a%20free%20visa%20consultation." rel="noopener" target="_blank">Get Free Consultation</a>
-            </div>
+              <span className="v-line v-serif" data-i="73132c348a">go next?</span>
+            </h2>
+            <p className="v-lead" data-i="6c355bb7b6">Turn the globe, follow our routes from London and select a country to see how we can help you get there.</p>
             <form autoComplete="off" className="v-search" data-dests={"[{\"n\": \"United States\", \"s\": \"usa-visa-from-uk.html\"}, {\"n\": \"Canada\", \"s\": \"canada-visa-from-uk.html\"}, {\"n\": \"Dubai\", \"s\": \"dubai-visa-from-uk.html\"}, {\"n\": \"Turkey\", \"s\": \"turkey-visa-from-uk.html\"}, {\"n\": \"Austria\", \"s\": \"austria-visa-from-uk.html\"}, {\"n\": \"Belgium\", \"s\": \"belgium-visa-from-uk.html\"}, {\"n\": \"Bulgaria\", \"s\": \"bulgaria-visa-from-uk.html\"}, {\"n\": \"Croatia\", \"s\": \"croatia-visa-from-uk.html\"}, {\"n\": \"Czech Republic\", \"s\": \"czech-republic-visa-from-uk.html\"}, {\"n\": \"Denmark\", \"s\": \"denmark-visa-from-uk.html\"}, {\"n\": \"Estonia\", \"s\": \"estonia-visa-from-uk.html\"}, {\"n\": \"Finland\", \"s\": \"finland-visa-from-uk.html\"}, {\"n\": \"France\", \"s\": \"france-visa-from-uk.html\"}, {\"n\": \"Germany\", \"s\": \"germany-visa-from-uk.html\"}, {\"n\": \"Greece\", \"s\": \"greece-visa-from-uk.html\"}, {\"n\": \"Hungary\", \"s\": \"hungary-visa-from-uk.html\"}, {\"n\": \"Iceland\", \"s\": \"iceland-visa-from-uk.html\"}, {\"n\": \"Italy\", \"s\": \"italy-visa-from-uk.html\"}, {\"n\": \"Latvia\", \"s\": \"latvia-visa-from-uk.html\"}, {\"n\": \"Liechtenstein\", \"s\": \"liechtenstein-visa-from-uk.html\"}, {\"n\": \"Lithuania\", \"s\": \"lithuania-visa-from-uk.html\"}, {\"n\": \"Luxembourg\", \"s\": \"luxembourg-visa-from-uk.html\"}, {\"n\": \"Malta\", \"s\": \"malta-visa-from-uk.html\"}, {\"n\": \"Netherlands\", \"s\": \"netherlands-visa-from-uk.html\"}, {\"n\": \"Norway\", \"s\": \"norway-visa-from-uk.html\"}, {\"n\": \"Poland\", \"s\": \"poland-visa-from-uk.html\"}, {\"n\": \"Portugal\", \"s\": \"portugal-visa-from-uk.html\"}, {\"n\": \"Romania\", \"s\": \"romania-visa-from-uk.html\"}, {\"n\": \"Slovakia\", \"s\": \"slovakia-visa-from-uk.html\"}, {\"n\": \"Slovenia\", \"s\": \"slovenia-visa-from-uk.html\"}, {\"n\": \"Spain\", \"s\": \"spain-visa-from-uk.html\"}, {\"n\": \"Sweden\", \"s\": \"sweden-visa-from-uk.html\"}, {\"n\": \"Switzerland\", \"s\": \"switzerland-visa-from-uk.html\"}, {\"n\": \"Schengen area\", \"s\": \"schengen-visa.html\"}]"} role="search">
               <label className="v-search-l" data-i="d39c141af1" htmlFor="v-dest">Where are you travelling?</label>
               <div className="v-search-row">
@@ -254,30 +284,6 @@ export default function Page() {
                 <a className="v-chip" data-i="91310be76f" href="/dubai-visa-from-uk">Dubai</a>
               </div>
             </form>
-            <ul className="v-trust">
-              <li>
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="18">
-                  <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path>
-                  <circle cx="12" cy="9.5" r="2.5"></circle>
-                </svg>
-                <span data-i="51ad6d2e47">UK-Based Consultancy</span>
-              </li>
-              <li>
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="18">
-                  <path d="M16 6.5A4 4 0 0 0 9 9v11"></path>
-                  <path d="M6 20h12M6 13h8"></path>
-                </svg>
-                <span data-i="425a6bfb4e">Transparent Service Fees</span>
-              </li>
-              <li>
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="18">
-                  <path d="M7 3h7l5 5v13H7z"></path>
-                  <path d="M14 3v5h5"></path>
-                  <path d="m9.5 14 2 2 3.5-4"></path>
-                </svg>
-                <span data-i="3de91186f4">Personalised Document Support</span>
-              </li>
-            </ul>
           </div>
         </div>
         <div className="v-schengen-panel" hidden={true}>
@@ -297,40 +303,26 @@ export default function Page() {
             </span>
           </a>
         </div>
-        <a aria-label="Scroll to the next section" className="v-scroll" data-i-aria-label="cc143a205b" href="#intro">
-          <span></span>
-        </a>
       </section>
-      <section aria-labelledby="intro-title" className="v-sec v-ivory" id="intro">
-        <div className="v-wrap v-intro">
-          <div className="v-intro-media v-reveal">
-            <figure className="v-intro-a">
-              <img alt="Clouds seen through an aircraft window" className="" decoding="async" height="1125" loading="lazy" sizes="(max-width: 900px) 90vw, 40vw" src={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=900&h=1125"} srcset={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="900" />
-            </figure>
-            <figure className="v-intro-b">
-              <img alt="The Grand Canal in Venice" className="" decoding="async" height="800" loading="lazy" sizes="(max-width: 900px) 50vw, 22vw" src={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=640&h=800"} srcset={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="640" />
-            </figure>
-            <p className="v-intro-tag">
-              <span className="notranslate">51.5° N</span>
-              {" "}
-              <span data-i="4c57f0c88d">London</span>
+      <section aria-labelledby="in-title" className="v3-sec v3-ivory v3-intro" id="intro">
+        <div className="v-wrap v3-intro-grid">
+          <div className="v3-intro-text">
+            <p className="v3-eye" data-i="1fcb97fc86">
+              <span aria-hidden="true" className="v3-rule"></span>
+              A considered way to travel
             </p>
-          </div>
-          <div className="v-intro-copy">
-            <p className="v-eyebrow">
-              <span className="v-num notranslate">01</span>
-              <span data-i="22fe8a8535">The TravelVista approach</span>
-            </p>
-            <h2 className="v-h2 v-reveal" data-i="48c09086c6" id="intro-title">
-              {"A London team that prepares the "}
-              <em>whole journey</em>
-              , not just the form.
+            <h2 className="v3-h2 v3-anim" data-i="e189d75ebc" id="in-title">
+              {"Travel should begin with "}
+              <em>excitement,</em>
+              {" not paperwork."}
             </h2>
-            <p className="v-reveal" data-i="ba0504fc4a">TravelVista helps people living in the UK apply for visas with confidence. We check what you need, prepare your complete application file, book your appointment and stay with you until the embassy decides.</p>
-            <p className="v-reveal" data-i="b1292b9f47">Alongside visas, we arrange the travel around them: flight and hotel reservations, travel insurance guidance and holidays planned around your dates. One team, one conversation, from your first question to your departure.</p>
-            <dl className="v-facts v-reveal">
+            <div className="v3-cols v3-anim">
+              <p data-i="6c4bcc7e65">TravelVista is a London consultancy for people who live in the UK and want to see more of the world.</p>
+              <p data-i="bc1fe36109">We prepare visa applications with care, book the appointments, and arrange the flights, hotels and holidays around them, so the only thing left to plan is the journey itself.</p>
+            </div>
+            <dl className="v3-facts v3-anim">
               <div>
-                <dt>£89</dt>
+                <dt className="notranslate">£89</dt>
                 <dd data-i="deec67e16a">Schengen service fee per applicant</dd>
               </div>
               <div>
@@ -342,211 +334,262 @@ export default function Page() {
                 <dd data-i="464d7dd682">Open every day of the week</dd>
               </div>
             </dl>
-            <a className="v-link" href="/about">
-              <span data-i="b7621fa692">More about TravelVista</span>
-              {" "}
-              <span aria-hidden="true" className="v-arr">
-                <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                  <path d="M5 12h14M13 6l6 6-6 6"></path>
-                </svg>
-              </span>
-            </a>
+          </div>
+          <div className="v3-intro-media">
+            <figure className="v3-fig v3-fig-a v3-mask">
+              <img alt="A traveller taking a photograph from a train window" className="" decoding="async" height="1200" loading="lazy" sizes="(max-width: 900px) 80vw, 34vw" src={"https://images.unsplash.com/photo-1479556234618-efd55bac0a26?auto=format&fit=crop&q=72&w=900&h=1200"} srcset={"https://images.unsplash.com/photo-1479556234618-efd55bac0a26?auto=format&fit=crop&q=72&w=480&h=640 480w, https://images.unsplash.com/photo-1479556234618-efd55bac0a26?auto=format&fit=crop&q=72&w=800&h=1067 800w, https://images.unsplash.com/photo-1479556234618-efd55bac0a26?auto=format&fit=crop&q=72&w=1200&h=1600 1200w, https://images.unsplash.com/photo-1479556234618-efd55bac0a26?auto=format&fit=crop&q=72&w=1600&h=2133 1600w"} width="900" />
+              <figcaption data-i="5a0258a662">On the way, not just there.</figcaption>
+            </figure>
+            <figure className="v3-fig v3-fig-b v3-mask">
+              <img alt="Planning a trip at a laptop with a view" className="" decoding="async" height="600" loading="lazy" sizes="(max-width: 900px) 60vw, 24vw" src={"https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=800&h=600"} srcset={"https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=480&h=360 480w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=800&h=600 800w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=1200&h=900 1200w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=1600&h=1200 1600w"} width="800" />
+            </figure>
           </div>
         </div>
       </section>
-      <section aria-labelledby="svc-title" className="v-sec v-white" id="services">
+      <section aria-labelledby="ds-title" className="v3-sec v3-dark v3-dest" id="destinations">
         <div className="v-wrap">
-          <div className="v-head-split">
-            <div>
-              <p className="v-eyebrow">
-                <span className="v-num notranslate">02</span>
-                <span data-i="2d323019d1">Our services</span>
-              </p>
-              <h2 className="v-h2 v-reveal" data-i="5b877fdee5" id="svc-title">
-                {"Every visa and booking, "}
-                <em>handled with care.</em>
-              </h2>
+          <div className="v3-head">
+            <p className="v3-eye v3-eye-gold" data-i="d319b915ac">
+              <span aria-hidden="true" className="v3-rule"></span>
+              Destinations
+            </p>
+            <h2 className="v3-h2 v3-anim" data-i="673a9eb07a" id="ds-title">
+              {"Choose a place. "}
+              <em>We’ll open the door.</em>
+            </h2>
+            <p className="v3-head-note v3-anim" data-i="9cfe6622eb">Each destination has its own guide: the visa you need, where to apply in the UK and how we help.</p>
+          </div>
+          <div className="v3-dest-grid">
+            <ol className="v3-dlist">
+              <li>
+                <a className="v3-di on" data-n="0" href="/france-visa-from-uk">
+                  <span className="v3-di-n notranslate">01</span>
+                  <span className="v3-di-name" data-i="e3772ac4b4">France</span>
+                  <span className="v3-di-line" data-i="34ed6c8fef">Paris, Provence and the Riviera</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="1" href="/italy-visa-from-uk">
+                  <span className="v3-di-n notranslate">02</span>
+                  <span className="v3-di-name" data-i="ad79ef0f07">Italy</span>
+                  <span className="v3-di-line" data-i="dd2b92d1f1">Venice, Rome and the Amalfi Coast</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="2" href="/spain-visa-from-uk">
+                  <span className="v3-di-n notranslate">03</span>
+                  <span className="v3-di-name" data-i="20a8df9b76">Spain</span>
+                  <span className="v3-di-line" data-i="4f6b4ba76c">Seville, Barcelona and the islands</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="3" href="/switzerland-visa-from-uk">
+                  <span className="v3-di-n notranslate">04</span>
+                  <span className="v3-di-name" data-i="77dcd849e5">Switzerland</span>
+                  <span className="v3-di-line" data-i="e4a660a413">Alpine railways and mountain lakes</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="4" href="/germany-visa-from-uk">
+                  <span className="v3-di-n notranslate">05</span>
+                  <span className="v3-di-name" data-i="17d53e0e6a">Germany</span>
+                  <span className="v3-di-line" data-i="6a7830ffc5">Berlin, Bavaria and the Rhine</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="5" href="/netherlands-visa-from-uk">
+                  <span className="v3-di-n notranslate">06</span>
+                  <span className="v3-di-name" data-i="fb61c8a8eb">Netherlands</span>
+                  <span className="v3-di-line" data-i="a5acb25af5">Canals, galleries and tulip fields</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="6" href="/greece-visa-from-uk">
+                  <span className="v3-di-n notranslate">07</span>
+                  <span className="v3-di-name" data-i="4902a456ca">Greece</span>
+                  <span className="v3-di-line" data-i="2958f6a8a5">Athens and the Cyclades</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="7" href="/portugal-visa-from-uk">
+                  <span className="v3-di-n notranslate">08</span>
+                  <span className="v3-di-name" data-i="a495190bcc">Portugal</span>
+                  <span className="v3-di-line" data-i="ef0c893fe7">Lisbon, Porto and the Algarve</span>
+                  <span className="v3-di-visa" data-i="e8f1e9ab2e">Schengen visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="8" href="/canada-visa-from-uk">
+                  <span className="v3-di-n notranslate">09</span>
+                  <span className="v3-di-name" data-i="cd6a7b8768">Canada</span>
+                  <span className="v3-di-line" data-i="09f16f5fed">From the Rockies to Québec</span>
+                  <span className="v3-di-visa" data-i="38a87b8a4f">Visitor visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="9" href="/usa-visa-from-uk">
+                  <span className="v3-di-n notranslate">10</span>
+                  <span className="v3-di-name" data-i="768685ca58">United States</span>
+                  <span className="v3-di-line" data-i="dc3de5ac5a">New York and far beyond</span>
+                  <span className="v3-di-visa" data-i="178bfe554d">B1/B2 visitor visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="10" href="/turkey-visa-from-uk">
+                  <span className="v3-di-n notranslate">11</span>
+                  <span className="v3-di-name" data-i="d7153e6702">Turkey</span>
+                  <span className="v3-di-line" data-i="6de457685c">Istanbul and Cappadocia</span>
+                  <span className="v3-di-visa" data-i="aea4bd6828">e-Visa or sticker visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a className="v3-di" data-n="11" href="/dubai-visa-from-uk">
+                  <span className="v3-di-n notranslate">12</span>
+                  <span className="v3-di-name" data-i="91310be76f">Dubai</span>
+                  <span className="v3-di-line" data-i="86ed90d8b9">The Gulf’s city of light</span>
+                  <span className="v3-di-visa" data-i="2a0874c664">UAE visit visa</span>
+                  <span aria-hidden="true" className="v3-di-img">
+                    <img alt="" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 78vw, 1px" src={"https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=800&h=1000"} srcset={"https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="800" />
+                  </span>
+                </a>
+              </li>
+            </ol>
+            <div aria-hidden="true" className="v3-dstage">
+              <figure aria-hidden="true" className="v3-dfig on" data-n="0">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="3d2ee8d989">
+                  <span>France</span>
+                  {" Paris, Provence and the Riviera"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="1">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="1b1dd6ea8a">
+                  <span>Italy</span>
+                  {" Venice, Rome and the Amalfi Coast"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="2">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1650322652704-b42b3a5e3e09?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="b034f69b91">
+                  <span>Spain</span>
+                  {" Seville, Barcelona and the islands"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="3">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1767697358965-658270af329a?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="438ba6a22f">
+                  <span>Switzerland</span>
+                  {" Alpine railways and mountain lakes"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="4">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1664980294789-a4650a3bb0e1?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="afce690a13">
+                  <span>Germany</span>
+                  {" Berlin, Bavaria and the Rhine"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="5">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1762829161330-fe3d7c0a77d5?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="e65ef7f707">
+                  <span>Netherlands</span>
+                  {" Canals, galleries and tulip fields"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="6">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="c759c5705e">
+                  <span>Greece</span>
+                  {" Athens and the Cyclades"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="7">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1785951470200-5f08a19ea863?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="6579993503">
+                  <span>Portugal</span>
+                  {" Lisbon, Porto and the Algarve"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="8">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="0bc4eba2a7">
+                  <span>Canada</span>
+                  {" From the Rockies to Québec"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="9">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="2c0675380a">
+                  <span>United States</span>
+                  {" New York and far beyond"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="10">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="4ae5924b90">
+                  <span>Turkey</span>
+                  {" Istanbul and Cappadocia"}
+                </figcaption>
+              </figure>
+              <figure aria-hidden="true" className="v3-dfig" data-n="11">
+                <img alt="" className="" decoding="async" height="1700" loading="lazy" sizes="(max-width: 900px) 1px, 46vw" src={"https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=1400&h=1700"} srcset={"https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=480&h=583 480w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=800&h=971 800w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=1200&h=1457 1200w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=1600&h=1943 1600w"} width="1400" />
+                <figcaption data-i="0110ff0ca0">
+                  <span>Dubai</span>
+                  {" The Gulf’s city of light"}
+                </figcaption>
+              </figure>
             </div>
-            <p className="v-head-note v-reveal" data-i="426cd31a6f">Choose a service to see what you need. Not sure which visa applies to you? Ask us. Your first consultation is free.</p>
           </div>
-          <div className="v-svc-grid">
-            <a className="v-svc v-reveal" href="/schengen-visa">
-              <span className="v-svc-img">
-                <img alt="The Eiffel Tower above the Seine in Paris" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1755817073913-deecc151b211?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">01</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="c873dfeff5">29 European countries · from £89 per applicant</span>
-                <span className="v-svc-t" data-i="56a7dd1d48">Schengen Visa Assistance</span>
-                <span className="v-svc-d" data-i="6156e6dd39">Complete file, appointment booking and a full document check.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-            <a className="v-svc v-reveal" href="/usa-visa-from-uk">
-              <span className="v-svc-img">
-                <img alt="Manhattan skyline at golden hour" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">02</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="178bfe554d">B1/B2 visitor visa</span>
-                <span className="v-svc-t" data-i="9780feb911">USA Visitor Visa</span>
-                <span className="v-svc-d" data-i="56e3da7c25">DS-160 form help, documents and interview preparation.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-            <a className="v-svc v-reveal" href="/canada-visa-from-uk">
-              <span className="v-svc-img">
-                <img alt="Moraine Lake in the Canadian Rockies" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">03</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="6d4f9739cf">{"Visitor visa & Super Visa"}</span>
-                <span className="v-svc-t" data-i="673b649f8a">Canada Visitor Visa</span>
-                <span className="v-svc-d" data-i="61441a726c">Guidance for visitors, parents and grandparents.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-            <a className="v-svc v-reveal" href="/turkey-visa-from-uk">
-              <span className="v-svc-img">
-                <img alt="Hot-air balloons over Cappadocia, Turkey" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1733303987597-7c8814ad3768?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">04</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="96101bbeb6">e-Visa or consulate visa</span>
-                <span className="v-svc-t" data-i="3016d3c9be">Turkey Visa Assistance</span>
-                <span className="v-svc-d" data-i="d9c2e82d93">We check which route applies to your passport.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-            <a className="v-svc v-reveal" href="/dubai-visa-from-uk">
-              <span className="v-svc-img">
-                <img alt="Dubai skyline with the Burj Khalifa at night" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1503178427426-413e153f886c?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">05</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="2a0874c664">UAE visit visa</span>
-                <span className="v-svc-t" data-i="11c0575b60">{"Dubai & UAE Visa"}</span>
-                <span className="v-svc-d" data-i="9fcbd578dc">The right UAE visit visa for your trip.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-            <a className="v-svc v-reveal" href="/holidays">
-              <span className="v-svc-img">
-                <img alt="Sunset above the clouds from an aircraft" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">06</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="210821f243">Planned around your visa</span>
-                <span className="v-svc-t" data-i="8f09d92cf8">{"Flight & Hotel Reservations"}</span>
-                <span className="v-svc-d" data-i="2980d89a0d">Bookings that match your application dates.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-            <a className="v-svc v-reveal" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20help%20with%20travel%20insurance%20for%20my%20trip." rel="noopener" target="_blank">
-              <span className="v-svc-img">
-                <img alt="Passport, camera and map ready for a trip" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">07</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="3a911b7ce5">For visas and trips</span>
-                <span className="v-svc-t" data-i="a08d84236e">Travel Insurance</span>
-                <span className="v-svc-d" data-i="704f10d781">Guidance on cover that meets your visa’s requirements.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-            <a className="v-svc v-reveal" href="/holidays">
-              <span className="v-svc-img">
-                <img alt="White and blue houses in Oia, Santorini" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 700px) 80vw, (max-width: 1100px) 45vw, 24vw" src={"https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=720&h=900"} srcset={"https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1563789031959-4c02bcb41319?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="720" />
-              </span>
-              {" "}
-              <span className="v-svc-num notranslate">08</span>
-              {" "}
-              <span className="v-svc-body">
-                <span className="v-svc-tag" data-i="66c5a4f26d">Tailored trips</span>
-                <span className="v-svc-t" data-i="9b6dca3063">International Holiday Packages</span>
-                <span className="v-svc-d" data-i="ce660534d1">Holidays planned around your dates and budget.</span>
-                <span className="v-svc-go">
-                  <span data-i="824d76b124">Learn more</span>
-                  {" "}
-                  <span aria-hidden="true" className="v-arr">
-                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
+          <a className="v3-link v3-link-light" href="#schengen">
+            <span data-i="6313aca837">Explore all 29 Schengen countries on the map</span>
+            {" "}
+            <span aria-hidden="true" className="v-arr">
+              <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </span>
+          </a>
         </div>
       </section>
       <section aria-labelledby="sch-title" className="v-sec v-deep" id="schengen">
@@ -872,187 +915,324 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section aria-labelledby="proc-title" className="v-sec v-ivory" id="process">
+      <section aria-labelledby="sv-title" className="v3-sec v3-ivory v3-services" id="services">
         <div className="v-wrap">
-          <div className="v-head-center">
-            <p className="v-eyebrow">
-              <span className="v-num notranslate">04</span>
-              <span data-i="815dc8567a">How TravelVista works</span>
+          <div className="v3-head v3-head-split">
+            <div>
+              <p className="v3-eye" data-i="9d37fddf96">
+                <span aria-hidden="true" className="v3-rule"></span>
+                Our visa services
+              </p>
+              <h2 className="v3-h2 v3-anim" data-i="ba9933e6d9" id="sv-title">
+                {"Expert help, "}
+                <em>quietly delivered.</em>
+              </h2>
+            </div>
+            <p className="v3-head-note v3-anim" data-i="267a8cbe8b">We prepare complete applications and arrange the travel around them. The embassy or consulate makes every visa decision; our role is to make your application clear, complete and on time.</p>
+          </div>
+          <div className="v3-chaps">
+            <article className="v3-chap">
+              <figure className="v3-chap-img v3-mask">
+                <img alt="Aircraft wing above clouds and green land" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 100vw, 58vw" src={"https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=1400&h=1000"} srcset={"https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=480&h=343 480w, https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=800&h=571 800w, https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=1200&h=857 1200w, https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=1600&h=1143 1600w"} width="1400" />
+              </figure>
+              <div className="v3-chap-text">
+                <p className="v3-chap-n notranslate">01</p>
+                <p className="v3-chap-tag" data-i="c873dfeff5">29 European countries · from £89 per applicant</p>
+                <h3 data-i="56a7dd1d48">Schengen Visa Assistance</h3>
+                <p data-i="c62f24fa7a">One application opens 29 European countries. We confirm where you should apply, prepare your complete file, book your appointment and check every document before you go.</p>
+                <div className="v3-chap-cta">
+                  <a className="v3-btn v3-btn-dark" href="/schengen-visa">
+                    <span data-i="2c7c2bf3f1">Explore Schengen visas</span>
+                    {" "}
+                    <span aria-hidden="true" className="v-arr">
+                      <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                      </svg>
+                    </span>
+                  </a>
+                  <a className="v3-link" data-i="d55ae64f08" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20help%20with%20a%20Schengen%20visa." rel="noopener" target="_blank">Enquire on WhatsApp</a>
+                </div>
+              </div>
+            </article>
+            <article className="v3-chap v3-chap-r">
+              <figure className="v3-chap-img v3-mask">
+                <img alt="Manhattan skyline at golden hour" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 100vw, 58vw" src={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1400&h=1000"} srcset={"https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=480&h=343 480w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=800&h=571 800w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1200&h=857 1200w, https://images.unsplash.com/photo-1578771607806-a34b27022297?auto=format&fit=crop&q=72&w=1600&h=1143 1600w"} width="1400" />
+              </figure>
+              <div className="v3-chap-text">
+                <p className="v3-chap-n notranslate">02</p>
+                <p className="v3-chap-tag" data-i="178bfe554d">B1/B2 visitor visa</p>
+                <h3 data-i="8beb43f1d0">USA Visa Assistance</h3>
+                <p data-i="aecae2d5f7">Help with the US visitor visa: the DS-160 form, your documents and preparation for your interview at the US Embassy in London.</p>
+                <div className="v3-chap-cta">
+                  <a className="v3-btn v3-btn-dark" href="/usa-visa-from-uk">
+                    <span data-i="5cffb98465">Explore USA visas</span>
+                    {" "}
+                    <span aria-hidden="true" className="v-arr">
+                      <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                      </svg>
+                    </span>
+                  </a>
+                  <a className="v3-link" data-i="d55ae64f08" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20help%20with%20a%20USA%20visitor%20visa." rel="noopener" target="_blank">Enquire on WhatsApp</a>
+                </div>
+              </div>
+            </article>
+            <article className="v3-chap">
+              <figure className="v3-chap-img v3-mask">
+                <img alt="Moraine Lake in the Canadian Rockies" className="" decoding="async" height="1000" loading="lazy" sizes="(max-width: 900px) 100vw, 58vw" src={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1400&h=1000"} srcset={"https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=480&h=343 480w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=800&h=571 800w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1200&h=857 1200w, https://images.unsplash.com/photo-1562375121-ea1bc3e8fc10?auto=format&fit=crop&q=72&w=1600&h=1143 1600w"} width="1400" />
+              </figure>
+              <div className="v3-chap-text">
+                <p className="v3-chap-n notranslate">03</p>
+                <p className="v3-chap-tag" data-i="ec56105050">Visitor visa and Super Visa</p>
+                <h3 data-i="2cf9d9264b">Canada Visa Assistance</h3>
+                <p data-i="eaea0b46a9">Visitor visa and Super Visa applications prepared with care, from the online application to giving your biometrics at a visa application centre.</p>
+                <div className="v3-chap-cta">
+                  <a className="v3-btn v3-btn-dark" href="/canada-visa-from-uk">
+                    <span data-i="5b8233616f">Explore Canada visas</span>
+                    {" "}
+                    <span aria-hidden="true" className="v-arr">
+                      <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                      </svg>
+                    </span>
+                  </a>
+                  <a className="v3-link" data-i="d55ae64f08" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20help%20with%20a%20Canada%20visa." rel="noopener" target="_blank">Enquire on WhatsApp</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <ul className="v3-svcs">
+            <li className="v3-svc">
+              <span className="v3-svc-n notranslate">04</span>
+              <div>
+                <h3 data-i="557c552673">UK Visa Consultancy</h3>
+                <p data-i="9fdee7ba5b">Guidance and application support for people applying for a UK visa, explained in plain language.</p>
+                <a className="v3-link" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20advice%20about%20a%20UK%20visa." rel="noopener" target="_blank">
+                  <span data-i="d55ae64f08">Enquire on WhatsApp</span>
+                  {" "}
+                  <span aria-hidden="true" className="v-arr">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li className="v3-svc">
+              <span className="v3-svc-n notranslate">05</span>
+              <div>
+                <h3 data-i="c2ba1ade48">Visa Appointment Management</h3>
+                <p data-i="c8885ad0a7">We book the earliest appointment the visa centre offers and keep you informed of every date and change.</p>
+                <a className="v3-link" href="/appointment-updates">
+                  <span data-i="824d76b124">Learn more</span>
+                  {" "}
+                  <span aria-hidden="true" className="v-arr">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li className="v3-svc">
+              <span className="v3-svc-n notranslate">06</span>
+              <div>
+                <h3 data-i="e17313ef16">Document Preparation</h3>
+                <p data-i="e9cfff5321">Application forms, cover letters and travel plans, with every document checked in the order the visa centre expects.</p>
+                <a className="v3-link" href="/document-checklist">
+                  <span data-i="824d76b124">Learn more</span>
+                  {" "}
+                  <span aria-hidden="true" className="v-arr">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li className="v3-svc">
+              <span className="v3-svc-n notranslate">07</span>
+              <div>
+                <h3 data-i="a08d84236e">Travel Insurance</h3>
+                <p data-i="5fd6825945">Guidance on travel medical insurance that meets visa requirements, such as the €30,000 cover needed for a Schengen visa.</p>
+                <a className="v3-link" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20guidance%20on%20travel%20insurance%20for%20my%20visa." rel="noopener" target="_blank">
+                  <span data-i="d55ae64f08">Enquire on WhatsApp</span>
+                  {" "}
+                  <span aria-hidden="true" className="v-arr">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li className="v3-svc">
+              <span className="v3-svc-n notranslate">08</span>
+              <div>
+                <h3 data-i="8f09d92cf8">{"Flight & Hotel Reservations"}</h3>
+                <p data-i="ed38cdfc49">Flight and hotel reservations for your application, and bookings for the trip itself.</p>
+                <a className="v3-link" href="/holidays">
+                  <span data-i="824d76b124">Learn more</span>
+                  {" "}
+                  <span aria-hidden="true" className="v-arr">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </li>
+            <li className="v3-svc">
+              <span className="v3-svc-n notranslate">09</span>
+              <div>
+                <h3 data-i="9b6dca3063">International Holiday Packages</h3>
+                <p data-i="5374b8b1eb">Holidays planned around your dates and budget, from city breaks to longer journeys.</p>
+                <a className="v3-link" href="/holidays">
+                  <span data-i="824d76b124">Learn more</span>
+                  {" "}
+                  <span aria-hidden="true" className="v-arr">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section aria-labelledby="xp-title" className="v3-sec v3-deep v3-xp">
+        <div className="v-wrap">
+          <div className="v3-head">
+            <p className="v3-eye v3-eye-gold" data-i="98c6e0880a">
+              <span aria-hidden="true" className="v3-rule"></span>
+              The TravelVista journey
             </p>
-            <h2 className="v-h2 v-reveal" data-i="b6dd6e5a59" id="proc-title">
-              {"Five steps from "}
-              <em>first question</em>
-              {" to visa decision."}
+            <h2 className="v3-h2 v3-h2-xl v3-anim" data-i="84e57845b8" id="xp-title">
+              {"It’s more than reaching a destination. "}
+              <em>It’s about enjoying the journey.</em>
             </h2>
           </div>
-          <div className="v-steps-wrap">
-            <svg aria-hidden="true" className="v-steps-line" preserveAspectRatio="none" viewBox="0 0 1000 40">
-              <path className="v-sl-bg" d="M0 20 H1000"></path>
-              <path className="v-sl-fg" d="M0 20 H1000" pathLength="1"></path>
-            </svg>
-            <ol className="v-steps">
-              <li className="v-step" style={{ "--i": "0" }}>
-                <span className="v-step-node">
-                  <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                    <path d="M4 5h16v11H9l-5 4z"></path>
-                    <path d="M8 9.5h8M8 12.5h5"></path>
-                  </svg>
-                </span>
-                {" "}
-                <span className="v-step-n notranslate">01</span>
-                <h3 data-i="38c54d9dca">Initial Consultation</h3>
-                <p data-i="b4656e98cc">Tell us your passport, UK status, destination and travel dates on WhatsApp or by email. The first consultation is free.</p>
+          <div className="v3-xp-grid">
+            <div aria-hidden="true" className="v3-xp-stage">
+              <figure className="v3-xp-fig on" data-n="0">
+                <img alt="Planning a trip at a laptop with a view" className="" decoding="async" height="1500" loading="lazy" sizes="(max-width: 900px) 100vw, 46vw" src={"https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=1200&h=1500"} srcset={"https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="1200" />
+              </figure>
+              <figure className="v3-xp-fig" data-n="1">
+                <img alt="Passport, camera and map ready for a trip" className="" decoding="async" height="1500" loading="lazy" sizes="(max-width: 900px) 100vw, 46vw" src={"https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=1200&h=1500"} srcset={"https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="1200" />
+              </figure>
+              <figure className="v3-xp-fig" data-n="2">
+                <img alt="A traveller walking through a bright airport terminal" className="" decoding="async" height="1500" loading="lazy" sizes="(max-width: 900px) 100vw, 46vw" src={"https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=1200&h=1500"} srcset={"https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="1200" />
+              </figure>
+              <figure className="v3-xp-fig" data-n="3">
+                <img alt="An aircraft seen through an airport window" className="" decoding="async" height="1500" loading="lazy" sizes="(max-width: 900px) 100vw, 46vw" src={"https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=1200&h=1500"} srcset={"https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="1200" />
+              </figure>
+              <figure className="v3-xp-fig" data-n="4">
+                <img alt="Clouds seen through an aircraft window" className="" decoding="async" height="1500" loading="lazy" sizes="(max-width: 900px) 100vw, 46vw" src={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1200&h=1500"} srcset={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=480&h=600 480w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=800&h=1000 800w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1200&h=1500 1200w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1600&h=2000 1600w"} width="1200" />
+              </figure>
+            </div>
+            <ol className="v3-xp-steps">
+              <li className="v3-xp-step on" data-n="0">
+                <span className="v3-xp-n notranslate">01</span>
+                <h3 data-i="48f0bae984">A conversation first</h3>
+                <p data-i="988f0ea4a4">Tell us your passport, UK status and destination. We tell you which visa you need and what it involves, free of charge.</p>
+                <figure aria-hidden="true" className="v3-xp-mob">
+                  <img alt="" className="" decoding="async" height="600" loading="lazy" sizes="(max-width: 900px) 92vw, 1px" src={"https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=900&h=600"} srcset={"https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=480&h=320 480w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=800&h=533 800w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=1200&h=800 1200w, https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?auto=format&fit=crop&q=72&w=1600&h=1067 1600w"} width="900" />
+                </figure>
               </li>
-              <li className="v-step" style={{ "--i": "1" }}>
-                <span className="v-step-node">
-                  <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                    <path d="M7 3h7l5 5v13H7z"></path>
-                    <path d="M14 3v5h5"></path>
-                    <path d="m9.5 14 2 2 3.5-4"></path>
-                  </svg>
-                </span>
-                {" "}
-                <span className="v-step-n notranslate">02</span>
-                <h3 data-i="b0a19fbc2f">Document Assessment</h3>
-                <p data-i="a5b8405bc5">We confirm which visa you need and send a document checklist made for your case, then review everything you send.</p>
+              <li className="v3-xp-step" data-n="1">
+                <span className="v3-xp-n notranslate">02</span>
+                <h3 data-i="9ef83195cc">Your file, prepared</h3>
+                <p data-i="c897873298">We send a document list made for your situation, then check everything you send and prepare the forms, cover letter and travel plan.</p>
+                <figure aria-hidden="true" className="v3-xp-mob">
+                  <img alt="" className="" decoding="async" height="600" loading="lazy" sizes="(max-width: 900px) 92vw, 1px" src={"https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=900&h=600"} srcset={"https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=480&h=320 480w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=800&h=533 800w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=1200&h=800 1200w, https://images.unsplash.com/photo-1646303297330-17073f7823c3?auto=format&fit=crop&q=72&w=1600&h=1067 1600w"} width="900" />
+                </figure>
               </li>
-              <li className="v-step" style={{ "--i": "2" }}>
-                <span className="v-step-node">
-                  <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                    <rect height="15.5" rx="1.5" width="17" x="3.5" y="5"></rect>
-                    <path d="M3.5 10h17M8 3v4M16 3v4"></path>
-                    <path d="m9 15 2 2 4-4"></path>
-                  </svg>
-                </span>
-                {" "}
-                <span className="v-step-n notranslate">03</span>
-                <h3 data-i="f15ad95943">Appointment Assistance</h3>
-                <p data-i="3439b67853">We book the earliest appointment the visa centre offers and send you the date and time. Visa centres set availability, and it can change daily.</p>
+              <li className="v3-xp-step" data-n="2">
+                <span className="v3-xp-n notranslate">03</span>
+                <h3 data-i="280607f8a5">Your appointment, arranged</h3>
+                <p data-i="5a2ea3598c">We book the earliest appointment the visa centre offers and send you the date, the time and what to bring.</p>
+                <figure aria-hidden="true" className="v3-xp-mob">
+                  <img alt="" className="" decoding="async" height="600" loading="lazy" sizes="(max-width: 900px) 92vw, 1px" src={"https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=900&h=600"} srcset={"https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=480&h=320 480w, https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=800&h=533 800w, https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=1200&h=800 1200w, https://images.unsplash.com/photo-1687992193298-af75164a10bd?auto=format&fit=crop&q=72&w=1600&h=1067 1600w"} width="900" />
+                </figure>
               </li>
-              <li className="v-step" style={{ "--i": "3" }}>
-                <span className="v-step-node">
-                  <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                    <path d="M3 6h6l2 2h10v11H3z"></path>
-                    <path d="M8 13h8M8 16h5"></path>
-                  </svg>
-                </span>
-                {" "}
-                <span className="v-step-n notranslate">04</span>
-                <h3 data-i="f3613a4d49">Application Preparation</h3>
-                <p data-i="7a4a90a445">We complete your application form, write your cover letter, arrange your travel plan and check every document.</p>
+              <li className="v3-xp-step" data-n="3">
+                <span className="v3-xp-n notranslate">04</span>
+                <h3 data-i="f23c185d14">Ready to go</h3>
+                <p data-i="88bb9e0c24">Flight and hotel reservations, travel insurance guidance and holidays, planned around the dates on your visa.</p>
+                <figure aria-hidden="true" className="v3-xp-mob">
+                  <img alt="" className="" decoding="async" height="600" loading="lazy" sizes="(max-width: 900px) 92vw, 1px" src={"https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=900&h=600"} srcset={"https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=480&h=320 480w, https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=800&h=533 800w, https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=1200&h=800 1200w, https://images.unsplash.com/photo-1672603585878-a22767b3a97c?auto=format&fit=crop&q=72&w=1600&h=1067 1600w"} width="900" />
+                </figure>
               </li>
-              <li className="v-step" style={{ "--i": "4" }}>
-                <span className="v-step-node">
-                  <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                    <path d="M4 13v-1a8 8 0 0 1 16 0v1"></path>
-                    <rect height="6" rx="1" width="4" x="3" y="13"></rect>
-                    <rect height="6" rx="1" width="4" x="17" y="13"></rect>
-                    <path d="M19 19c0 1.5-2 2.5-5 2.5"></path>
-                  </svg>
-                </span>
-                {" "}
-                <span className="v-step-n notranslate">05</span>
-                <h3 data-i="4998d71127">Ongoing Customer Support</h3>
-                <p data-i="3e30b86c06">You attend with a complete, checked file. We help you follow your application until the decision.</p>
+              <li className="v3-xp-step" data-n="4">
+                <span className="v3-xp-n notranslate">05</span>
+                <h3 data-i="eec75cd8c6">With you until the decision</h3>
+                <p data-i="d91d8613ae">We answer your questions until the embassy decides, with every date and next step in writing.</p>
+                <figure aria-hidden="true" className="v3-xp-mob">
+                  <img alt="" className="" decoding="async" height="600" loading="lazy" sizes="(max-width: 900px) 92vw, 1px" src={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=900&h=600"} srcset={"https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=480&h=320 480w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=800&h=533 800w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1200&h=800 1200w, https://images.unsplash.com/photo-1515102597191-fe409fca9804?auto=format&fit=crop&q=72&w=1600&h=1067 1600w"} width="900" />
+                </figure>
               </li>
             </ol>
           </div>
         </div>
       </section>
-      <section aria-labelledby="why-title" className="v-sec v-white" id="why">
-        <div className="v-wrap v-why">
-          <div className="v-why-side">
-            <p className="v-eyebrow">
-              <span className="v-num notranslate">05</span>
-              <span data-i="7dfac0dfb4">Why choose TravelVista</span>
-            </p>
-            <h2 className="v-h2 v-reveal" data-i="a62b95a97e" id="why-title">
-              {"Careful work. Honest fees. "}
-              <em>A real team in London.</em>
-            </h2>
-            <p className="v-why-note v-reveal" data-i="75f8843f74">No one can guarantee a visa. The embassy or consulate makes every decision. What we promise is a complete, correct application and clear answers at every step.</p>
-            <figure className="v-why-img v-reveal">
-              <img alt="London skyline from Southwark Bridge" className="" decoding="async" height="520" loading="lazy" sizes="(max-width: 900px) 90vw, 36vw" src={"https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=760&h=520"} srcset={"https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=480&h=328 480w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=800&h=547 800w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1200&h=821 1200w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1600&h=1095 1600w"} width="760" />
+      <section aria-labelledby="wy-title" className="v3-sec v3-ivory v3-why">
+        <div className="v-wrap v3-why-grid">
+          <div className="v3-why-media">
+            <figure className="v3-fig v3-mask v3-why-a">
+              <img alt="London skyline from Southwark Bridge" className="" decoding="async" height="1300" loading="lazy" sizes="(max-width: 900px) 92vw, 40vw" src={"https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1000&h=1300"} srcset={"https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=480&h=624 480w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=800&h=1040 800w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1200&h=1560 1200w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1600&h=2080 1600w"} width="1000" />
               <figcaption data-i="d2e3422483">London, where our team is based.</figcaption>
             </figure>
+            <figure className="v3-fig v3-mask v3-why-b">
+              <img alt="The Grand Canal in Venice" className="" decoding="async" height="520" loading="lazy" sizes="(max-width: 900px) 60vw, 22vw" src={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=700&h=520"} srcset={"https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=480&h=357 480w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=800&h=594 800w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1200&h=891 1200w, https://images.unsplash.com/photo-1545157000-85f257f7b040?auto=format&fit=crop&q=72&w=1600&h=1189 1600w"} width="700" />
+            </figure>
           </div>
-          <ol className="v-why-list">
-            <li className="v-why-i v-reveal">
-              <span className="v-why-ic">
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="22">
-                  <circle cx="12" cy="12" r="9"></circle>
-                  <path d="m15.5 8.5-2 5-5 2 2-5z"></path>
-                </svg>
-              </span>
-              <div>
-                <h3 data-i="736f287195">Professional visa guidance</h3>
-                <p data-i="b7c4439564">We check which visa you need, which country to apply to and what the embassy expects to see.</p>
-              </div>
-            </li>
-            <li className="v-why-i v-reveal">
-              <span className="v-why-ic">
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="22">
-                  <circle cx="12" cy="8" r="4"></circle>
-                  <path d="M4 21c1-4.5 4.2-6.5 8-6.5s7 2 8 6.5"></path>
-                </svg>
-              </span>
-              <div>
-                <h3 data-i="b55832d239">Personalised customer assistance</h3>
+          <div className="v3-why-text">
+            <p className="v3-eye" data-i="abd82d4d01">
+              <span aria-hidden="true" className="v3-rule"></span>
+              Why TravelVista
+            </p>
+            <h2 className="v3-h2 v3-anim" data-i="81d021cac8" id="wy-title">
+              {"Careful work, honest fees and "}
+              <em>a real team in London.</em>
+            </h2>
+            <p className="v3-why-note v3-anim" data-i="b57c39104d">No one can guarantee a visa. The embassy or consulate makes every decision. What we promise is a complete, checked application and clear answers at every step.</p>
+            <ol className="v3-why-list">
+              <li className="v3-why-i">
+                <span className="notranslate">01</span>
+                <h3 data-i="0a889b2639">Personalised assistance</h3>
                 <p data-i="3aba7bac53">One team follows your case from the first message to the decision, in plain English and in your language.</p>
-              </div>
-            </li>
-            <li className="v-why-i v-reveal">
-              <span className="v-why-ic">
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="22">
-                  <path d="M16 6.5A4 4 0 0 0 9 9v11"></path>
-                  <path d="M6 20h12M6 13h8"></path>
-                </svg>
-              </span>
-              <div>
-                <h3 data-i="5a5744e18d">Transparent service charges</h3>
-                <p data-i="f286ec1f58">£89 per applicant for our Schengen package. Official visa and visa centre fees are shown separately, never hidden.</p>
-              </div>
-            </li>
-            <li className="v-why-i v-reveal">
-              <span className="v-why-ic">
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="22">
-                  <path d="M7 3h7l5 5v13H7z"></path>
-                  <path d="M14 3v5h5"></path>
-                  <path d="m9.5 14 2 2 3.5-4"></path>
-                </svg>
-              </span>
-              <div>
-                <h3 data-i="476002f0ce">Document preparation</h3>
-                <p data-i="977906507b">Application form, cover letter, travel plan and a full check of every document, in the order the visa centre expects.</p>
-              </div>
-            </li>
-            <li className="v-why-i v-reveal">
-              <span className="v-why-ic">
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="22">
-                  <path d="M21 15.5v-2l-8-5V3.6a1.6 1.6 0 0 0-3.2 0V8.5l-8 5v2l8-2.5V18l-2.2 1.6V21l3.8-1.1 3.8 1.1v-1.4L13 18v-5z"></path>
-                </svg>
-              </span>
-              <div>
-                <h3 data-i="18ab901890">Travel planning support</h3>
-                <p data-i="ee92ea1d4f">Flight and hotel reservations, insurance guidance and holidays, planned around your visa dates.</p>
-              </div>
-            </li>
-            <li className="v-why-i v-reveal">
-              <span className="v-why-ic">
-                <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="22">
-                  <circle cx="12" cy="12" r="9"></circle>
-                  <path d="M12 7v5l3 2"></path>
-                </svg>
-              </span>
-              <div>
+              </li>
+              <li className="v3-why-i">
+                <span className="notranslate">02</span>
+                <h3 data-i="7ab523ae67">Professional documentation support</h3>
+                <p data-i="7d6507134e">Application forms, cover letters and a full check of every document, in the order the visa centre expects.</p>
+              </li>
+              <li className="v3-why-i">
+                <span className="notranslate">03</span>
+                <h3 data-i="ec97cb75d6">Appointment management</h3>
+                <p data-i="e8bf9f0394">We book your appointment at the right visa centre and keep you updated on every date.</p>
+              </li>
+              <li className="v3-why-i">
+                <span className="notranslate">04</span>
                 <h3 data-i="78fd580119">Clear communication</h3>
                 <p data-i="6da9521f51">Replies within 2 hours in office hours, 7 days a week, with every date and next step in writing.</p>
-              </div>
-            </li>
-          </ol>
+              </li>
+              <li className="v3-why-i">
+                <span className="notranslate">05</span>
+                <h3 data-i="9c3ad890f0">Dedicated customer support</h3>
+                <p data-i="aa178619fe">Questions answered by WhatsApp, email or phone, until the embassy or consulate makes its decision.</p>
+              </li>
+              <li className="v3-why-i">
+                <span className="notranslate">06</span>
+                <h3 data-i="831861d456">Transparent service information</h3>
+                <p data-i="f286ec1f58">£89 per applicant for our Schengen package. Official visa and visa centre fees are shown separately, never hidden.</p>
+              </li>
+            </ol>
+          </div>
         </div>
       </section>
-      <section aria-labelledby="rv-title" className="v-sec v-dark" id="reviews">
+      <section aria-labelledby="rv-title" className="v-sec v-dark v3-stories" id="reviews">
         <div className="v-wrap">
           <div className="v-head-split v-head-dark">
             <div>
@@ -1468,6 +1648,33 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section aria-labelledby="at-title" className="v3-sec v3-white v3-aboutt">
+        <div className="v-wrap v3-aboutt-grid">
+          <figure className="v3-fig v3-mask">
+            <img alt="London skyline from Southwark Bridge" className="" decoding="async" height="900" loading="lazy" sizes="(max-width: 900px) 100vw, 55vw" src={"https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1400&h=900"} srcset={"https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=480&h=309 480w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=800&h=514 800w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1200&h=771 1200w, https://images.unsplash.com/photo-1511882018853-d4006256d2e6?auto=format&fit=crop&q=72&w=1600&h=1029 1600w"} width="1400" />
+          </figure>
+          <div>
+            <p className="v3-eye" data-i="0d28c1d5fa">
+              <span aria-hidden="true" className="v3-rule"></span>
+              About TravelVista
+            </p>
+            <h2 className="v3-h2 v3-anim" data-i="4a71abac23" id="at-title">
+              {"A London consultancy, "}
+              <em>built on care.</em>
+            </h2>
+            <p className="v3-anim" data-i="b6a772cf51">TravelVista Ltd is a UK company that helps people who live in the UK apply for visas and plan their travel. Our team works from London and replies within 2 hours in office hours, seven days a week.</p>
+            <a className="v3-link" href="/about">
+              <span data-i="69126e9d4a">Our story and approach</span>
+              {" "}
+              <span aria-hidden="true" className="v-arr">
+                <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
       <section aria-labelledby="faq-title" className="v-sec v-white" id="faq">
         <div className="v-wrap v-faq">
           <div className="v-faq-side">
@@ -1540,26 +1747,23 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section aria-labelledby="cta-title" className="v-cta">
-        <div className="v-cta-img">
-          <img alt="Aircraft wing above clouds and green land" className="" decoding="async" height="1080" loading="lazy" sizes="100vw" src={"https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=1920&h=1080"} srcset={"https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=480&h=270 480w, https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=800&h=450 800w, https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=1200&h=675 1200w, https://images.unsplash.com/photo-1768069932751-a070c2ef5670?auto=format&fit=crop&q=72&w=1600&h=900 1600w"} width="1920" />
+      <section aria-labelledby="ct-title" className="v3-cta">
+        <div aria-hidden="true" className="v3-cta-media">
+          <img alt="" className="" decoding="async" height="1100" loading="lazy" sizes="100vw" src={"https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=2000&h=1100"} srcset={"https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=480&h=264 480w, https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=800&h=440 800w, https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=1200&h=660 1200w, https://images.unsplash.com/photo-1631742272329-eeca83cb6886?auto=format&fit=crop&q=72&w=1600&h=880 1600w"} width="2000" />
         </div>
-        <div className="v-wrap v-cta-in">
-          <p className="v-eyebrow v-eyebrow-gold" data-i="f1848cc5e8">
-            <span aria-hidden="true" className="v-rule"></span>
-            TravelVista Ltd · Your Journey, Our Priority
+        <div className="v-wrap v3-cta-in">
+          <p className="v3-eye v3-eye-gold" data-i="66cac64f03">
+            <span aria-hidden="true" className="v3-rule"></span>
+            Begin your journey
           </p>
-          <h2 className="v-h1 v-reveal" id="cta-title">
-            <span className="v-line" data-i="9601cc1279">Your Next Journey</span>
-            {" "}
-            <span className="v-line v-serif" data-i="38db35e833">Starts Here.</span>
+          <h2 className="v3-h2 v3-h2-xl v3-anim" data-i="5602ee7931" id="ct-title">
+            {"Your next journey "}
+            <em>starts with a conversation.</em>
           </h2>
-          <p className="v-lead v-reveal" data-i="127d03e738">Let TravelVista help you prepare for your next international journey.</p>
-          <div className="v-ctas v-reveal">
-            <a className="v-btn v-btn-white" data-i="f4a1846260" href="/contact">Speak to Our Team</a>
-            {" "}
-            <a className="v-btn v-btn-red" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20a%20free%20visa%20consultation." rel="noopener" target="_blank">
-              <span data-i="43bcbb7183">Get Free Consultation</span>
+          <p className="v3-anim" data-i="f342230778">Tell us where you are going. Your first consultation is free, and we reply within 2 hours in office hours.</p>
+          <div className="v3-ctas">
+            <a className="v3-btn v3-btn-light" href="https://wa.me/447862609755?text=Hello%20TravelVista%2C%20I%20would%20like%20a%20free%20visa%20consultation." rel="noopener" target="_blank">
+              <span data-i="586e403157">Free Consultation</span>
               {" "}
               <span aria-hidden="true" className="v-arr">
                 <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
@@ -1567,11 +1771,12 @@ export default function Page() {
                 </svg>
               </span>
             </a>
+            <a className="v3-btn v3-btn-ghost" data-i="4832e45812" href="/contact">Contact us</a>
           </div>
         </div>
       </section>
       </main>
-      <Footer2 />
+      <Footer3 />
     </>
   );
 }

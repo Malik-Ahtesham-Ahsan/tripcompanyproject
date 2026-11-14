@@ -1,7 +1,7 @@
 import Script from "next/script";
 
-// Site footer and floating WhatsApp button (v2i).
-export default function Footer2() {
+// Site footer and floating WhatsApp button (v3i).
+export default function Footer3() {
   return (
     <>
       <footer className="v-foot">
@@ -188,6 +188,7 @@ export default function Footer2() {
         <span data-i="3aba7bad7f">WhatsApp us</span>
       </a>
       <Script src="/assets/v2/v2.js?v=49da9738" strategy="afterInteractive" />
+      <Script src="/assets/v3/v3.js?v=9ee57d3a" strategy="afterInteractive" />
     </>
   );
 }

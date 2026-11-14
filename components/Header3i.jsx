@@ -1,14 +1,17 @@
-// Site header (v2). `current` is the page file name, used to mark the active menu link.
+// Site header (v3i). `current` is the page file name, used to mark the active menu link.
 // The stylesheets for this page style are declared here and hoisted into <head> by React.
-export default function Header2({ current }) {
+export default function Header3i({ current }) {
   return (
     <>
       <link rel="preload" href="/assets/v2/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
       <link rel="preload" href="/assets/v2/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
       <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
-      <link rel="stylesheet" precedence="default" href="/assets/v2/shared.css?v=f74fe7be" />
+      <link rel="stylesheet" precedence="default" href="/assets/styles.css?v=b1df0bac" />
       <link rel="stylesheet" precedence="default" href="/assets/v2/v2.css?v=09a7cf4d" />
-      <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add(\"v2\");document.documentElement.classList.remove(\"v2-inner\")" }} />
+      <link rel="stylesheet" precedence="default" href="/assets/v2/pages.css?v=7e746097" />
+      <link rel="preload" href="/assets/v2/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
+      <link rel="stylesheet" precedence="default" href="/assets/v3/v3.css?v=59bae0c3" />
+      <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add(\"v2\",\"v2-inner\",\"v3\")" }} />
       <a className="skip" data-i="0a4470d64e" href="#main">Skip to content</a>
       <header className="site-header v-head">
         <div className="v-bar">
