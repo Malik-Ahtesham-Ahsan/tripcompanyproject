@@ -610,3 +610,20 @@ html[lang="ar"] .v-gl-c, html[lang="ur"] .v-gl-c, html[lang="hi"] .v-gl-c, html[
 .v-gl-city { display: inline-flex; align-items: center; gap: 5px; font: 500 .7rem/1 var(--f-body); color: #fff; white-space: nowrap;
   text-shadow: 0 0 4px rgba(4,8,16,.95), 0 1px 3px rgba(4,8,16,.9); }
 .v-gl-city::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px rgba(154,6,16,.85); flex: none; }
+
+/* globe: soft edges; when zoomed in the map turns into a faded, see-through backdrop behind the text */
+@property --gm { syntax: "<percentage>"; inherits: true; initial-value: 80%; }
+@property --gl { syntax: "<percentage>"; inherits: true; initial-value: 0%; }
+@property --go { syntax: "<number>"; inherits: true; initial-value: 1; }
+.v-globe { --gm: 80%; --gl: 0%; --go: 1; transition: --gm 1.1s var(--ease), --gl 1.1s var(--ease), --go 1.1s var(--ease); }
+.v-globe.near { --gm: 36%; --gl: 40%; --go: .74; }
+.v-globe.mid { --gm: 58%; --gl: 22%; --go: .85; }
+.v-globe-canvas, .v-globe-overlay {
+  -webkit-mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(90deg, transparent 0%, #000 var(--gl));
+  mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(90deg, transparent 0%, #000 var(--gl));
+  -webkit-mask-composite: source-in; mask-composite: intersect; }
+html[dir="rtl"] .v-globe-canvas, html[dir="rtl"] .v-globe-overlay {
+  -webkit-mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(270deg, transparent 0%, #000 var(--gl));
+  mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(270deg, transparent 0%, #000 var(--gl)); }
+.v-globe.ready .v-globe-canvas { opacity: var(--go); }
+@media (max-width: 1100px) { .v-globe.near { --gl: 0%; --gm: 40%; } .v-globe.mid { --gl: 0%; } }

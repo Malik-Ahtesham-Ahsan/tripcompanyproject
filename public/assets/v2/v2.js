@@ -235,16 +235,25 @@
     var ctl = g.controls();
     ctl.autoRotate = !reduce; ctl.autoRotateSpeed = .42; ctl.enableZoom = false; ctl.minDistance = 113; ctl.maxDistance = 520; ctl.enableDamping = true; ctl.dampingFactor = .08;
     var HOME = { lat: 36, lng: 2, altitude: small ? 2.5 : 2.25 };
-    g.pointOfView(HOME, 0);
+    if (reduce) g.pointOfView(HOME, 0);
+    else { g.pointOfView({ lat: HOME.lat + 8, lng: HOME.lng - 55, altitude: 3.9 }, 0); setTimeout(function () { g.pointOfView(HOME, 2800); }, 700); }
     host.addEventListener("pointerdown", function () { ctl.enableZoom = true; ctl.autoRotate = false; resumeLater(); });
     host.addEventListener("pointerleave", function () { ctl.enableZoom = false; if (!pinned) setHover(null); });
+    var zT = null, zIdle;
+    var zoomTo = function (alt, ms) { var p = g.pointOfView(); zT = Math.max(.14, Math.min(3.6, alt)); g.pointOfView({ lat: p.lat, lng: p.lng, altitude: zT }, ms); clearTimeout(zIdle); zIdle = setTimeout(function () { zT = null; }, ms + 150); };
+    host.addEventListener("wheel", function (e) {
+      if (!ctl.enableZoom) return;
+      e.preventDefault(); e.stopPropagation();
+      zoomTo((zT || g.pointOfView().altitude) * Math.exp(Math.max(-120, Math.min(120, e.deltaY)) * .0032), 520);
+      ctl.autoRotate = false; resumeLater();
+    }, { capture: true, passive: false });
     var rt; var resumeLater = function () { clearTimeout(rt); rt = setTimeout(function () { if (!pinned && !reduce) ctl.autoRotate = true; }, 6000); };
     // zoom buttons
     $$(".v-globe-ctrl button", gEl).forEach(function (b) {
       b.addEventListener("click", function () {
         var z = b.getAttribute("data-z"), p = g.pointOfView();
-        if (z === "reset") { unpin(); g.pointOfView(HOME, 1200); return; }
-        g.pointOfView({ lat: p.lat, lng: p.lng, altitude: Math.max(.14, Math.min(3.2, p.altitude * (z === "in" ? .62 : 1.6))) }, 600);
+        if (z === "reset") { unpin(); zT = null; g.pointOfView(HOME, 1600); return; }
+        zoomTo((zT || p.altitude) * (z === "in" ? .58 : 1.7), 950);
         ctl.autoRotate = false; resumeLater();
       });
     });
@@ -317,7 +326,7 @@
         if (p) r.pl.style.opacity = String(Math.min(1, Math.sin(Math.PI * Math.min(1, f * 1.02)) * 3));
         r.lab.classList.toggle("on", f > .82);
       });
-      if (frame++ % 2 === 0) layout(pov);
+      if (frame++ % 2 === 0) { layout(pov); gEl.classList.toggle("near", pov.altitude < 1.05); gEl.classList.toggle("mid", pov.altitude >= 1.05 && pov.altitude < 1.7); }
       requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
