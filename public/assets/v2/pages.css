@@ -212,3 +212,16 @@ html[dir="rtl"].v2-inner .faq summary::after { right: auto; left: 0; }
 .v2-inner .package-list svg { color: var(--gold); }
 .v2-inner .package .small, .v2-inner .package p { color: var(--slate); }
 .v2-inner .package-copy h2 { font-size: clamp(2rem, 1.3rem + 2.4vw, 3.2rem); }
+
+/* ---------- polish pass (inner pages) ---------- */
+.v2-inner .card, .v2-inner .ccard { transition: border-color .5s var(--ease), transform .7s var(--ease-out), box-shadow .7s var(--ease-out); }
+.v2-inner .card:hover, .v2-inner .ccard:hover { transform: translateY(-2px); border-color: rgba(154,6,16,.22); box-shadow: 0 22px 44px -32px rgba(8,15,28,.38); }
+.v2-inner .card img, .v2-inner .ccard img { transition: transform 1.4s var(--ease-out); }
+.v2-inner .card:hover img, .v2-inner .ccard:hover img { transform: scale(1.04); }
+.v2-inner .v-ph-img img { animation: v-kb 16s var(--ease) both; }
+.v2-inner .btn { transition: background-color .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease), transform .5s var(--ease-out); }
+.v2-inner .btn-primary { background: linear-gradient(180deg, #A50812, #8C0610); box-shadow: inset 0 1px 0 rgba(255,255,255,.12); }
+.v2-inner .btn-primary:hover { background: #7E050D; }
+.v2-inner .section-head h2, .v2-inner .content section > h2 { text-wrap: balance; }
+.v2-inner .content p, .v2-inner .section-head p { text-wrap: pretty; }
+@media (prefers-reduced-motion: reduce) { .v2-inner .v-ph-img img { animation: none; } }

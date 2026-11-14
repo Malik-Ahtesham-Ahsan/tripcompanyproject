@@ -187,7 +187,7 @@ export default function Footer2() {
         </svg>
         <span data-i="3aba7bad7f">WhatsApp us</span>
       </a>
-      <Script src="/assets/v2/v2.js" strategy="afterInteractive" />
+      <Script src="/assets/v2/v2.js?v=38a78d20" strategy="afterInteractive" />
     </>
   );
 }

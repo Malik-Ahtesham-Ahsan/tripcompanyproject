@@ -6,8 +6,8 @@ export default function Header2({ current }) {
       <link rel="preload" href="/assets/v2/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
       <link rel="preload" href="/assets/v2/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
       <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
-      <link rel="stylesheet" precedence="default" href="/assets/v2/shared.css" />
-      <link rel="stylesheet" precedence="default" href="/assets/v2/v2.css" />
+      <link rel="stylesheet" precedence="default" href="/assets/v2/shared.css?v=f74fe7be" />
+      <link rel="stylesheet" precedence="default" href="/assets/v2/v2.css?v=d7b737ad" />
       <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add(\"v2\");document.documentElement.classList.remove(\"v2-inner\")" }} />
       <a className="skip" data-i="0a4470d64e" href="#main">Skip to content</a>
       <header className="site-header v-head">

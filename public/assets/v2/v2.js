@@ -35,12 +35,45 @@
   }
 
   /* ---------------- reveal on scroll ---------------- */
+  // Content is only hidden for revealing once this script runs ("js" class), so it stays visible if scripts fail.
   var revealEls = $$(".v-reveal, .v-intro-media, .v-steps-wrap, .v-cta");
   if ("IntersectionObserver" in window && !reduce) {
+    document.documentElement.classList.add("js");
+    // section headings: words rise in one after another
+    $$(".v-sec .v-h2, .v-cta .v-h2").forEach(function (h) {
+      var n = 0, walk = function (node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (c) {
+          if (c.nodeType === 3) {
+            var parts = c.textContent.split(/(\s+)/), frag = document.createDocumentFragment();
+            parts.forEach(function (w) {
+              if (!w) return;
+              if (/^\s+$/.test(w)) { frag.appendChild(document.createTextNode(w)); return; }
+              var sp = document.createElement("span"); sp.className = "v-w"; sp.style.setProperty("--wi", n++); sp.textContent = w; frag.appendChild(sp);
+            });
+            c.parentNode.replaceChild(frag, c);
+          } else if (c.nodeType === 1 && !/^(BR|IMG|SVG)$/i.test(c.tagName)) walk(c);
+        });
+      };
+      walk(h);
+      // keep punctuation that follows an emphasised phrase on the same line (", not just the form")
+      $$(".v-w", h).forEach(function (w) {
+        var prev = w.previousSibling;
+        if (prev && prev.nodeType === 1 && !prev.classList.contains("v-w") && /^[,.;:!?)»”’]/.test(w.textContent)) {
+          var nw = document.createElement("span"); nw.className = "v-nw"; prev.parentNode.insertBefore(nw, prev); nw.appendChild(prev); nw.appendChild(w);
+        }
+      });
+      h.classList.add("v-split"); revealEls.push(h);
+    });
+    // siblings reveal in sequence rather than all at once
+    revealEls.forEach(function (el) {
+      if (!el.classList.contains("v-reveal") || !el.parentNode) return;
+      var sib = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.classList.contains("v-reveal"); });
+      el.style.transitionDelay = Math.min(sib.indexOf(el), 5) * 0.09 + "s";
+    });
     var ro = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } });
-    }, { threshold: .18, rootMargin: "0px 0px -6% 0px" });
-    revealEls.forEach(function (el, i) { el.style.transitionDelay = el.classList.contains("v-reveal") ? ((i % 3) * 0.08) + "s" : ""; ro.observe(el); });
+    }, { threshold: .12, rootMargin: "0px 0px -8% 0px" });
+    revealEls.forEach(function (el) { ro.observe(el); });
   } else revealEls.forEach(function (el) { el.classList.add("in"); });
 
   /* ---------------- hero search ---------------- */
@@ -200,6 +233,7 @@
   var build = function (countries, world) {
     var host = $(".v-globe-canvas", gEl), overlay = $(".v-globe-overlay", gEl), card = $(".v-gcard", gEl), panel = $(".v-schengen-panel");
     var small = window.innerWidth < 860;
+    var lite = small || (navigator.deviceMemory && navigator.deviceMemory <= 4) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
     var feats = countries.map(function (c) {
       var polys = c.p.map(function (r) { var ring = []; for (var i = 0; i + 1 < r.length; i += 2) ring.push([r[i + 1] / 100, r[i] / 100]); if (ring.length) ring.push(ring[0]); return [ring]; });
       return { type: "Feature", properties: { c: c, sch: SCH.indexOf(c.i) > -1 }, geometry: { type: "MultiPolygon", coordinates: polys } };
@@ -211,36 +245,39 @@
     var sz = size();
     var g = Globe({ animateIn: !reduce, rendererConfig: { antialias: true, alpha: true, powerPreference: "high-performance" } })(host)
       .width(sz.w).height(sz.h).backgroundColor("rgba(0,0,0,0)")
-      .globeImageUrl(asset() + (small ? "v2/img/earth-day-2k.jpg" : "v2/img/earth-day.jpg"))
-      .bumpImageUrl(asset() + "v2/img/earth-bump.jpg")
-      .showAtmosphere(true).atmosphereColor("#6d9bff").atmosphereAltitude(.19)
-      .showGraticules(true)
+      .globeImageUrl(asset() + (lite ? "v2/img/earth-day-2k.jpg" : "v2/img/earth-day.jpg"))
+      .bumpImageUrl(lite ? null : asset() + "v2/img/earth-bump.jpg")
+      .showAtmosphere(true).atmosphereColor("#7ea6ff").atmosphereAltitude(.24)
+      .showGraticules(!lite)
       .polygonsData(feats)
       .polygonAltitude(function (f) { return f === hover || f === pinned ? .028 : f.properties.w ? .004 : .007; })
-      .polygonCapColor(function (f) { var on = f === hover || f === pinned; if (f.properties.w) return on ? "rgba(198,167,123,.34)" : "rgba(255,255,255,.015)"; return f.properties.sch ? (on ? "rgba(184,10,22,.62)" : "rgba(154,6,16,.2)") : (on ? "rgba(120,170,255,.45)" : "rgba(98,150,255,.10)"); })
+      .polygonCapColor(function (f) { var on = f === hover || f === pinned; if (f.properties.w) return on ? "rgba(214,182,132,.38)" : "rgba(255,255,255,.015)"; return f.properties.sch ? (on ? "rgba(184,10,22,.62)" : "rgba(154,6,16,.2)") : (on ? "rgba(120,170,255,.45)" : "rgba(98,150,255,.10)"); })
       .polygonSideColor(function (f) { if (f.properties.w) return "rgba(255,255,255,.04)"; return f.properties.sch ? "rgba(154,6,16,.25)" : "rgba(98,150,255,.12)"; })
-      .polygonStrokeColor(function (f) { if (f.properties.w) return "rgba(235,225,205,.32)"; return f.properties.sch ? "rgba(255,190,190,.42)" : "rgba(170,205,255,.35)"; })
+      .polygonStrokeColor(function (f) { var on = f === hover || f === pinned; if (on) return "rgba(255,236,200,.95)"; if (f.properties.w) return "rgba(235,225,205,.32)"; return f.properties.sch ? "rgba(255,190,190,.42)" : "rgba(170,205,255,.35)"; })
       .polygonsTransitionDuration(300)
-      .pathsData(routes).pathPoints("pts").pathPointLat(function (p) { return p[0]; }).pathPointLng(function (p) { return p[1]; }).pathPointAlt(function (p) { return p[2]; })
-      .pathColor(function () { return ["rgba(198,167,123,.15)", "rgba(198,167,123,.75)"]; }).pathStroke(1.1).pathTransitionDuration(0)
+      .pathsData(routes.concat(routes.map(function (r) { return { pts: r.pts, glow: true, dur: r.dur }; }))).pathPoints("pts").pathPointLat(function (p) { return p[0]; }).pathPointLng(function (p) { return p[1]; }).pathPointAlt(function (p) { return p[2]; })
+      .pathColor(function (p) { return p.glow ? "rgba(255,238,210,.85)" : ["rgba(198,167,123,.12)", "rgba(198,167,123,.6)"]; })
+      .pathStroke(function (p) { return p.glow ? 1.6 : .9; }).pathTransitionDuration(0)
+      .pathDashLength(function (p) { return p.glow ? .14 : 1; }).pathDashGap(function (p) { return p.glow ? .86 : 0; })
+      .pathDashAnimateTime(function (p) { return p.glow && !reduce ? p.dur * 1.6 : 0; })
       .ringsData([{ lat: LON[0], lng: LON[1], c: "198,167,123" }].concat(routes.map(function (r) { return { lat: r.lat, lng: r.lng, c: "255,120,130" }; })))
       .ringColor(function (d) { return function (t) { return "rgba(" + d.c + "," + (1 - t) * .9 + ")"; }; })
-      .ringMaxRadius(function (d) { return d.c[0] === "1" ? 3.4 : 2.2; }).ringPropagationSpeed(1.4).ringRepeatPeriod(function (d) { return d.c[0] === "1" ? 1600 : 2600; })
+      .ringMaxRadius(function (d) { return d.c[0] === "1" ? 3.6 : 2.6; }).ringPropagationSpeed(1.4).ringRepeatPeriod(function (d) { return d.c[0] === "1" ? 1600 : 2600; })
       .onPolygonHover(function (f) { if (pinned) return; setHover(f); })
       .onPolygonClick(function (f, e) { clickCountry(f, e); })
       .onGlobeClick(function () { unpin(); });
     window.tvGlobe = g;
     var m = g.globeMaterial && g.globeMaterial(); if (m) { m.bumpScale = 3; m.shininess = 8; }
-    var renderer = g.renderer && g.renderer(); if (renderer) renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.5 : 2));
+    var renderer = g.renderer && g.renderer(); if (renderer) renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lite ? 1.25 : 1.75));
     var ctl = g.controls();
-    ctl.autoRotate = !reduce; ctl.autoRotateSpeed = .42; ctl.enableZoom = false; ctl.minDistance = 113; ctl.maxDistance = 520; ctl.enableDamping = true; ctl.dampingFactor = .08;
+    ctl.autoRotate = !reduce; ctl.autoRotateSpeed = .42; ctl.enableZoom = false; ctl.minDistance = 132; ctl.rotateSpeed = .55; ctl.maxDistance = 520; ctl.enableDamping = true; ctl.dampingFactor = .08;
     var HOME = { lat: 36, lng: 2, altitude: small ? 2.5 : 2.25 };
     if (reduce) g.pointOfView(HOME, 0);
     else { g.pointOfView({ lat: HOME.lat + 8, lng: HOME.lng - 55, altitude: 3.9 }, 0); setTimeout(function () { g.pointOfView(HOME, 2800); }, 700); }
     host.addEventListener("pointerdown", function () { ctl.enableZoom = true; ctl.autoRotate = false; resumeLater(); });
     host.addEventListener("pointerleave", function () { ctl.enableZoom = false; if (!pinned) setHover(null); });
     var zT = null, zIdle;
-    var zoomTo = function (alt, ms) { var p = g.pointOfView(); zT = Math.max(.14, Math.min(3.6, alt)); g.pointOfView({ lat: p.lat, lng: p.lng, altitude: zT }, ms); clearTimeout(zIdle); zIdle = setTimeout(function () { zT = null; }, ms + 150); };
+    var zoomTo = function (alt, ms) { var p = g.pointOfView(); zT = Math.max(.32, Math.min(3.6, alt)); g.pointOfView({ lat: p.lat, lng: p.lng, altitude: zT }, ms); clearTimeout(zIdle); zIdle = setTimeout(function () { zT = null; }, ms + 150); };
     host.addEventListener("wheel", function (e) {
       if (!ctl.enableZoom) return;
       e.preventDefault(); e.stopPropagation();
@@ -326,7 +363,7 @@
         if (p) r.pl.style.opacity = String(Math.min(1, Math.sin(Math.PI * Math.min(1, f * 1.02)) * 3));
         r.lab.classList.toggle("on", f > .82);
       });
-      if (frame++ % 2 === 0) { layout(pov); gEl.classList.toggle("near", pov.altitude < 1.05); gEl.classList.toggle("mid", pov.altitude >= 1.05 && pov.altitude < 1.7); }
+      if (frame++ % (lite ? 3 : 2) === 0) { layout(pov); gEl.classList.toggle("near", pov.altitude < 1.05); gEl.classList.toggle("mid", pov.altitude >= 1.05 && pov.altitude < 1.7); }
       requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -394,6 +431,10 @@
     setTimeout(ready, 900);
     var fit = function () { var s2 = size(); g.width(s2.w).height(s2.h); hb = gEl.getBoundingClientRect(); };
     window.addEventListener("resize", function () { clearTimeout(fit.t); fit.t = setTimeout(fit, 150); });
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden && running) { running = false; g.pauseAnimation(); }
+      else if (!document.hidden && !running && gEl.getBoundingClientRect().bottom > 0) { running = true; g.resumeAnimation(); requestAnimationFrame(tick); }
+    });
     if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
       var on = es[0].isIntersecting;
       if (on && !running) { running = true; g.resumeAnimation(); requestAnimationFrame(tick); }

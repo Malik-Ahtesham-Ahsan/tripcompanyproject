@@ -843,7 +843,7 @@ export default function Page() {
                 {" "}
                 <span className="v-step-n notranslate">03</span>
                 <h3 data-i="f15ad95943">Appointment Assistance</h3>
-                <p data-i="fbdebbabac">We book the earliest appointment available at the right visa centre and send you the date and time.</p>
+                <p data-i="3439b67853">We book the earliest appointment the visa centre offers and send you the date and time. Visa centres set availability, and it can change daily.</p>
               </li>
               <li className="v-step" style={{ "--i": "3" }}>
                 <span className="v-step-node">
@@ -1003,7 +1003,7 @@ export default function Page() {
                   {" · "}
                   <span data-i="80fca14b0b">Last checked:</span>
                   {" "}
-                  <span className="notranslate">13 November 2026</span>
+                  <span className="notranslate">14 November 2026</span>
                 </p>
               </div>
             </div>
