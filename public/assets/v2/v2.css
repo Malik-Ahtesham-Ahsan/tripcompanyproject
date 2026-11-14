@@ -595,7 +595,6 @@ html[dir="rtl"] .v-schengen-panel { right: auto; left: max(var(--gut), calc((100
   .v-hero-in { order: 1; padding-bottom: 8px; }
   .v-globe { order: 2; margin: 0 auto -6%; width: min(112vw, 760px); }
   .v-schengen-panel { order: 3; margin-top: 12px; }
-  .v-gl-lab:not(.on) { opacity: 0 !important; }
   .v-globe-hint { bottom: 4%; }
 }
 @media (max-width: 640px) {
@@ -726,3 +725,63 @@ html[dir="rtl"] .to-top { left: auto; right: calc(22px + env(safe-area-inset-rig
 @media (min-width: 981px) { .v-step { align-content: start; grid-template-rows: auto auto minmax(2.7em, auto) auto; } }
 .v-step h3 { align-self: start; }
 .v-nw { white-space: nowrap; }
+
+/* =====================================================================
+   GLOBE REFINEMENT — placement, labels, trails, destination panel, controls
+   ===================================================================== */
+/* the whole Earth sits inside the right-hand hero area (no longer pushed off screen) */
+@media (min-width: 1101px) {
+  .v-globe { right: max(0px, calc((100vw - var(--wrap)) / 2 - 60px)); width: min(56vw, 860px); }
+  html[dir="rtl"] .v-globe { right: auto; left: max(0px, calc((100vw - var(--wrap)) / 2 - 60px)); }
+}
+@media (max-width: 1100px) { .v-globe { width: min(100vw, 600px); margin: 0 auto -2%; } }
+@media (max-width: 560px) { .v-globe { width: 100vw; } }
+.v-globe::before { content: ""; position: absolute; inset: 14%; border-radius: 50%; pointer-events: none; z-index: 0;
+  background: radial-gradient(circle, rgba(70,120,220,.16) 0%, rgba(40,80,170,.08) 45%, transparent 70%); filter: blur(30px); }
+.v-globe-canvas { z-index: 1; }
+.v-globe-overlay { z-index: 2; }
+
+/* destination labels: small, elegant, readable */
+.v-gl-lab { appearance: none; margin: 0; left: 0; top: 0; transform: none; padding: 5px 10px 5px 8px; border: 1px solid rgba(198,167,123,.3); background: rgba(8,15,28,.62);
+  font: 600 .62rem/1 var(--f-head); letter-spacing: .16em; color: rgba(255,255,255,.92); box-shadow: 0 8px 20px -10px rgba(0,0,0,.8);
+  transition: opacity .45s var(--ease), background-color .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease), color .35s; }
+.v-gl-lab::before { width: 5px; height: 5px; background: #d64a55; box-shadow: 0 0 0 3px rgba(214,74,85,.18), 0 0 10px rgba(214,74,85,.9); }
+.v-gl-lab.hub::before { background: var(--gold); box-shadow: 0 0 0 3px rgba(198,167,123,.2), 0 0 12px var(--gold); }
+.v-gl-lab.hub { border-color: rgba(198,167,123,.5); }
+.v-gl-lab:hover, .v-gl-lab.hl, .v-gl-lab:focus-visible { background: rgba(20,36,58,.9); border-color: rgba(243,227,198,.85); color: #fff; outline: none;
+  box-shadow: 0 0 0 4px rgba(243,227,198,.08), 0 0 24px rgba(243,227,198,.25), 0 10px 24px -10px rgba(0,0,0,.8); }
+.v-gl-lab.on { background: rgba(122,6,14,.86); border-color: rgba(214,74,85,.8); }
+.v-gl-c { font-size: .6rem; letter-spacing: .16em; color: rgba(255,255,255,.72); }
+.v-gl-city { font-size: .66rem; color: rgba(255,255,255,.88); }
+.v-gl-plane { width: 18px; height: 18px; color: #fff3df; filter: drop-shadow(0 0 5px rgba(255,236,205,.9)); transition: opacity .4s; }
+
+/* flight trails: crimson tail into a champagne head */
+.v-gl-trails { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; filter: drop-shadow(0 0 3px rgba(243,227,198,.55)); }
+.v-gl-trail { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: opacity .3s; }
+
+/* destination / country panel: docks beside the globe when selected */
+@media (min-width: 1101px) {
+  .v-gcard.dock { left: auto !important; right: 4%; top: 16% !important; width: 290px; }
+  html[dir="rtl"] .v-gcard.dock { right: auto; left: 4%; }
+}
+.v-gcard { background: linear-gradient(160deg, rgba(20,36,58,.92), rgba(8,15,28,.94)); border-color: rgba(198,167,123,.22); }
+.v-gd-city { display: block; font: 600 1.3rem/1.1 var(--f-head) !important; letter-spacing: .14em; text-transform: uppercase; }
+.v-gd-h small { margin-top: 6px; font-size: .78rem; }
+.v-gd-go { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: var(--r); background: linear-gradient(180deg, #A50812, #8C0610); color: #fff !important; }
+.v-gd-go:hover { background: #7E050D; }
+
+/* floating controls: small circular glass buttons, champagne icons */
+.v-globe-ctrl { gap: 8px; z-index: 4; }
+.v-globe-ctrl button { width: 36px; height: 36px; color: rgba(243,227,198,.92); background: rgba(8,15,28,.5); border-color: rgba(243,227,198,.2);
+  transition: border-color .3s var(--ease), color .3s, background-color .3s, transform .4s var(--ease-out); }
+.v-globe-ctrl button:hover { border-color: rgba(243,227,198,.6); color: #fff; background: rgba(20,36,58,.75); transform: scale(1.05); }
+.v-globe-ctrl button:active { transform: scale(.96); }
+.v-globe-ctrl .v-ic-play { display: none; }
+.v-globe-ctrl [data-z="spin"].off .v-ic-play { display: block; } .v-globe-ctrl [data-z="spin"].off .v-ic-pause { display: none; }
+.v-globe-hint { z-index: 4; }
+.v-globe-overlay { -webkit-mask-image: none; mask-image: none; }
+html.tv-gpin .tvc-teaser { display: none !important; }
+.v-gl-trails { -webkit-mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(90deg, transparent 0%, #000 var(--gl));
+  mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(90deg, transparent 0%, #000 var(--gl)); -webkit-mask-composite: source-in; mask-composite: intersect; }
+html[dir="rtl"] .v-gl-trails { -webkit-mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(270deg, transparent 0%, #000 var(--gl));
+  mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(270deg, transparent 0%, #000 var(--gl)); }

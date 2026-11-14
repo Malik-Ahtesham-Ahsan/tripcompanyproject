@@ -158,7 +158,7 @@ export default function Page() {
       <main id="main">
       <section aria-labelledby="hero-title" className="v-hero">
         <div aria-hidden="true" className="v-stars"></div>
-        <div aria-label="Interactive 3D globe. Drag to rotate, scroll or pinch to zoom, select a country to open its visa guide." className="v-globe" data-i-aria-label="2883812e1b" data-routes={"[{\"n\": \"Paris\", \"s\": \"france-visa-from-uk.html\", \"lat\": 48.86, \"lng\": 2.35}, {\"n\": \"Rome\", \"s\": \"italy-visa-from-uk.html\", \"lat\": 41.9, \"lng\": 12.5}, {\"n\": \"Madrid\", \"s\": \"spain-visa-from-uk.html\", \"lat\": 40.42, \"lng\": -3.7}, {\"n\": \"Dubai\", \"s\": \"dubai-visa-from-uk.html\", \"lat\": 25.2, \"lng\": 55.27}, {\"n\": \"Toronto\", \"s\": \"canada-visa-from-uk.html\", \"lat\": 43.65, \"lng\": -79.38}, {\"n\": \"New York\", \"s\": \"usa-visa-from-uk.html\", \"lat\": 40.71, \"lng\": -74.0}]"} role="group">
+        <div aria-label="Interactive 3D globe. Drag to rotate, scroll or pinch to zoom, select a country to open its visa guide." className="v-globe" data-i-aria-label="2883812e1b" data-routes={"[{\"n\": \"Paris\", \"s\": \"france-visa-from-uk.html\", \"lat\": 48.86, \"lng\": 2.35, \"c\": \"FR\"}, {\"n\": \"New York\", \"s\": \"usa-visa-from-uk.html\", \"lat\": 40.71, \"lng\": -74.0, \"c\": \"US\"}, {\"n\": \"Dubai\", \"s\": \"dubai-visa-from-uk.html\", \"lat\": 25.2, \"lng\": 55.27, \"c\": \"AE\"}, {\"n\": \"Rome\", \"s\": \"italy-visa-from-uk.html\", \"lat\": 41.9, \"lng\": 12.5, \"c\": \"IT\"}, {\"n\": \"Toronto\", \"s\": \"canada-visa-from-uk.html\", \"lat\": 43.65, \"lng\": -79.38, \"c\": \"CA\"}, {\"n\": \"Amsterdam\", \"s\": \"netherlands-visa-from-uk.html\", \"lat\": 52.37, \"lng\": 4.9, \"c\": \"NL\"}, {\"n\": \"Madrid\", \"s\": \"spain-visa-from-uk.html\", \"lat\": 40.42, \"lng\": -3.7, \"c\": \"ES\"}, {\"n\": \"Zurich\", \"s\": \"switzerland-visa-from-uk.html\", \"lat\": 47.37, \"lng\": 8.54, \"c\": \"CH\"}]"} role="group">
           <div aria-hidden="true" className="v-globe-static"></div>
           <div className="v-globe-canvas"></div>
           <div aria-hidden="true" className="v-globe-overlay"></div>
@@ -173,6 +173,15 @@ export default function Page() {
             <button aria-label="Zoom out" data-i-aria-label="a4ae4b24a1" data-z="out" type="button">
               <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
                 <path d="M5 12h14"></path>
+              </svg>
+            </button>
+            {" "}
+            <button aria-label="Pause rotation" aria-pressed="true" data-i-aria-label="ef4a3938c6" data-z="spin" type="button">
+              <svg className="v-ic-pause" fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                <path d="M9 6v12M15 6v12"></path>
+              </svg>
+              <svg className="v-ic-play" fill="currentColor" height="16" viewBox="0 0 24 24" width="16">
+                <path d="M8 5.5v13l10.5-6.5z"></path>
               </svg>
             </button>
             {" "}
