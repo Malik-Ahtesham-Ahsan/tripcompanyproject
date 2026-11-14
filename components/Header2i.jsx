@@ -7,7 +7,7 @@ export default function Header2i({ current }) {
       <link rel="preload" href="/assets/v2/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
       <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
       <link rel="stylesheet" precedence="default" href="/assets/styles.css?v=b1df0bac" />
-      <link rel="stylesheet" precedence="default" href="/assets/v2/v2.css?v=9a3e60f9" />
+      <link rel="stylesheet" precedence="default" href="/assets/v2/v2.css?v=09a7cf4d" />
       <link rel="stylesheet" precedence="default" href="/assets/v2/pages.css?v=6d0ae3a9" />
       <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add(\"v2\",\"v2-inner\")" }} />
       <a className="skip" data-i="0a4470d64e" href="#main">Skip to content</a>

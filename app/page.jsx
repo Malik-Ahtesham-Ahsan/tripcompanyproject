@@ -665,7 +665,51 @@ export default function Page() {
                   <title>Switzerland</title>
                 </path>
               </svg>
-              {" "}
+              <div aria-label="Interactive world map. Select a country for details." className="v-wmap" data-i-aria-label="54f062f285" hidden={true} role="region">
+                <div className="v-wmap-canvas"></div>
+                <div aria-hidden="true" className="v-wmap-labels"></div>
+                <div aria-hidden="true" className="v-wmap-tip" hidden={true}></div>
+                <button aria-pressed="false" className="v-wmap-sch" type="button">
+                  <span aria-hidden="true" className="v-wmap-sw"></span>
+                  <span data-i="e1126642bd">Schengen Area</span>
+                  {" "}
+                  <b className="notranslate">29</b>
+                </button>
+                <div aria-label="Map controls" className="v-wmap-ctrl" data-i-aria-label="85ebaa301b" role="group">
+                  <button aria-label="Zoom in" data-i-aria-label="4fc05f2763" data-m="in" type="button">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" viewBox="0 0 24 24" width="16">
+                      <path d="M12 5v14M5 12h14"></path>
+                    </svg>
+                  </button>
+                  {" "}
+                  <button aria-label="Zoom out" data-i-aria-label="a4ae4b24a1" data-m="out" type="button">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14"></path>
+                    </svg>
+                  </button>
+                  {" "}
+                  <button aria-label="Explore Europe" data-i-aria-label="298346c74e" data-m="eu" type="button">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" viewBox="0 0 24 24" width="16">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18M3 12h18"></path>
+                    </svg>
+                  </button>
+                  {" "}
+                  <button aria-label="Flight routes" aria-pressed="true" data-i-aria-label="cf03df8f15" data-m="routes" type="button">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" viewBox="0 0 24 24" width="16">
+                      <path d="M3 17c4-8 10-11 18-11"></path>
+                      <path d="m16 3 5 3-3 5"></path>
+                    </svg>
+                  </button>
+                  {" "}
+                  <button aria-label="Reset view" data-i-aria-label="80d8db7ad9" data-m="reset" type="button">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" viewBox="0 0 24 24" width="16">
+                      <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+                      <path d="M3 4v5h5"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
               <label className="v-map-pick">
                 <span className="sr-only" data-i="015b78fe00">Choose a Schengen country</span>
                 {" "}
@@ -729,6 +773,16 @@ export default function Page() {
                     <strong data-i="f6735796bd">Up to 6 months, at least 15 days before travel</strong>
                   </li>
                 </ul>
+                <p className="v-cp-sd" data-i="eaf864777c">Explore visa assistance for European destinations.</p>
+                <a className="v-btn v-btn-red v-btn-sm v-cp-schbtn" href="/schengen-visa">
+                  <span data-i="1cf04cdd91">Explore Schengen</span>
+                  {" "}
+                  <span aria-hidden="true" className="v-arr">
+                    <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </span>
+                </a>
                 <p className="v-cp-hint">
                   <svg aria-hidden="true" className="ic" fill="none" focusable="false" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="16">
                     <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path>
@@ -737,6 +791,27 @@ export default function Page() {
                   {" "}
                   <span data-i="8050771adb">Select a country on the map</span>
                 </p>
+              </div>
+              <div className="v-cp-other notranslate" hidden={true}>
+                <div className="v-cp-head">
+                  <img alt="" className="v-cp-flag" height="36" src="" width="48" />
+                  <div>
+                    <p className="v-cp-k"></p>
+                    <h3 className="v-cp-name"></h3>
+                  </div>
+                </div>
+                <p className="v-cp-txt"></p>
+                <div className="v-cp-cta">
+                  <a className="v-btn v-btn-red v-btn-sm v-cp-go" href="/contact">
+                    <span></span>
+                    {" "}
+                    <span aria-hidden="true" className="v-arr">
+                      <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="16">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
               </div>
               <div className="v-cp-full" hidden={true}>
                 <div className="v-cp-head">

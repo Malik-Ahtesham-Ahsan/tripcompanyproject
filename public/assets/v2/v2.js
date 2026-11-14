@@ -115,6 +115,7 @@
     var pick = function (code, focus) {
       var c = C[code]; if (!c) return;
       $$(".v-mc", mw).forEach(function (p) { p.classList.toggle("on", p.getAttribute("data-c") === code); });
+      var oth = $(".v-cp-other", mw); if (oth) oth.hidden = true;
       empty.hidden = true; full.hidden = false;
       full.style.animation = "none"; void full.offsetWidth; full.style.animation = "";
       var f = $(".v-cp-flag", full); f.src = asset() + "v2/flags/" + code.toLowerCase() + ".svg"; f.alt = "";
@@ -131,7 +132,252 @@
       p.addEventListener("click", function () { pick(p.getAttribute("data-c")); });
       if (fine) p.addEventListener("mouseenter", function () { p.parentNode.appendChild(p); });
     });
-    if (selEl) selEl.addEventListener("change", function () { if (selEl.value) pick(selEl.value, true); });
+    if (selEl) selEl.addEventListener("change", function () { if (selEl.value) { pick(selEl.value, true); if (mw.tvMapPick) mw.tvMapPick(selEl.value, true); } });
+
+    /* ---- real world map (MapLibre GL + Natural Earth boundaries), loaded when the section comes near ---- */
+    var other = $(".v-cp-other", mw), wm = $(".v-wmap", mw);
+    var PAGES = { US: "usa-visa-from-uk.html", CA: "canada-visa-from-uk.html", TR: "turkey-visa-from-uk.html", AE: "dubai-visa-from-uk.html" };
+    var regionName = function (code) { var l = document.documentElement.lang || "en"; try { var v = new Intl.DisplayNames([l, "en"], { type: "region" }).of(code); return (/^en/.test(l) && { CD: "DR Congo", CG: "Congo" }[code]) || v || code; } catch (e) { return code; } };
+    var flagSrc = function (code) { return asset() + "v2/flags-all/" + code.toLowerCase() + ".svg"; };
+    var pickOther = function (code) {
+      if (!other) return;
+      $$(".v-mc", mw).forEach(function (p) { p.classList.remove("on"); });
+      empty.hidden = true; full.hidden = true; other.hidden = false;
+      other.style.animation = "none"; void other.offsetWidth; other.style.animation = "";
+      var f = $(".v-cp-flag", other); f.src = flagSrc(code); f.onerror = function () { f.style.visibility = "hidden"; }; f.style.visibility = "";
+      var name = regionName(code), page = PAGES[code];
+      $(".v-cp-k", other).textContent = ui("g_country", "Destination");
+      $(".v-cp-name", other).textContent = name;
+      $(".v-cp-txt", other).textContent = page ? ui("g_dest", "Explore TravelVista’s visa and travel services for {c}.").replace("{c}", name) : ui("g_ask", "Planning a trip here? Ask us what you need.");
+      var go = $(".v-cp-go", other); go.href = pageUrl(page || "contact.html");
+      $("span", go).textContent = page ? ui("g_evs", "Explore visa services") : ui("g_askbtn", "Free consultation");
+      if (selEl) selEl.value = "";
+    };
+    var showSchengen = function () { $$(".v-mc", mw).forEach(function (p) { p.classList.remove("on"); }); empty.hidden = false; full.hidden = true; if (other) other.hidden = true; if (selEl) selEl.value = ""; };
+    var hasGL = (function () { try { var c = document.createElement("canvas"); return !!(window.WebGLRenderingContext && (c.getContext("webgl2") || c.getContext("webgl"))); } catch (e) { return false; } })();
+    var mapStart = function () {
+      if (!wm || !hasGL || mw.dataset.map) return; mw.dataset.map = "1";
+      var css = document.createElement("link"); css.rel = "stylesheet"; css.href = asset() + "v2/map/maplibre-gl.css"; document.head.appendChild(css);
+      var sc = document.createElement("script"); sc.src = asset() + "v2/map/maplibre-gl.js"; sc.async = true;
+      sc.onload = function () { fetch(asset() + "v2/map/world.json").then(function (r) { return r.json(); }).then(mapBuild).catch(function () {}); };
+      document.head.appendChild(sc);
+    };
+    var mapBuild = function (W) {
+      var ml = window.maplibregl; if (!ml) return;
+      var D2R = Math.PI / 180, SCHS = Object.keys(C);
+      // bounding box of each country's largest landmass (so Russia, the USA or Fiji frame sensibly)
+      var meta = {};
+      W.countries.features.forEach(function (f) {
+        var big = null, ba = -1;
+        (f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates).forEach(function (p) {
+          var r = p[0], a = 0; for (var i = 0; i < r.length - 1; i++) a += r[i][0] * r[i + 1][1] - r[i + 1][0] * r[i][1]; a = Math.abs(a);
+          if (a > ba) { ba = a; big = r; }
+        });
+        var b = [180, 90, -180, -90]; big.forEach(function (q) { b[0] = Math.min(b[0], q[0]); b[1] = Math.min(b[1], q[1]); b[2] = Math.max(b[2], q[0]); b[3] = Math.max(b[3], q[1]); });
+        meta[f.properties.i] = { b: b, lx: f.properties.lx, ly: f.properties.ly, a: f.properties.a };
+      });
+      var LBL_FIX = { FJ: [178.2, -17.8], KI: [-157.4, 1.9], RU: [96, 61], CA: [-104, 59], US: [-98.5, 39.5], GL: [-40, 73], FR: [2.4, 46.6], NO: [9, 61.5], GB: [-2.3, 53.6] };
+      // graticule
+      var grat = []; for (var x = -180; x <= 180; x += 30) { var ln = []; for (var y = -70; y <= 80; y += 5) ln.push([x, y]); grat.push({ type: "Feature", geometry: { type: "LineString", coordinates: ln } }); }
+      for (var y2 = -60; y2 <= 75; y2 += 30) { var lt = []; for (var x2 = -180; x2 <= 180; x2 += 5) lt.push([x2, y2]); grat.push({ type: "Feature", geometry: { type: "LineString", coordinates: lt } }); }
+      // routes from London along great circles
+      var gEl0 = $(".v-globe"), routes = JSON.parse((gEl0 && gEl0.getAttribute("data-routes")) || "[]"), LON = [-0.13, 51.5];
+      var gc = function (a, b, n) {
+        var la1 = a[1] * D2R, lo1 = a[0] * D2R, la2 = b[1] * D2R, lo2 = b[0] * D2R, out = [];
+        var d = Math.acos(Math.sin(la1) * Math.sin(la2) + Math.cos(la1) * Math.cos(la2) * Math.cos(lo2 - lo1));
+        for (var i = 0; i <= n; i++) {
+          var f = i / n, A = Math.sin((1 - f) * d) / Math.sin(d), B = Math.sin(f * d) / Math.sin(d);
+          var X = A * Math.cos(la1) * Math.cos(lo1) + B * Math.cos(la2) * Math.cos(lo2), Y = A * Math.cos(la1) * Math.sin(lo1) + B * Math.cos(la2) * Math.sin(lo2), Z = A * Math.sin(la1) + B * Math.sin(la2);
+          out.push([Math.atan2(Y, X) / D2R, Math.atan2(Z, Math.sqrt(X * X + Y * Y)) / D2R]);
+        }
+        // short hops get a gentle bow so every route reads as a flight arc
+        if (d < .35) { var bow = .18 * d / D2R; out = out.map(function (q, i) { return [q[0], q[1] + Math.sin(Math.PI * i / n) * bow]; }); }
+        return out;
+      };
+      routes.forEach(function (r) { r.line = gc(LON, [r.lng, r.lat], 80); r.dur = 3200 + Math.hypot(r.lng - LON[0], r.lat - LON[1]) * 55; });
+      var FC = function (fs) { return { type: "FeatureCollection", features: fs }; };
+      var routeFC = FC(routes.map(function (r) { return { type: "Feature", properties: { s: r.s }, geometry: { type: "LineString", coordinates: r.line } }; }));
+
+      wm.hidden = false; $(".v-map", mw).classList.add("v-map-live");
+      var small = window.innerWidth < 760;
+      var map = new ml.Map({
+        container: $(".v-wmap-canvas", wm), style: { version: 8, sources: {}, layers: [] },
+        center: [10, 30], zoom: 1, minZoom: 0.4, maxZoom: 6.2, renderWorldCopies: false, dragRotate: false, pitchWithRotate: false, touchPitch: false,
+        cooperativeGestures: true, attributionControl: { compact: true, customAttribution: "Boundaries: Natural Earth" },
+        fadeDuration: 0,
+        locale: {
+          "CooperativeGesturesHandler.WindowsHelpText": ui("m_ctrl", "Use Ctrl + scroll to zoom the map"),
+          "CooperativeGesturesHandler.MacHelpText": ui("m_cmd", "Use ⌘ + scroll to zoom the map"),
+          "CooperativeGesturesHandler.MobileHelpText": ui("m_two", "Use two fingers to move the map")
+        }
+      });
+      map.touchZoomRotate.disableRotation();
+      mw.tvMap = map;
+      var worldView = function (anim) { map.fitBounds([[-168, -56], [179, 76]], { padding: small ? 8 : 20, animate: anim !== false && !reduce, duration: 1400, essential: true }); };
+      map.on("load", function () {
+        map.addSource("land", { type: "geojson", data: W.countries, promoteId: "i" });
+        map.addSource("sch", { type: "geojson", data: W.schengen, promoteId: "i" });
+        map.addSource("grat", { type: "geojson", data: FC(grat) });
+        map.addSource("routes", { type: "geojson", data: routeFC });
+        map.addSource("fa0", { type: "geojson", data: FC([]), lineMetrics: true });
+        map.addSource("fa1", { type: "geojson", data: FC([]), lineMetrics: true });
+        var st = function (k, on, off) { return ["case", ["boolean", ["feature-state", k], false], on, off]; };
+        map.addLayer({ id: "grat", type: "line", source: "grat", paint: { "line-color": "rgba(198,167,123,.08)", "line-width": .6 } });
+        map.addLayer({ id: "coast", type: "line", source: "land", paint: { "line-color": "rgba(110,150,225,.22)", "line-width": ["interpolate", ["linear"], ["zoom"], 0, 2, 5, 5], "line-blur": ["interpolate", ["linear"], ["zoom"], 0, 2, 5, 5] } });
+        map.addLayer({ id: "land", type: "fill", source: "land", paint: { "fill-color": st("sel", "#2b3550", st("hover", "#26385a", "#1a2b45")), "fill-antialias": true } });
+        map.addLayer({ id: "sch", type: "fill", source: "sch", paint: { "fill-color": "#9A0610", "fill-opacity": st("sel", .5, st("hover", .36, .2)), "fill-opacity-transition": { duration: 700 } } });
+        map.addLayer({ id: "borders", type: "line", source: "land", paint: { "line-color": "rgba(198,167,123,.42)", "line-width": ["interpolate", ["linear"], ["zoom"], 0, .35, 3, .6, 6, 1.1] } });
+        map.addLayer({ id: "sch-line", type: "line", source: "sch", paint: { "line-color": "rgba(226,104,112,.55)", "line-width": ["interpolate", ["linear"], ["zoom"], 0, .4, 5, 1] } });
+        map.addLayer({ id: "focus-glow", type: "line", source: "land", filter: ["in", ["get", "i"], ["literal", []]], paint: { "line-color": "#F3E3C6", "line-width": 6, "line-blur": 6, "line-opacity": .45 } });
+        map.addLayer({ id: "focus-line", type: "line", source: "land", filter: ["in", ["get", "i"], ["literal", []]], paint: { "line-color": "#F3E3C6", "line-width": 1.3 } });
+        map.addLayer({ id: "routes", type: "line", source: "routes", layout: { "line-cap": "round" }, paint: { "line-color": "rgba(198,167,123,.32)", "line-width": 1, "line-dasharray": [1.5, 2.5], "line-opacity-transition": { duration: 500 } } });
+        ["fa0", "fa1"].forEach(function (id) { map.addLayer({ id: id, type: "line", source: id, layout: { "line-cap": "round" }, paint: { "line-width": 2.2, "line-gradient": ["interpolate", ["linear"], ["line-progress"], 0, "rgba(0,0,0,0)", 1, "rgba(0,0,0,0)"] } }); });
+        worldView(false);
+        map.setMinZoom(Math.max(0, map.getZoom() - .15));
+        setTimeout(function () { wm.classList.add("ready"); }, 300);
+        setup();
+      });
+
+      var setup = function () {
+        var labels = $(".v-wmap-labels", wm), tip = $(".v-wmap-tip", wm), hoverId = null, selId = null, schOn = false, routesOn = true;
+        var setFocus = function () { var ids = [hoverId, selId].filter(Boolean); map.setFilter("focus-glow", ["in", ["get", "i"], ["literal", ids]]); map.setFilter("focus-line", ["in", ["get", "i"], ["literal", ids]]); };
+        var fs = function (id, k, v) { if (!id) return; map.setFeatureState({ source: "land", id: id }, (function (o) { o[k] = v; return o; })({})); if (SCHS.indexOf(id) > -1) map.setFeatureState({ source: "sch", id: id }, (function (o) { o[k] = v; return o; })({})); };
+        // hover: highlight, glow and name
+        map.on("mousemove", "land", function (e) {
+          var f = e.features && e.features[0]; if (!f) return;
+          var id = f.properties.i;
+          if (id !== hoverId) { fs(hoverId, "hover", false); hoverId = id; fs(id, "hover", true); setFocus(); }
+          map.getCanvas().style.cursor = "pointer";
+          tip.hidden = false; tip.textContent = regionName(id);
+          tip.style.transform = "translate(" + (e.point.x + 14) + "px," + (e.point.y - 12) + "px)";
+        });
+        map.on("movestart", function () { tip.hidden = true; });
+        map.on("mouseleave", "land", function () { fs(hoverId, "hover", false); hoverId = null; setFocus(); tip.hidden = true; map.getCanvas().style.cursor = ""; });
+        // select (click or tap)
+        var select = function (id, fly) {
+          if (selId) fs(selId, "sel", false);
+          selId = id; fs(id, "sel", true); setFocus(); setSch(false, true);
+          if (C[id]) pick(id); else pickOther(id);
+          var m = meta[id];
+          if (fly && m) {
+            var b = m.b, wide = Math.max(b[2] - b[0], (b[3] - b[1]) * 1.4);
+            map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: small ? 30 : 70, maxZoom: wide < 3 ? 5.6 : wide < 12 ? 4.6 : 3.4, duration: reduce ? 0 : 1500, essential: true });
+          }
+        };
+        mw.tvMapPick = function (id, fly) { select(id, fly); };
+        map.on("click", "land", function (e) { var f = e.features && e.features[0]; if (f) select(f.properties.i, true); });
+        // Schengen region view
+        var schBtn = $(".v-wmap-sch", wm);
+        var setSch = function (on, quiet) {
+          schOn = on; schBtn.setAttribute("aria-pressed", on ? "true" : "false"); wm.classList.toggle("sch-on", on);
+          map.setPaintProperty("sch", "fill-opacity", on ? st2(.62, .5, .44) : st2(.5, .36, .2));
+          if (on && !quiet) {
+            if (selId) { fs(selId, "sel", false); selId = null; setFocus(); }
+            showSchengen(); map.fitBounds([[-25, 34], [33, 71.5]], { padding: small ? 16 : 40, duration: reduce ? 0 : 1600, essential: true });
+          }
+        };
+        var st2 = function (a, b, c) { return ["case", ["boolean", ["feature-state", "sel"], false], a, ["case", ["boolean", ["feature-state", "hover"], false], b, c]]; };
+        schBtn.addEventListener("click", function () { setSch(!schOn); });
+        // controls
+        $$(".v-wmap-ctrl button", wm).forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var m = btn.getAttribute("data-m"), o = { duration: reduce ? 0 : 700, essential: true };
+            if (m === "in") map.zoomIn(o);
+            else if (m === "out") map.zoomOut(o);
+            else if (m === "eu") map.fitBounds([[-13, 34.5], [36, 63]], { padding: 20, duration: reduce ? 0 : 1600, essential: true });
+            else if (m === "reset") { if (selId) { fs(selId, "sel", false); selId = null; setFocus(); } setSch(false, true); showSchengen(); worldView(); }
+            else if (m === "routes") { routesOn = !routesOn; btn.setAttribute("aria-pressed", routesOn ? "true" : "false"); btn.classList.toggle("off", !routesOn);
+              ["routes", "fa0", "fa1"].forEach(function (id) { map.setLayoutProperty(id, "visibility", routesOn ? "visible" : "none"); });
+              wm.classList.toggle("no-routes", !routesOn); }
+          });
+        });
+
+        // destination markers (glowing dots that pulse gently) + labels drawn in an overlay with collision handling
+        var dests = [{ n: "London", lng: LON[0], lat: LON[1], hub: true, c: "GB" }].concat(routes.map(function (r) { return { n: r.n, lng: r.lng, lat: r.lat, c: r.c, s: r.s }; }));
+        dests.forEach(function (d) {
+          var el = document.createElement("button"); el.type = "button"; el.className = "v-wm-dot" + (d.hub ? " hub" : ""); el.setAttribute("aria-label", d.n);
+          var go = function () { if (d.c && !d.hub) select(d.c, true); }, down = null, tapAt = 0;
+          // touch screens: the map swallows synthetic clicks, so recognise a tap directly
+          el.addEventListener("pointerdown", function (e) { down = { x: e.clientX, y: e.clientY, t: Date.now() }; });
+          el.addEventListener("pointerup", function (e) { if (down && Math.abs(e.clientX - down.x) < 10 && Math.abs(e.clientY - down.y) < 10 && Date.now() - down.t < 600) { tapAt = Date.now(); e.stopPropagation(); go(); } down = null; });
+          el.addEventListener("click", function (e) { e.stopPropagation(); if (Date.now() - tapAt > 500) go(); });
+          d.mk = new ml.Marker({ element: el }).setLngLat([d.lng, d.lat]).addTo(map); el.setAttribute("aria-label", d.n); d.dot = el;
+          d.lab = document.createElement("span"); d.lab.className = "v-wm-lab notranslate" + (d.hub ? " hub" : ""); labels.appendChild(d.lab);
+        });
+        var CL = W.countries.features.map(function (f) { var i = f.properties.i, m = meta[i], fx = LBL_FIX[i]; return { i: i, a: m.a, lng: fx ? fx[0] : m.lx, lat: fx ? fx[1] : m.ly, el: (function () { var e = document.createElement("span"); e.className = "v-wm-c"; labels.appendChild(e); return e; })() }; })
+          .sort(function (a, b) { return b.a - a.a; });
+        var names = function () { CL.forEach(function (c) { c.el.textContent = regionName(c.i); c.w = 0; }); dests.forEach(function (d) { d.lab.textContent = nm(d.n); d.w = 0; if (d.dot) d.dot.setAttribute("aria-label", nm(d.n)); }); };
+        names();
+        var lastLang = document.documentElement.lang;
+        if ("MutationObserver" in window) new MutationObserver(function () { if (document.documentElement.lang !== lastLang) { lastLang = document.documentElement.lang; setTimeout(function () { names(); place(); if (selId && !C[selId]) pickOther(selId); }, 60); } }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+        var hide = function (el) { if (el.style.opacity !== "0") el.style.opacity = "0"; };
+        var place = function () {
+          var z = map.getZoom(), cw = wm.clientWidth, ch = wm.clientHeight, boxes = [];
+          // keep clear of the controls, Schengen chip and country picker
+          $$(".v-wmap-ctrl, .v-wmap-sch, .v-map-pick, .maplibregl-ctrl-bottom-right", mw).forEach(function (el) { var r = el.getBoundingClientRect(), w0 = wm.getBoundingClientRect(); boxes.push([r.left - w0.left - 6, r.top - w0.top - 6, r.right - w0.left + 6, r.bottom - w0.top + 6]); });
+          var fits = function (b) { if (b[0] < 6 || b[1] < 6 || b[2] > cw - 6 || b[3] > ch - 6) return false; for (var k = 0; k < boxes.length; k++) { var q = boxes[k]; if (b[0] < q[2] && b[2] > q[0] && b[1] < q[3] && b[3] > q[1]) return false; } return true; };
+          dests.forEach(function (d) {
+            var p = map.project([d.lng, d.lat]); if (!d.w) { d.w = d.lab.offsetWidth || 60; d.h = d.lab.offsetHeight || 18; }
+            var b = [p.x + 9, p.y - d.h / 2, p.x + 9 + d.w, p.y + d.h / 2];
+            if (!fits(b)) { b = [p.x - 9 - d.w, p.y - d.h / 2, p.x - 9, p.y + d.h / 2]; if (!fits(b)) { hide(d.lab); return; } }
+            boxes.push([b[0] - 3, b[1] - 2, b[2] + 3, b[3] + 2]); boxes.push([p.x - 7, p.y - 7, p.x + 7, p.y + 7]);
+            d.lab.style.opacity = "1"; d.lab.style.transform = "translate(" + b[0] + "px," + b[1] + "px)";
+          });
+          var minA = z < 1.3 ? 120 : z < 2 ? 25 : z < 2.8 ? 4 : z < 3.6 ? .8 : z < 4.5 ? .12 : 0;
+          CL.forEach(function (c) {
+            if (c.a < minA) { hide(c.el); return; }
+            var p = map.project([c.lng, c.lat]); if (!c.w) { c.w = c.el.offsetWidth || 50; c.h = c.el.offsetHeight || 12; }
+            var b = [p.x - c.w / 2 - 2, p.y - c.h / 2 - 1, p.x + c.w / 2 + 2, p.y + c.h / 2 + 1];
+            if (!fits(b)) { hide(c.el); return; }
+            boxes.push(b); c.el.style.opacity = "1"; c.el.style.transform = "translate(" + (p.x - c.w / 2) + "px," + (p.y - c.h / 2) + "px)";
+          });
+        };
+        map.on("move", place); map.on("resize", function () { CL.forEach(function (c) { c.w = 0; }); place(); }); setTimeout(place, 400);
+
+        // flights: at most two at once, a crimson-to-champagne trail with a small aircraft at its head
+        var planes = [0, 1].map(function () { var el = document.createElement("div"); el.className = "v-wm-plane"; el.innerHTML = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M21 15.5v-2l-8-5V3.6a1.6 1.6 0 0 0-3.2 0V8.5l-8 5v2l8-2.5V18l-2.2 1.6V21l3.8-1.1 3.8 1.1v-1.4L13 18v-5z"/></svg>'; return new ml.Marker({ element: el }).setLngLat(LON); });
+        var slots = [null, null], qi = 0, nextAt = 0, visibleNow = false, raf = 0;
+        var grad = function (tail, head, fade) {
+          var a = Math.max(0, tail), h = Math.max(a + .002, Math.min(1, head)), m = a + (h - a) * .6;
+          var stops = ["interpolate", ["linear"], ["line-progress"], 0, "rgba(154,6,16,0)"];
+          if (a > 0) stops.push(a, "rgba(154,6,16,0)");
+          stops.push(m, "rgba(200,52,64," + (.55 * fade) + ")", h, "rgba(243,227,198," + fade + ")");
+          if (h < .999) stops.push(Math.min(1, h + .001), "rgba(243,227,198,0)");
+          if (stops[stops.length - 2] < 1) stops.push(1, "rgba(243,227,198,0)");
+          return stops;
+        };
+        var frame = function (now) {
+          raf = 0; if (!visibleNow || !routesOn || reduce) return;
+          for (var k = 0; k < 2; k++) {
+            var s = slots[k];
+            if (!s && k < (small ? 1 : 2) && now > nextAt) {
+              var r = routes[qi++ % routes.length];
+              if (!slots.some(function (x) { return x && x.r === r; })) { s = slots[k] = { r: r, t0: now }; map.getSource("fa" + k).setData(FC([{ type: "Feature", geometry: { type: "LineString", coordinates: r.line } }])); planes[k].addTo(map); nextAt = now + r.dur * .6 + 500; }
+            }
+            if (!s) continue;
+            var f = (now - s.t0) / s.r.dur, e = Math.min(1, f), e2 = e < .5 ? 2 * e * e : 1 - Math.pow(-2 * e + 2, 2) / 2;
+            var fade = f > 1 ? Math.max(0, 1 - (f - 1) * s.r.dur / 900) : 1;
+            if (fade <= 0) { slots[k] = null; planes[k].remove(); map.setPaintProperty("fa" + k, "line-gradient", grad(0, .01, 0)); continue; }
+            map.setPaintProperty("fa" + k, "line-gradient", grad(e2 - .45, e2, fade));
+            var L = s.r.line, idx = Math.min(L.length - 1, Math.max(1, Math.round(e2 * (L.length - 1))));
+            var pa = map.project(L[idx - 1]), pb = map.project(L[idx]);
+            planes[k].setLngLat(L[idx]);
+            var pe = planes[k].getElement(); pe.style.opacity = f > 1 ? "0" : String(Math.min(1, Math.sin(Math.PI * e) * 4));
+            pe.firstChild.style.transform = "rotate(" + (Math.atan2(pb.y - pa.y, pb.x - pa.x) * 180 / Math.PI + 90) + "deg)";
+          }
+          raf = requestAnimationFrame(frame);
+        };
+        var kick = function () { if (!raf && visibleNow && routesOn && !reduce) raf = requestAnimationFrame(frame); };
+        $$('.v-wmap-ctrl [data-m="routes"]', wm).forEach(function (b) { b.addEventListener("click", function () { if (!routesOn) planes.forEach(function (p) { p.remove(); }); slots = [null, null]; kick(); }); });
+        if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visibleNow = es[0].isIntersecting && !document.hidden; kick(); }, { threshold: .1 }).observe(wm);
+        else { visibleNow = true; kick(); }
+        document.addEventListener("visibilitychange", function () { visibleNow = !document.hidden && wm.getBoundingClientRect().top < window.innerHeight; kick(); });
+      };
+    };
+    if (wm) {
+      if ("IntersectionObserver" in window) { var mio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { mio.disconnect(); mapStart(); } }, { rootMargin: "700px 0px" }); mio.observe(mw); }
+      else mapStart();
+    }
   }
 
   /* ---------------- reviews slider ---------------- */

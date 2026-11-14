@@ -785,3 +785,66 @@ html.tv-gpin .tvc-teaser { display: none !important; }
   mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(90deg, transparent 0%, #000 var(--gl)); -webkit-mask-composite: source-in; mask-composite: intersect; }
 html[dir="rtl"] .v-gl-trails { -webkit-mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(270deg, transparent 0%, #000 var(--gl));
   mask-image: radial-gradient(circle closest-side, #000 var(--gm), transparent 100%), linear-gradient(270deg, transparent 0%, #000 var(--gl)); }
+
+/* =====================================================================
+   WORLD MAP (MapLibre GL + Natural Earth) — section 03
+   ===================================================================== */
+.v-map-live > svg { display: none; }
+.v-map-live { aspect-ratio: 16 / 11; background: none; }
+@media (max-width: 760px) { .v-map-live { aspect-ratio: 4 / 5; } }
+.v-wmap { position: absolute; inset: 0; overflow: hidden; border-radius: inherit;
+  background: radial-gradient(120% 90% at 55% 35%, #10203a 0%, #0b1730 45%, #080F1C 100%); }
+.v-wmap-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s var(--ease); }
+.v-wmap.ready .v-wmap-canvas { opacity: 1; }
+.v-wmap .maplibregl-canvas { outline: none; }
+.v-wmap-labels { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.v-wm-c, .v-wm-lab { position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0; transition: opacity .35s var(--ease); direction: ltr; unicode-bidi: isolate; }
+.v-wm-c { font: 600 .58rem/1 var(--f-head); letter-spacing: .16em; text-transform: uppercase; color: rgba(242,240,235,.62); text-shadow: 0 0 4px #080F1C, 0 1px 3px #080F1C; }
+html[lang="ar"] .v-wm-c, html[lang="ur"] .v-wm-c, html[lang="hi"] .v-wm-c, html[lang="bn"] .v-wm-c { letter-spacing: 0; font-size: .7rem; }
+.v-wm-lab { padding: 4px 8px; border-radius: 99px; background: rgba(8,15,28,.72); border: 1px solid rgba(198,167,123,.32); font: 600 .6rem/1 var(--f-head); letter-spacing: .14em; text-transform: uppercase; color: #fff; }
+.v-wm-lab.hub { border-color: rgba(198,167,123,.6); }
+/* destination markers */
+.v-wm-dot { width: 12px; height: 12px; padding: 0; border: 0; border-radius: 50%; background: #d64a55; cursor: pointer; position: relative; box-shadow: 0 0 0 3px rgba(214,74,85,.22), 0 0 12px rgba(214,74,85,.85); }
+.v-wm-dot.hub { background: var(--gold); box-shadow: 0 0 0 3px rgba(198,167,123,.25), 0 0 14px rgba(198,167,123,.9); cursor: default; }
+.v-wm-dot::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 1px solid currentColor; color: rgba(214,74,85,.8); animation: v-pulse 2.8s var(--ease-out) infinite; }
+.v-wm-dot.hub::after { color: rgba(198,167,123,.9); animation-duration: 2.2s; }
+.v-wm-dot:hover, .v-wm-dot:focus-visible { box-shadow: 0 0 0 4px rgba(243,227,198,.35), 0 0 18px rgba(243,227,198,.9); outline: none; }
+@keyframes v-pulse { from { transform: scale(1); opacity: .9; } to { transform: scale(3.2); opacity: 0; } }
+.v-wmap.no-routes .v-wm-plane { display: none; }
+.v-wm-plane { width: 18px; height: 18px; color: #fff3df; pointer-events: none; transition: opacity .3s; }
+.v-wm-plane svg { width: 100%; height: 100%; filter: drop-shadow(0 0 5px rgba(255,236,205,.9)); }
+/* hover name */
+.v-wmap-tip { position: absolute; left: 0; top: 0; z-index: 3; padding: 6px 10px; border-radius: 6px; background: rgba(8,15,28,.9); border: 1px solid rgba(198,167,123,.3); color: #fff;
+  font: 600 .72rem/1 var(--f-head); letter-spacing: .04em; pointer-events: none; white-space: nowrap; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+@media (hover: none) { .v-wmap-tip { display: none; } }
+/* Schengen chip */
+.v-wmap-sch { position: absolute; z-index: 3; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 99px; cursor: pointer;
+  border: 1px solid rgba(226,104,112,.4); background: rgba(8,15,28,.6); color: #fff; font: 600 .7rem/1 var(--f-head); letter-spacing: .12em; text-transform: uppercase;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: background-color .35s var(--ease), border-color .35s var(--ease); }
+.v-wmap-sch b { font-weight: 700; color: var(--gold); letter-spacing: 0; }
+.v-wmap-sw { width: 10px; height: 10px; border-radius: 2px; background: rgba(154,6,16,.75); box-shadow: inset 0 0 0 1px rgba(226,104,112,.8); }
+.v-wmap-sch:hover, .v-wmap-sch[aria-pressed="true"] { background: rgba(122,6,14,.82); border-color: rgba(226,104,112,.85); }
+html[dir="rtl"] .v-wmap-sch { left: auto; right: 14px; }
+/* controls */
+.v-wmap-ctrl { position: absolute; z-index: 3; right: 14px; top: 14px; display: grid; gap: 8px; }
+html[dir="rtl"] .v-wmap-ctrl { right: auto; left: 14px; }
+.v-wmap-ctrl button { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(243,227,198,.2); background: rgba(8,15,28,.55); color: rgba(243,227,198,.92);
+  cursor: pointer; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: border-color .3s, color .3s, background-color .3s, transform .4s var(--ease-out); }
+.v-wmap-ctrl button:hover { border-color: rgba(243,227,198,.6); color: #fff; background: rgba(20,36,58,.8); transform: scale(1.05); }
+.v-wmap-ctrl button.off { color: rgba(243,227,198,.4); }
+.v-map-live .v-map-pick { z-index: 3; }
+/* MapLibre chrome in brand colours */
+.v-wmap .maplibregl-ctrl-attrib { background: rgba(8,15,28,.6) !important; color: rgba(255,255,255,.55); font: 400 .62rem var(--f-body); }
+.v-wmap .maplibregl-ctrl-attrib a { color: rgba(255,255,255,.7); }
+.v-wmap .maplibregl-ctrl-attrib-button { filter: invert(1) opacity(.6); }
+.v-wmap .maplibregl-cooperative-gesture-screen { background: rgba(8,15,28,.72); color: #fff; font: 500 .95rem var(--f-head); }
+/* panel for countries outside Schengen + Schengen intro button */
+.v-cp-other { animation: v-up .7s var(--ease-out); }
+.v-cp-other[hidden] { display: none; }
+.v-cp-txt { color: rgba(255,255,255,.78); font-size: .95rem; line-height: 1.6; margin: 4px 0 6px; }
+.v-cp-sd { color: rgba(255,255,255,.72); font-size: .92rem; margin: 18px 0 14px; }
+.v-cp-schbtn { align-self: flex-start; }
+@media (prefers-reduced-motion: reduce) { .v-wm-dot::after { animation: none; display: none; } }
+.v-wmap .v-wmap-canvas, .v-wmap .v-wmap-canvas.maplibregl-map { position: absolute; inset: 0; width: 100%; height: 100%; }
+.v-map-wrap > .v-map-live { align-self: start; height: auto; min-height: 0; aspect-ratio: 16 / 11; }
+@media (max-width: 760px) { .v-map-wrap > .v-map-live { aspect-ratio: 4 / 5; } }
