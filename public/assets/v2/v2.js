@@ -192,18 +192,20 @@
     if (gEl.dataset.started) return; gEl.dataset.started = "1";
     var s = document.createElement("script");
     s.src = asset() + "v2/globe.gl.min.js"; s.async = true;
-    s.onload = function () { fetch(asset() + "globe-countries.json").then(function (r) { return r.json(); }).then(build).catch(function () { gEl.classList.add("static"); }); };
+    s.onload = function () { Promise.all([fetch(asset() + "globe-countries.json").then(function (r) { return r.json(); }), fetch(asset() + "globe-world.json").then(function (r) { return r.json(); }).catch(function () { return { labels: [], borders: [] }; })]).then(function (a) { build(a[0], a[1]); }).catch(function () { gEl.classList.add("static"); }); };
     s.onerror = function () { gEl.classList.add("static"); };
     document.head.appendChild(s);
   };
 
-  var build = function (countries) {
+  var build = function (countries, world) {
     var host = $(".v-globe-canvas", gEl), overlay = $(".v-globe-overlay", gEl), card = $(".v-gcard", gEl), panel = $(".v-schengen-panel");
     var small = window.innerWidth < 860;
     var feats = countries.map(function (c) {
       var polys = c.p.map(function (r) { var ring = []; for (var i = 0; i + 1 < r.length; i += 2) ring.push([r[i + 1] / 100, r[i] / 100]); if (ring.length) ring.push(ring[0]); return [ring]; });
       return { type: "Feature", properties: { c: c, sch: SCH.indexOf(c.i) > -1 }, geometry: { type: "MultiPolygon", coordinates: polys } };
     });
+    var ringsOf = function (p) { return p.map(function (r) { var ring = []; for (var i = 0; i + 1 < r.length; i += 2) ring.push([r[i + 1] / 100, r[i] / 100]); if (ring.length) ring.push(ring[0]); return [ring]; }); };
+    world.borders.forEach(function (b) { feats.push({ type: "Feature", properties: { w: b.i }, geometry: { type: "MultiPolygon", coordinates: ringsOf(b.p) } }); });
     var hover = null, pinned = null;
     var size = function () { return { w: host.clientWidth, h: host.clientHeight }; };
     var sz = size();
@@ -214,10 +216,10 @@
       .showAtmosphere(true).atmosphereColor("#6d9bff").atmosphereAltitude(.19)
       .showGraticules(true)
       .polygonsData(feats)
-      .polygonAltitude(function (f) { return f === hover || f === pinned ? .028 : .007; })
-      .polygonCapColor(function (f) { var on = f === hover || f === pinned; return f.properties.sch ? (on ? "rgba(184,10,22,.62)" : "rgba(154,6,16,.2)") : (on ? "rgba(120,170,255,.45)" : "rgba(98,150,255,.10)"); })
-      .polygonSideColor(function (f) { return f.properties.sch ? "rgba(154,6,16,.25)" : "rgba(98,150,255,.12)"; })
-      .polygonStrokeColor(function (f) { return f.properties.sch ? "rgba(255,190,190,.42)" : "rgba(170,205,255,.35)"; })
+      .polygonAltitude(function (f) { return f === hover || f === pinned ? .028 : f.properties.w ? .004 : .007; })
+      .polygonCapColor(function (f) { var on = f === hover || f === pinned; if (f.properties.w) return on ? "rgba(198,167,123,.34)" : "rgba(255,255,255,.015)"; return f.properties.sch ? (on ? "rgba(184,10,22,.62)" : "rgba(154,6,16,.2)") : (on ? "rgba(120,170,255,.45)" : "rgba(98,150,255,.10)"); })
+      .polygonSideColor(function (f) { if (f.properties.w) return "rgba(255,255,255,.04)"; return f.properties.sch ? "rgba(154,6,16,.25)" : "rgba(98,150,255,.12)"; })
+      .polygonStrokeColor(function (f) { if (f.properties.w) return "rgba(235,225,205,.32)"; return f.properties.sch ? "rgba(255,190,190,.42)" : "rgba(170,205,255,.35)"; })
       .polygonsTransitionDuration(300)
       .pathsData(routes).pathPoints("pts").pathPointLat(function (p) { return p[0]; }).pathPointLng(function (p) { return p[1]; }).pathPointAlt(function (p) { return p[2]; })
       .pathColor(function () { return ["rgba(198,167,123,.15)", "rgba(198,167,123,.75)"]; }).pathStroke(1.1).pathTransitionDuration(0)
@@ -231,18 +233,18 @@
     var m = g.globeMaterial && g.globeMaterial(); if (m) { m.bumpScale = 3; m.shininess = 8; }
     var renderer = g.renderer && g.renderer(); if (renderer) renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.5 : 2));
     var ctl = g.controls();
-    ctl.autoRotate = !reduce; ctl.autoRotateSpeed = .42; ctl.enableZoom = false; ctl.minDistance = 175; ctl.maxDistance = 520; ctl.enableDamping = true; ctl.dampingFactor = .08;
+    ctl.autoRotate = !reduce; ctl.autoRotateSpeed = .42; ctl.enableZoom = false; ctl.minDistance = 113; ctl.maxDistance = 520; ctl.enableDamping = true; ctl.dampingFactor = .08;
     var HOME = { lat: 36, lng: 2, altitude: small ? 2.5 : 2.25 };
     g.pointOfView(HOME, 0);
     host.addEventListener("pointerdown", function () { ctl.enableZoom = true; ctl.autoRotate = false; resumeLater(); });
-    host.addEventListener("pointerleave", function () { ctl.enableZoom = false; });
+    host.addEventListener("pointerleave", function () { ctl.enableZoom = false; if (!pinned) setHover(null); });
     var rt; var resumeLater = function () { clearTimeout(rt); rt = setTimeout(function () { if (!pinned && !reduce) ctl.autoRotate = true; }, 6000); };
     // zoom buttons
     $$(".v-globe-ctrl button", gEl).forEach(function (b) {
       b.addEventListener("click", function () {
         var z = b.getAttribute("data-z"), p = g.pointOfView();
         if (z === "reset") { unpin(); g.pointOfView(HOME, 1200); return; }
-        g.pointOfView({ lat: p.lat, lng: p.lng, altitude: Math.max(.75, Math.min(3.2, p.altitude * (z === "in" ? .72 : 1.38))) }, 600);
+        g.pointOfView({ lat: p.lat, lng: p.lng, altitude: Math.max(.14, Math.min(3.2, p.altitude * (z === "in" ? .62 : 1.6))) }, 600);
         ctl.autoRotate = false; resumeLater();
       });
     });
@@ -256,13 +258,47 @@
     });
     overlay.style.pointerEvents = "none";
     var lonLab = document.createElement("span"); lonLab.className = "v-gl v-gl-lab notranslate"; lonLab.textContent = "London"; lonLab.style.pointerEvents = "none"; overlay.appendChild(lonLab);
-    var visible = function (lat, lng, pov, alt) { return ang(lat, lng, pov.lat, pov.lng) < Math.PI / 2 - .12 + (alt || 0) * 1.4; };
+    var visible = function (lat, lng, pov, alt) { return ang(lat, lng, pov.lat, pov.lng) < Math.acos(1 / (1 + pov.altitude)) - .03 + (alt || 0) * 1.4; };
     var place = function (el, lat, lng, alt, pov, extra) {
       var on = visible(lat, lng, pov, alt);
       if (!on) { el.style.opacity = "0"; return null; }
       var p = g.getScreenCoords(lat, lng, alt || 0);
       el.style.opacity = "1"; el.style.transform = "translate(" + p.x + "px," + p.y + "px) translate(-50%,-50%)" + (extra || "");
       return p;
+    };
+    // country names (every country) + UK cities, shown by zoom level without overlapping
+    var FIX = { RU: [61, 96], CA: [59, -104], US: [39.5, -98.5], GL: [73, -40], FR: [46.6, 2.4], NO: [61.5, 9], CL: [-33, -71], ID: [-2, 117], MY: [3.8, 102], JP: [36.5, 138.5], NZ: [-42, 172.5], GR: [39.3, 22], HR: [45.3, 16], IT: [42.8, 12.6], GB: [54.45, -2.35] };
+    var regionName = function () { var l = document.documentElement.lang || "en"; try { var dn = new Intl.DisplayNames([l, "en"], { type: "region" }); var EN = { CD: "DR Congo", CG: "Congo" }; return function (c) { if (/^en/.test(l) && EN[c]) return EN[c]; try { return dn.of(c) || c; } catch (e) { return c; } }; } catch (e) { return function (c) { return c; }; } };
+    var GL = [], mk = function (cls, txt) { var el = document.createElement("span"); el.className = "v-gl " + cls; el.textContent = txt; el.style.opacity = "0"; overlay.appendChild(el); return el; };
+    world.labels.forEach(function (r) { var ll = FIX[r[0]] || [r[1], r[2]]; GL.push({ el: mk("v-gl-c", r[0]), code: r[0], lat: ll[0], lng: ll[1], pr: r[0] === "GB" ? 1e5 : r[3], min: r[3] > 150 ? 9 : r[3] > 40 ? 2.3 : r[3] > 8 ? 1.45 : r[3] > 1.5 ? .95 : r[3] > .3 ? .55 : .3 }); });
+    [["Birmingham", 52.49, -1.89, 1], ["Manchester", 53.48, -2.24, 1], ["Glasgow", 55.86, -4.25, 1], ["Edinburgh", 55.95, -3.19, 1], ["Cardiff", 51.48, -3.18, 1], ["Belfast", 54.6, -5.93, 1],
+     ["Liverpool", 53.41, -2.99, 2], ["Leeds", 53.8, -1.55, 2], ["Newcastle", 54.98, -1.62, 2], ["Bristol", 51.45, -2.59, 2], ["Sheffield", 53.38, -1.47, 2], ["Nottingham", 52.95, -1.16, 2], ["Leicester", 52.64, -1.14, 2], ["Aberdeen", 57.15, -2.09, 2],
+     ["Southampton", 50.91, -1.4, 3], ["Bradford", 53.8, -1.76, 3], ["Oxford", 51.75, -1.26, 3], ["Cambridge", 52.2, .12, 3], ["Brighton", 50.82, -.14, 3], ["Plymouth", 50.38, -4.14, 3], ["Inverness", 57.48, -4.22, 3]
+    ].forEach(function (c) { GL.push({ el: mk("v-gl-city notranslate", c[0]), city: c[0], lat: c[1], lng: c[2], pr: 1e4 - c[3], min: [0, .78, .55, .36][c[3]] }); });
+    var fixed = [lonLab].concat(routes.map(function (r) { return r.lab; }));
+    var setNames = function () { var rn = regionName(); GL.forEach(function (g2) { g2.el.textContent = g2.city ? nm(g2.city) : rn(g2.code); g2.w = 0; }); };
+    setNames();
+    var lastLang = document.documentElement.lang;
+    if ("MutationObserver" in window) new MutationObserver(function () { if (document.documentElement.lang !== lastLang) { lastLang = document.documentElement.lang; setTimeout(setNames, 60); } }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    var hb = gEl.getBoundingClientRect(), frame = 0;
+    var layout = function (pov) {
+      var boxes = [];
+      fixed.forEach(function (el) { if (el.style.opacity === "0") return; var r = el.getBoundingClientRect(); boxes.push([r.left - hb.left - 4, r.top - hb.top - 2, r.right - hb.left + 4, r.bottom - hb.top + 2]); });
+      var cands = [];
+      GL.forEach(function (o) {
+        if (pov.altitude > o.min || !visible(o.lat, o.lng, pov, -.05)) { o.el.style.opacity = "0"; return; }
+        var p = g.getScreenCoords(o.lat, o.lng, .006);
+        if (p.x < 0 || p.y < 0 || p.x > hb.width || p.y > hb.height) { o.el.style.opacity = "0"; return; }
+        o.x = p.x; o.y = p.y; cands.push(o);
+      });
+      cands.sort(function (a, b) { return b.pr - a.pr; });
+      cands.forEach(function (o) {
+        if (!o.w) { o.w = o.el.offsetWidth || 60; o.h = o.el.offsetHeight || 14; }
+        var dx = o.city ? 5 : -o.w / 2, b = [o.x + dx - 3, o.y - o.h / 2 - 2, o.x + dx + o.w + 3, o.y + o.h / 2 + 2];
+        for (var i = 0; i < boxes.length; i++) { var q = boxes[i]; if (b[0] < q[2] && b[2] > q[0] && b[1] < q[3] && b[3] > q[1]) { o.el.style.opacity = "0"; return; } }
+        boxes.push(b); o.el.style.opacity = "1";
+        o.el.style.transform = "translate(" + o.x + "px," + o.y + "px) translate(" + (o.city ? "-4px" : "-50%") + ",-50%)";
+      });
     };
     var t0 = performance.now(), running = true;
     var tick = function (now) {
@@ -281,6 +317,7 @@
         if (p) r.pl.style.opacity = String(Math.min(1, Math.sin(Math.PI * Math.min(1, f * 1.02)) * 3));
         r.lab.classList.toggle("on", f > .82);
       });
+      if (frame++ % 2 === 0) layout(pov);
       requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -292,6 +329,11 @@
     var lastXY = { x: 0, y: 0 };
     gEl.addEventListener("pointermove", function (e) { var r = gEl.getBoundingClientRect(); lastXY = { x: e.clientX - r.left, y: e.clientY - r.top }; if (hover && !pinned) position(); });
     var schLabel = function () { var k = panel && $(".v-sp-k", panel); return k ? k.textContent : "Schengen Area"; };
+    var worldHTML = function (code) {
+      return '<button type="button" class="v-gc-x" aria-label="Close">×</button><p class="v-gc-k">' + esc(ui("g_world", "Country")) + '</p>' +
+        '<div class="v-gc-h"><div><b>' + esc(regionName()(code)) + '</b></div></div><p class="v-gc-p">' + esc(ui("g_ask", "Planning a trip here? Ask us what you need.")) + '</p>' +
+        '<div class="v-gc-foot"><a href="' + pageUrl("contact.html") + '">' + esc(ui("g_askbtn", "Free consultation")) + ' →</a></div>';
+    };
     var cardHTML = function (c, sch) {
       var x = c.x || {}, h = [];
       h.push('<button type="button" class="v-gc-x" aria-label="Close">×</button>');
@@ -320,7 +362,7 @@
     };
     var showCard = function (f) {
       if (!f) { card.classList.remove("on"); card.hidden = true; if (panel) panel.classList.remove("on"); return; }
-      card.innerHTML = cardHTML(f.properties.c, f.properties.sch); card.hidden = false; card.classList.add("on"); position();
+      card.innerHTML = f.properties.w ? worldHTML(f.properties.w) : cardHTML(f.properties.c, f.properties.sch); card.hidden = false; card.classList.add("on"); position();
       if (panel) { panel.hidden = !f.properties.sch; panel.classList.toggle("on", f.properties.sch); }
     };
     var setHover = function (f) {
@@ -333,7 +375,7 @@
     var clickCountry = function (f) {
       if (!f) return;
       if (touchUI && pinned !== f) { pinned = f; hover = f; card.classList.add("pinned"); g.polygonsData(g.polygonsData()); showCard(f); ctl.autoRotate = false; return; }
-      location.href = pageUrl(f.properties.c.s);
+      location.href = pageUrl(f.properties.w ? "contact.html" : f.properties.c.s);
     };
     var unpin = function () { if (!pinned) return; pinned = null; card.classList.remove("pinned"); setHover(null); resumeLater(); };
     card.addEventListener("click", function (e) { if (e.target.closest(".v-gc-x")) { e.stopPropagation(); unpin(); } });
@@ -341,14 +383,14 @@
     // ---- lifecycle ----
     var ready = function () { gEl.classList.add("ready"); };
     setTimeout(ready, 900);
-    var fit = function () { var s2 = size(); g.width(s2.w).height(s2.h); };
+    var fit = function () { var s2 = size(); g.width(s2.w).height(s2.h); hb = gEl.getBoundingClientRect(); };
     window.addEventListener("resize", function () { clearTimeout(fit.t); fit.t = setTimeout(fit, 150); });
     if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
       var on = es[0].isIntersecting;
       if (on && !running) { running = true; g.resumeAnimation(); requestAnimationFrame(tick); }
       if (!on && running) { running = false; g.pauseAnimation(); }
     }).observe(gEl);
-    document.addEventListener("tv:lang", function () { if (hover) showCard(hover); });
+    document.addEventListener("tv:lang", function () { setNames(); if (hover) showCard(hover); });
   };
 
   if (document.readyState === "complete") setTimeout(start, 120);

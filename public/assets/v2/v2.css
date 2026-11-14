@@ -601,3 +601,12 @@ html[dir="rtl"] .v-schengen-panel { right: auto; left: max(var(--gut), calc((100
   .v-ap-strip::-webkit-scrollbar { display: none; }
   .v-ap { flex: 0 0 82%; scroll-snap-align: start; }
 }
+
+/* globe: country names + UK cities */
+.v-gl-c, .v-gl-city { direction: ltr; unicode-bidi: isolate; }
+.v-gl-c { font: 600 .66rem/1 var(--f-head); letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.86); white-space: nowrap;
+  text-shadow: 0 0 4px rgba(4,8,16,.95), 0 1px 3px rgba(4,8,16,.9), 0 0 12px rgba(4,8,16,.6); }
+html[lang="ar"] .v-gl-c, html[lang="ur"] .v-gl-c, html[lang="hi"] .v-gl-c, html[lang="bn"] .v-gl-c { letter-spacing: 0; font-size: .74rem; }
+.v-gl-city { display: inline-flex; align-items: center; gap: 5px; font: 500 .7rem/1 var(--f-body); color: #fff; white-space: nowrap;
+  text-shadow: 0 0 4px rgba(4,8,16,.95), 0 1px 3px rgba(4,8,16,.9); }
+.v-gl-city::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px rgba(154,6,16,.85); flex: none; }
